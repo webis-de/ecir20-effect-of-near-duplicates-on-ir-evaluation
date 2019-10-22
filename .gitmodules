@@ -1,0 +1,3 @@
+[submodule "third-party/jtreceval"]
+	path = third-party/jtreceval
+	url = https://github.com/mam10eks/jtreceval.git

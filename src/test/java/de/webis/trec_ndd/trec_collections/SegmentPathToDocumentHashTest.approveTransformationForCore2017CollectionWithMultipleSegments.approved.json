@@ -1,0 +1,22 @@
+[
+  {
+    "id": "146",
+    "textProfileSignature": "e447257176f8bc6b45e7113300332a19",
+    "md5": "aa4df19d2c10c056d7747c2bcda1c7c6",
+    "fullyTextProfileSignature": "afa1a9dbad9ae8ff705c5caa2d21de8c",
+    "fullyCanonicalizedMd5": "a07c461d46e0be8be1647741f3c38faf",
+    "documentLength": 4098,
+    "fullyCanonicalizedWord8GrammCount": 527,
+    "fullyCanonicalizedWord8GrammSetSize": 520
+  },
+  {
+    "id": "1816611",
+    "textProfileSignature": "224cfa3c9342d8a8c4a405fd182d046b",
+    "md5": "ce0a27d40dfdecbea97ed97802ed0e2e",
+    "fullyTextProfileSignature": "75a0748f6e5756edee4b88f2caca832a",
+    "fullyCanonicalizedMd5": "79bc80fc6d34a2aa920d9a0e9e84a431",
+    "documentLength": 858,
+    "fullyCanonicalizedWord8GrammCount": 88,
+    "fullyCanonicalizedWord8GrammSetSize": 87
+  }
+]

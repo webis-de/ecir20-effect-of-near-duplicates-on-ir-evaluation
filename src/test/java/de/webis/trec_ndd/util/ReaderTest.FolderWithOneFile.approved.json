@@ -1,0 +1,38 @@
+[
+  {
+    "hash": "ac2d11c5d7f77cdef38f1566f3df8b05",
+    "ids": [
+      "clueweb09-ja0004-63-23900",
+      "clueweb09-ja0009-69-49575",
+      "clueweb09-ja0014-01-20176"
+    ]
+  },
+  {
+    "hash": "73613269a81412b40d7c4e018b8359e0",
+    "ids": [
+      "clueweb09-en0069-96-24946",
+      "clueweb09-en0064-73-24946"
+    ]
+  },
+  {
+    "hash": "d2c82a8d843d11401dace58ed47274cf",
+    "ids": [
+      "clueweb09-en0083-53-03677",
+      "clueweb09-en0128-65-27891"
+    ]
+  },
+  {
+    "hash": "5465bd43e50c6d271f1ba77388bae7f4",
+    "ids": [
+      "clueweb09-zh0009-35-18959",
+      "clueweb09-zh0009-35-18962"
+    ]
+  },
+  {
+    "hash": "80630e116ba82a34d7516db35bfa8070",
+    "ids": [
+      "clueweb09-zh0036-08-11748",
+      "clueweb09-zh0036-08-11760"
+    ]
+  }
+]

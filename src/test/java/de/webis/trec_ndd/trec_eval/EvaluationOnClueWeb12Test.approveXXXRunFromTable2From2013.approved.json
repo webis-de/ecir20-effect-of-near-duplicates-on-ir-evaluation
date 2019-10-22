@@ -1,0 +1,13 @@
+{
+  "udemQlm1lFbWiki": {
+    "ERR_20": "0.152",
+    "ERR_10": "0.143",
+    "NDCG_CUT_10": "0.255",
+    "NRBP": "0.433",
+    "ALPHA_NDCG_CUT_20": "0.576",
+    "NDCG_CUT_20": "0.254",
+    "ALPHA_NDCG_CUT_10": "0.557",
+    "ERR_IA_20": "0.480",
+    "ERR_IA_10": "0.475"
+  }
+}

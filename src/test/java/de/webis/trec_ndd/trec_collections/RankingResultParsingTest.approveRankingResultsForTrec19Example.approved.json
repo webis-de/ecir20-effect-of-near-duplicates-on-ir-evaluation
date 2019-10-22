@@ -1,0 +1,20 @@
+{
+  "src/test/resources/data/sample-run-files-trec-19-web/input.DFalah2010.gz": {
+    "run-lines": 66,
+    "first-run-line": "51 Q0 clueweb09-enwp01-56-17042 1 0.9100282 DFalah2010",
+    "run-lines-hash": 1263611205,
+    "last-run-line": "100 Q0 clueweb09-en0005-56-14977 150 0.02245465 DFalah2010"
+  },
+  "src/test/resources/data/sample-run-files-trec-19-web/input.ICTNETAD10R1.gz": {
+    "run-lines": 41,
+    "first-run-line": "51 Q0 clueweb09-en0093-01-01638 1 387.634643555 ICTNETAD10R1",
+    "run-lines-hash": -478963340,
+    "last-run-line": "99 Q0 clueweb09-en0127-76-32095 1832 16.8464153967 ICTNETAD10R1"
+  },
+  "src/test/resources/data/sample-run-files-trec-19-web/input.udelIndriWP.gz": {
+    "run-lines": 36,
+    "first-run-line": "62 Q0 clueweb09-enwp01-99-00325 1798 -5.89975 udelIndriWP",
+    "run-lines-hash": 1631840988,
+    "last-run-line": "100 Q0 clueweb09-enwp01-80-10824 222 -5.29105 udelIndriWP"
+  }
+}

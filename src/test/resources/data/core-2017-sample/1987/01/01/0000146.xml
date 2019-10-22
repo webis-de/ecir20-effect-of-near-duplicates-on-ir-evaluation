@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nitf SYSTEM "http://www.nitf.org/IPTC/NITF/3.3/specification/dtd/nitf-3-3.dtd">
+<nitf change.date="June 10, 2005" change.time="19:30" version="-//IPTC//DTD NITF 3.3//EN">
+  <head>
+    <title>RYAN IS NOT ALONE AMONG BATTERED</title>
+    <meta content="1" name="publication_day_of_month"/>
+    <meta content="1" name="publication_month"/>
+    <meta content="1987" name="publication_year"/>
+    <meta content="Thursday" name="publication_day_of_week"/>
+    <meta content="Sports Desk" name="dsk"/>
+    <meta content="19" name="print_page_number"/>
+    <meta content="1" name="print_section"/>
+    <meta content="5" name="print_column"/>
+    <meta content="Sports" name="online_sections"/>
+    <docdata>
+      <doc-id id-string="146"/>
+      <doc.copyright holder="The New York Times" year="1987"/>
+      <series series.name="JETS NOTEBOOK"/>
+      <identified-content>
+        <classifier class="indexing_service" type="descriptor">FOOTBALL</classifier>
+        <classifier class="indexing_service" type="descriptor">PLAYOFF GAMES</classifier>
+        <org class="indexing_service">NEW YORK JETS</org>
+        <org class="indexing_service">CLEVELAND BROWNS</org>
+        <person class="indexing_service">ESKENAZI, GERALD</person>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/News</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/News/Sports</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/News/Sports/Pro Football/National Football League/Cleveland Browns</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/News/Sports/Pro Football/National Football League/New York Jets</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/News/Sports/Pro Football</classifier>
+        <classifier class="online_producer" type="general_descriptor">Games</classifier>
+        <classifier class="online_producer" type="general_descriptor">Playoff Games</classifier>
+        <classifier class="online_producer" type="general_descriptor">Football</classifier>
+        <classifier class="online_producer" type="general_descriptor">Baseball</classifier>
+      </identified-content>
+    </docdata>
+    <pubdata date.publication="19870101T000000" ex-ref="http://query.nytimes.com/gst/fullpage.html?res=9B0DEEDD153FF932A35752C0A961948260" item-length="659" name="The New York Times" unit-of-measure="word"/>
+  </head>
+  <body>
+    <body.head>
+      <hedline>
+        <hl1>RYAN IS NOT ALONE AMONG BATTERED</hl1>
+      </hedline>
+      <byline class="print_byline">By GERALD ESKENAZI</byline>
+      <byline class="normalized_byline">ESKENAZI, GERALD</byline>
+    </body.head>
+    <body.content>
+      <block class="lead_paragraph">
+        <p>LEAD: The Jets remain a battered team, a fact of football life obscured by their wild-card playoff victory over the Chiefs.</p>
+      </block>
+      <block class="full_text">
+        <p>LEAD: The Jets remain a battered team, a fact of football life obscured by their wild-card playoff victory over the Chiefs.</p>
+        <p>The Jets remain a battered team, a fact of football life obscured by their wild-card playoff victory over the Chiefs.</p>
+        <p>Even though Pat Ryan threw yesterday in his first full-scale drill for Saturday's divisional playoff against the Browns in Cleveland, he is nursing a bruised arm. And several of his key teammates are also playing with injuries.</p>
+        <p>''My arm's always stiff,'' Ryan said stoically. ''I get used to it.''</p>
+        <p>Ryan has had a chronic arm problem since 1984, when he started the first 11 games despite the injury. He began taking a day off once a week, a practice he has continued since.</p>
+        <p>''I was in a lot worse shape in '84 than I am now,'' he said.</p>
+        <p>Still, the Jets are ''not playing with a full deck,'' in the words of Coach Joe Walton.</p>
+        <p>The injured regulars include Marty Lyons, the defensive lineman who was sidelined late in the season with a shoulder injury. Now, both shoulders are bothering him.</p>
+        <p>''Marty's been able to help us to a certain point in the game,'' Walton concedes.</p>
+        <p>''I try not to take anything for the pain,'' says Lyons. ''You go on emotion and adrenaline, and when it gets to the point it's unbearable, you take yourself out.'' He was forced to take himself out against the Chiefs last Sunday.</p>
+        <p>Mark Gastineau has played just one game since returning from knee surgery; Ken O'Brien has a sprained right pinky that could limit him if he had to replace Ryan; the right tackle, Gordon King, and the left guard, Guy Bingham, are playing because the regulars are injured; Johnny Hector has not been on the field for three games because of a hamstring problem, leaving all the halfback duties to Freeman McNeil; Tom Baldwin is still at nose tackle for the sidelined Joe Klecko; Lance Mehl's surgery rushed Rusty Guilbeau's return to linebacker even though his knee rehabilitation wasn't complete.</p>
+        <p>''But,'' asks Lyons, ''tell me who's a healthy team now?''</p>
+        <p>Results against common opponents don't mean much because football often is a game of matchups. But, anyway, here are the Jets' and Browns' scores against common foes:</p>
+        <p>Buffalo - The Jets beat the Bills twice, 28-24 and 14-13; Cleveland beat them, 21-17.</p>
+        <p>Cincinnati - The Jets lost, 52-21; Cleveland split, losing, 30-13, and winning, 34-3.</p>
+        <p>Pittsburgh - The Jets lost by 45-24; Cleveland swept the Steelers, 27-24 and 37-31.</p>
+        <p>Kansas City - The Jets beat them in the wild-card game, 35-15; Cleveland beat them, 20-7.</p>
+        <p>Indianapolis - A Jet sweep, 26-7 and 31-16; Cleveland won by 24-9.</p>
+        <p>Miami - A Jet split, a 51-45 victory in overtime and a 45-3 thrashing; Cleveland beat them, 26-16.</p>
+        <p>The record shows the Browns were 7-1 against these teams while the Jets had a 6-3 mark against them.</p>
+        <p>The Jets have played in a Super Bowl and they have been to the American Conference championship game. But when they play the Browns they will be performing in their 18th game of the season - the most they have ever played. That A.F.C. championship season? That was 1982 - the strike season when they played only nine regular-season games. The Super Bowl season was only 14 regular-season games long. They had only one playoff game - a victory over the Raiders - before the Super Bowl.</p>
+        <p>The Jets' 37-10 victory over the Browns last season broke a six-year stretch between the teams in which no game was decided by more than 4 points. Two went into overtime (won by the Browns on field goals), another two were captured in regulation time by Cleveland on field goals and the Jets took one game by a missed extra point.</p>
+        <p>The kicking may be a factor Saturday. Five Cleveland Stadium games this season have been decided by field goals, with the Browns winning four.</p>
+        <p>''It's a hard stadium to kick in,'' says Pat Leahy of the Jets. ''It's open and cold, but I've had some decent games in there.''</p>
+        <p>Matt Bahr, the Browns' kicker, was injured on a tackle after a kickoff. Mark Moseley, cut by the Redskins, replaced him and has been fair, kicking 12 of 19. Leahy, though, is 16 for 19.</p>
+        <p>JETS NOTEBOOK</p>
+      </block>
+    </body.content>
+  </body>
+</nitf>

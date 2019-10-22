@@ -1,0 +1,26 @@
+{
+  "3": {
+    "relevantJudgments": 3,
+    "retrievalEquivalentGroupsInRelevantJudgments": 0,
+    "contentEquivalentGroupsInRelevantJudgments": 0,
+    "retrievalEquivalentDocsInRelevantJudgments": 0,
+    "contentEquivalentDocsInRelevantJudgments": 0,
+    "irrelevantJudgments": 2,
+    "retrievalEquivalentDocsInIrrelevantJudgments": 1,
+    "contentEquivalentDocsInIrrelevantJudgments": 2,
+    "retrievalEquivalentGroupsInIrrelevantJudgments": 1,
+    "contentEquivalentGroupsInIrrelevantJudgments": 2
+  },
+  "4": {
+    "relevantJudgments": 4,
+    "retrievalEquivalentGroupsInRelevantJudgments": 0,
+    "contentEquivalentGroupsInRelevantJudgments": 0,
+    "retrievalEquivalentDocsInRelevantJudgments": 0,
+    "contentEquivalentDocsInRelevantJudgments": 0,
+    "irrelevantJudgments": 1,
+    "retrievalEquivalentDocsInIrrelevantJudgments": 0,
+    "contentEquivalentDocsInIrrelevantJudgments": 0,
+    "retrievalEquivalentGroupsInIrrelevantJudgments": 0,
+    "contentEquivalentGroupsInIrrelevantJudgments": 0
+  }
+}

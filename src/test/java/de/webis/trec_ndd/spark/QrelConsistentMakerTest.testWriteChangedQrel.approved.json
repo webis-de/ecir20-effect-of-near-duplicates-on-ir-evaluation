@@ -1,0 +1,27 @@
+[
+  {
+    "score": 100,
+    "topicNumber": 2,
+    "documentID": "clueweb09-zh0036-08-11760"
+  },
+  {
+    "score": 0,
+    "topicNumber": 1,
+    "documentID": "clueweb09-zh0009-35-18959"
+  },
+  {
+    "score": 111,
+    "topicNumber": 1,
+    "documentID": "clueweb09-zh0009-35-18962"
+  },
+  {
+    "score": 10,
+    "topicNumber": 1,
+    "documentID": "clueweb09-en0069-96-24946"
+  },
+  {
+    "score": 6,
+    "topicNumber": 1,
+    "documentID": "clueweb09-en0064-73-24946"
+  }
+]

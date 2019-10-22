@@ -1,0 +1,22 @@
+[
+  {
+    "nGramm": "a B c D e F g h",
+    "md5Hash": "2e2817080af2c57ba54779ca4c7aaab4"
+  },
+  {
+    "nGramm": "B c D e F g h i",
+    "md5Hash": "1e6c1eb5fd5f6f77a00b5ebbd451c040"
+  },
+  {
+    "nGramm": "c D e F g h i j",
+    "md5Hash": "16c1657bbf105ad1d448c1212ac797ae"
+  },
+  {
+    "nGramm": "D e F g h i j klm",
+    "md5Hash": "b1823562bd91a38aadc8688c52fbf978"
+  },
+  {
+    "nGramm": "e F g h i j klm nop",
+    "md5Hash": "8d27b061dc5f91c2e49fd1e948201db2"
+  }
+]

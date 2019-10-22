@@ -1,0 +1,32 @@
+[
+  {
+    "id": "fffbc452-b422-11e2-9a98-4be1688d7d84",
+    "textProfileSignature": "672a6cc5f7e1f66f250a38414b95db5b",
+    "md5": "b6bbba0bacf3f58104ee29e94b0eeebc",
+    "fullyTextProfileSignature": "a6582fc82b0c31bbf8ae018282ef0b41",
+    "fullyCanonicalizedMd5": "b4bde8b324baf7f457ebac817f8dbf93",
+    "documentLength": 3957,
+    "fullyCanonicalizedWord8GrammCount": 460,
+    "fullyCanonicalizedWord8GrammSetSize": 460
+  },
+  {
+    "id": "b2e89334-33f9-11e1-825f-dabc29fd7071",
+    "textProfileSignature": "d8f6f7e167203ee8f2752b3acacfa70d",
+    "md5": "bb8ca0ca895d614b731b8b702e057040",
+    "fullyTextProfileSignature": "b0bc755749c5bee91c29e5da5e66b27e",
+    "fullyCanonicalizedMd5": "d8fac046a74f29876c1c0d168de4173f",
+    "documentLength": 4791,
+    "fullyCanonicalizedWord8GrammCount": 607,
+    "fullyCanonicalizedWord8GrammSetSize": 607
+  },
+  {
+    "id": "749ec5b2-32f5-11e1-825f-dabc29fd7071",
+    "textProfileSignature": "1e351d52530158b03699249c6641a759",
+    "md5": "6e2487d95bf84732893774e75d49f607",
+    "fullyTextProfileSignature": "2aad319b01f1d39ad148f133ef90236c",
+    "fullyCanonicalizedMd5": "670ca183f9a67aff03b33e0255d4d6d2",
+    "documentLength": 4017,
+    "fullyCanonicalizedWord8GrammCount": 484,
+    "fullyCanonicalizedWord8GrammSetSize": 484
+  }
+]

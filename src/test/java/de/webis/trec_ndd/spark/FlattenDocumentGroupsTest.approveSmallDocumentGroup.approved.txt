@@ -1,0 +1,1 @@
+[S3ScoreOnWord8GrammIndex.S3ScoreIntermediateResult(commonNGramms=0, leftMetadata=null, rightMetadata=null, idPair=(a,b))]

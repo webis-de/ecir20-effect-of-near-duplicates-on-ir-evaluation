@@ -1,0 +1,22 @@
+{
+  "maxValueDuplicateDocsIrrelevant": {
+    "removeDuplicates": true,
+    "base": true,
+    "duplicatesMarkedIrrelevant": true
+  },
+  "maxValue": {
+    "removeDuplicates": true,
+    "base": true,
+    "duplicatesMarkedIrrelevant": true
+  },
+  "maxValueAllDuplicateDocsIrrelevant": {
+    "removeDuplicates": true,
+    "base": false,
+    "duplicatesMarkedIrrelevant": true
+  },
+  "base": {
+    "removeDuplicates": true,
+    "base": true,
+    "duplicatesMarkedIrrelevant": true
+  }
+}

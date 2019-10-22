@@ -1,0 +1,29 @@
+[
+  {
+    "hash": "FIRST-DOC-IS: A",
+    "ids": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ]
+  },
+  {
+    "hash": "FIRST-DOC-IS: E",
+    "ids": [
+      "E",
+      "F",
+      "G",
+      "H"
+    ]
+  },
+  {
+    "hash": "FIRST-DOC-IS: I",
+    "ids": [
+      "I",
+      "J",
+      "K",
+      "L"
+    ]
+  }
+]

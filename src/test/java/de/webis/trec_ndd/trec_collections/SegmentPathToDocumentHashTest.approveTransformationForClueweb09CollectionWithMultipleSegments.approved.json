@@ -1,0 +1,462 @@
+[
+  {
+    "id": "clueweb09-en0000-00-00000",
+    "textProfileSignature": "d87ed09a6590ce334a84c24b8ab25709",
+    "md5": "a11e917c70f9b070a19708c57bddddde",
+    "fullyTextProfileSignature": "47aee9c93de955a74d736399454b9b6b",
+    "fullyCanonicalizedMd5": "3b225786ef10704975b5eb788fe3ffb5",
+    "documentLength": 466,
+    "fullyCanonicalizedWord8GrammCount": 56,
+    "fullyCanonicalizedWord8GrammSetSize": 56
+  },
+  {
+    "id": "clueweb09-en0000-00-00001",
+    "textProfileSignature": "d0032dfe3b684b3101841949b9d28683",
+    "md5": "77df74be648a8fa3e50e662f5be3b63d",
+    "fullyTextProfileSignature": "aff9af3a650aca817a7b44f310d9f99c",
+    "fullyCanonicalizedMd5": "388af582ca5eabbf07fd03a07f88e904",
+    "documentLength": 406,
+    "fullyCanonicalizedWord8GrammCount": 48,
+    "fullyCanonicalizedWord8GrammSetSize": 48
+  },
+  {
+    "id": "clueweb09-en0000-00-00002",
+    "textProfileSignature": "5e81c468afbe69e16e58ff5c50743dce",
+    "md5": "35f17d1e17b6fa8e47252690b1bb7969",
+    "fullyTextProfileSignature": "1580ec362e3c29a72bf238eb9ac530d3",
+    "fullyCanonicalizedMd5": "0c62162e6cd86b09efaf891436818b4c",
+    "documentLength": 425,
+    "fullyCanonicalizedWord8GrammCount": 45,
+    "fullyCanonicalizedWord8GrammSetSize": 45
+  },
+  {
+    "id": "clueweb09-en0000-00-00003",
+    "textProfileSignature": "f76cd5ddd2bbae68ee36a6b01a1fd65a",
+    "md5": "fc2587244d0934a253b9c2ca20e09cda",
+    "fullyTextProfileSignature": "ed725e434de0ad4f42ccd5da6e775e1c",
+    "fullyCanonicalizedMd5": "b50b59f2e195ef6c742a6dc649220e59",
+    "documentLength": 693,
+    "fullyCanonicalizedWord8GrammCount": 89,
+    "fullyCanonicalizedWord8GrammSetSize": 89
+  },
+  {
+    "id": "clueweb09-en0000-00-00004",
+    "textProfileSignature": "ffdb515039b405a32e31f8f0b6eee2fd",
+    "md5": "1a9d238a363c4b86f06173f2fe774edf",
+    "fullyTextProfileSignature": "e77d88c343cf0d89df6ddc7a2ef8f58d",
+    "fullyCanonicalizedMd5": "9509b29a5ec4effad614e9132cb78018",
+    "documentLength": 1242,
+    "fullyCanonicalizedWord8GrammCount": 162,
+    "fullyCanonicalizedWord8GrammSetSize": 162
+  },
+  {
+    "id": "clueweb09-en0000-00-00005",
+    "textProfileSignature": "f87a0d175509fc7792339b0c108358b3",
+    "md5": "3afe95f0523605ab7a1b7c2cb3885cf9",
+    "fullyTextProfileSignature": "1c6708ca333cae266565dc20efb5f213",
+    "fullyCanonicalizedMd5": "5a4562bfb66e541985e8f88bbf4312fa",
+    "documentLength": 1300,
+    "fullyCanonicalizedWord8GrammCount": 150,
+    "fullyCanonicalizedWord8GrammSetSize": 150
+  },
+  {
+    "id": "clueweb09-en0000-00-00006",
+    "textProfileSignature": "5fdaddf2a57c716b20035ec29c3f9a37",
+    "md5": "27929daf589ddcbbe1bca839ed07e33f",
+    "fullyTextProfileSignature": "e578d545299159bf9dbb7955e400b298",
+    "fullyCanonicalizedMd5": "1ca436b222823e4a79ba9ddbfa4b3fd1",
+    "documentLength": 2213,
+    "fullyCanonicalizedWord8GrammCount": 328,
+    "fullyCanonicalizedWord8GrammSetSize": 328
+  },
+  {
+    "id": "clueweb09-en0000-00-00007",
+    "textProfileSignature": "633fb04dfcd13a31848f2f7d82c7be42",
+    "md5": "3e558ab560a82d29016a14fcc205de79",
+    "fullyTextProfileSignature": "6f690d7256ac25935a2dfcb80b15ce3a",
+    "fullyCanonicalizedMd5": "acd9b919b465fc1176c5b5083ac71685",
+    "documentLength": 2491,
+    "fullyCanonicalizedWord8GrammCount": 332,
+    "fullyCanonicalizedWord8GrammSetSize": 332
+  },
+  {
+    "id": "clueweb09-en0000-00-00008",
+    "textProfileSignature": "64440253d8bb1deb52af1f2fe31dc719",
+    "md5": "5f4dcd48161ae112c1b279e674c1970e",
+    "fullyTextProfileSignature": "31e5f84e1065601c110430864e862e59",
+    "fullyCanonicalizedMd5": "87c6a8f37a7c4e92521510e8aae3a87f",
+    "documentLength": 1150,
+    "fullyCanonicalizedWord8GrammCount": 156,
+    "fullyCanonicalizedWord8GrammSetSize": 156
+  },
+  {
+    "id": "clueweb09-en0000-00-00009",
+    "textProfileSignature": "6597493858c6defe8d9b6c4bf3d2f9a1",
+    "md5": "e98d98bb8e743589f95e2140538a3611",
+    "fullyTextProfileSignature": "0e88c669293d7b1a40e04c05eaf683b5",
+    "fullyCanonicalizedMd5": "2f3a6bccf2b12f91fb06361c2b7fab46",
+    "documentLength": 2263,
+    "fullyCanonicalizedWord8GrammCount": 332,
+    "fullyCanonicalizedWord8GrammSetSize": 332
+  },
+  {
+    "id": "clueweb09-en0000-00-00010",
+    "textProfileSignature": "4e042215ce9d1afc6a19bd7835358214",
+    "md5": "cac8f9f55325ba1490dc95ea03bf9576",
+    "fullyTextProfileSignature": "04c6cdf26b3cc3dd06941df73c4e1ed7",
+    "fullyCanonicalizedMd5": "5eb695324bffac6616d23a6e30657c2f",
+    "documentLength": 494,
+    "fullyCanonicalizedWord8GrammCount": 73,
+    "fullyCanonicalizedWord8GrammSetSize": 73
+  },
+  {
+    "id": "clueweb09-en0000-00-00011",
+    "textProfileSignature": "e95b35c408d0e8140de83d6c7c8d2707",
+    "md5": "a69af40285463ab2a2fe2a67775cd991",
+    "fullyTextProfileSignature": "f32edacceb186db31d031f6a76be10d5",
+    "fullyCanonicalizedMd5": "3e824a2c7404f5a1e7dc78fd6e6c446c",
+    "documentLength": 7129,
+    "fullyCanonicalizedWord8GrammCount": 834,
+    "fullyCanonicalizedWord8GrammSetSize": 834
+  },
+  {
+    "id": "clueweb09-en0000-00-00012",
+    "textProfileSignature": "ade57d89b752b0d06d849394f72f119f",
+    "md5": "370f60cbf0b6a76a13aaeb64b94eba73",
+    "fullyTextProfileSignature": "09b83abd1dd105b0e4ae543337ef14da",
+    "fullyCanonicalizedMd5": "0eac6265c1279a30c5e308ae5d0d6919",
+    "documentLength": 16417,
+    "fullyCanonicalizedWord8GrammCount": 1874,
+    "fullyCanonicalizedWord8GrammSetSize": 1869
+  },
+  {
+    "id": "clueweb09-en0000-00-00013",
+    "textProfileSignature": "21becfb8089580084bb77967b3992cfd",
+    "md5": "412fa0d3d1460fed14c092a4a9aab370",
+    "fullyTextProfileSignature": "891e38966a58c7d8914eaf75ba1b895a",
+    "fullyCanonicalizedMd5": "8dea76f9e09488daca1f5aa3c500d214",
+    "documentLength": 1744,
+    "fullyCanonicalizedWord8GrammCount": 261,
+    "fullyCanonicalizedWord8GrammSetSize": 261
+  },
+  {
+    "id": "clueweb09-en0000-00-00014",
+    "textProfileSignature": "b6fba4def1dec2d94d0b988d3cce8bd1",
+    "md5": "e4b4793654e4a7c6bf9b09bbbc52c178",
+    "fullyTextProfileSignature": "e5a01dd9a64725169fbbb4d3b557d412",
+    "fullyCanonicalizedMd5": "ebd6df0cb05f85e64ed6398cf061fdf6",
+    "documentLength": 1108,
+    "fullyCanonicalizedWord8GrammCount": 118,
+    "fullyCanonicalizedWord8GrammSetSize": 118
+  },
+  {
+    "id": "clueweb09-en0000-00-00015",
+    "textProfileSignature": "c4b37f7fd8ad96d10fbb6976b3a59743",
+    "md5": "4510aa1254dd8082a94f85a130c620d3",
+    "fullyTextProfileSignature": "813e55d6f1992fad17b5d1833de7417b",
+    "fullyCanonicalizedMd5": "d228e70244c182b03161ef0a7ccdb10a",
+    "documentLength": 1595,
+    "fullyCanonicalizedWord8GrammCount": 165,
+    "fullyCanonicalizedWord8GrammSetSize": 165
+  },
+  {
+    "id": "clueweb09-en0000-00-00016",
+    "textProfileSignature": "ecb0f73a26b7973b52d583414b2a2474",
+    "md5": "49fd4ddd6cc4ff5fddd36481b22510ab",
+    "fullyTextProfileSignature": "4745226b9e59aab42d0b5d0647104ec0",
+    "fullyCanonicalizedMd5": "396d215248456db1c0fe083afe1603df",
+    "documentLength": 1612,
+    "fullyCanonicalizedWord8GrammCount": 234,
+    "fullyCanonicalizedWord8GrammSetSize": 234
+  },
+  {
+    "id": "clueweb09-en0000-00-00017",
+    "textProfileSignature": "fdf93756456049e7c3167de738b79f6b",
+    "md5": "02b83188b05c544479024b430dc68b69",
+    "fullyTextProfileSignature": "34104a178ffe01bce8968d70568f7cf6",
+    "fullyCanonicalizedMd5": "4473779131374982f2b3550f7711ef78",
+    "documentLength": 1548,
+    "fullyCanonicalizedWord8GrammCount": 259,
+    "fullyCanonicalizedWord8GrammSetSize": 259
+  },
+  {
+    "id": "clueweb09-en0000-00-00018",
+    "textProfileSignature": "cb640dfaa44eadf911478d56f8619c99",
+    "md5": "c649f2a8f9bb11e3b383f6c793e6eb90",
+    "fullyTextProfileSignature": "6708d62dc9644ba9f952eec354e0c136",
+    "fullyCanonicalizedMd5": "a9a56801ea3baa0bdfcc71ed93e788d7",
+    "documentLength": 1699,
+    "fullyCanonicalizedWord8GrammCount": 259,
+    "fullyCanonicalizedWord8GrammSetSize": 259
+  },
+  {
+    "id": "clueweb09-en0000-00-00019",
+    "textProfileSignature": "aba6ed16782b94d9fc7a29573615fb67",
+    "md5": "26e0f96635d514cc93afd6c47a52658b",
+    "fullyTextProfileSignature": "9b571f27d85233954a7768178a3c2c61",
+    "fullyCanonicalizedMd5": "6558f6a5ff7ce90ed98d8c2c2a402ea5",
+    "documentLength": 1575,
+    "fullyCanonicalizedWord8GrammCount": 234,
+    "fullyCanonicalizedWord8GrammSetSize": 234
+  },
+  {
+    "id": "clueweb09-en0000-00-00020",
+    "textProfileSignature": "637f30e8466aa6307175a596a0c50679",
+    "md5": "f621a2bdca052da4559e086f8706f312",
+    "fullyTextProfileSignature": "0b66798d234ec3ee017565c2f698aaeb",
+    "fullyCanonicalizedMd5": "95f14cc5234bfcd537d25c433247b0c1",
+    "documentLength": 1464,
+    "fullyCanonicalizedWord8GrammCount": 228,
+    "fullyCanonicalizedWord8GrammSetSize": 228
+  },
+  {
+    "id": "clueweb09-en0000-00-00021",
+    "textProfileSignature": "d4f1a8cf7b6c221ceaba3f83e20749b4",
+    "md5": "513ca37424762e14e46959c5af28d0f4",
+    "fullyTextProfileSignature": "9425beef1057723e80f14e04f7f3df23",
+    "fullyCanonicalizedMd5": "f88ea966e01b19ede6fc9fbbaf0ab465",
+    "documentLength": 550,
+    "fullyCanonicalizedWord8GrammCount": 61,
+    "fullyCanonicalizedWord8GrammSetSize": 61
+  },
+  {
+    "id": "clueweb09-en0000-00-00022",
+    "textProfileSignature": "9e15bebaa2c2ad0ff47b93f57c274fa3",
+    "md5": "422e9c6b965b9463d01bace2761e881c",
+    "fullyTextProfileSignature": "938514541ffb80cb7df3c4f5d157ce4b",
+    "fullyCanonicalizedMd5": "3304b41fb2bf7877f86dea2027bbd55d",
+    "documentLength": 589,
+    "fullyCanonicalizedWord8GrammCount": 83,
+    "fullyCanonicalizedWord8GrammSetSize": 83
+  },
+  {
+    "id": "clueweb09-en0000-00-00000",
+    "textProfileSignature": "d87ed09a6590ce334a84c24b8ab25709",
+    "md5": "a11e917c70f9b070a19708c57bddddde",
+    "fullyTextProfileSignature": "47aee9c93de955a74d736399454b9b6b",
+    "fullyCanonicalizedMd5": "3b225786ef10704975b5eb788fe3ffb5",
+    "documentLength": 466,
+    "fullyCanonicalizedWord8GrammCount": 56,
+    "fullyCanonicalizedWord8GrammSetSize": 56
+  },
+  {
+    "id": "clueweb09-en0000-00-00001",
+    "textProfileSignature": "d0032dfe3b684b3101841949b9d28683",
+    "md5": "77df74be648a8fa3e50e662f5be3b63d",
+    "fullyTextProfileSignature": "aff9af3a650aca817a7b44f310d9f99c",
+    "fullyCanonicalizedMd5": "388af582ca5eabbf07fd03a07f88e904",
+    "documentLength": 406,
+    "fullyCanonicalizedWord8GrammCount": 48,
+    "fullyCanonicalizedWord8GrammSetSize": 48
+  },
+  {
+    "id": "clueweb09-en0000-00-00002",
+    "textProfileSignature": "5e81c468afbe69e16e58ff5c50743dce",
+    "md5": "35f17d1e17b6fa8e47252690b1bb7969",
+    "fullyTextProfileSignature": "1580ec362e3c29a72bf238eb9ac530d3",
+    "fullyCanonicalizedMd5": "0c62162e6cd86b09efaf891436818b4c",
+    "documentLength": 425,
+    "fullyCanonicalizedWord8GrammCount": 45,
+    "fullyCanonicalizedWord8GrammSetSize": 45
+  },
+  {
+    "id": "clueweb09-en0000-00-00003",
+    "textProfileSignature": "f76cd5ddd2bbae68ee36a6b01a1fd65a",
+    "md5": "fc2587244d0934a253b9c2ca20e09cda",
+    "fullyTextProfileSignature": "ed725e434de0ad4f42ccd5da6e775e1c",
+    "fullyCanonicalizedMd5": "b50b59f2e195ef6c742a6dc649220e59",
+    "documentLength": 693,
+    "fullyCanonicalizedWord8GrammCount": 89,
+    "fullyCanonicalizedWord8GrammSetSize": 89
+  },
+  {
+    "id": "clueweb09-en0000-00-00004",
+    "textProfileSignature": "ffdb515039b405a32e31f8f0b6eee2fd",
+    "md5": "1a9d238a363c4b86f06173f2fe774edf",
+    "fullyTextProfileSignature": "e77d88c343cf0d89df6ddc7a2ef8f58d",
+    "fullyCanonicalizedMd5": "9509b29a5ec4effad614e9132cb78018",
+    "documentLength": 1242,
+    "fullyCanonicalizedWord8GrammCount": 162,
+    "fullyCanonicalizedWord8GrammSetSize": 162
+  },
+  {
+    "id": "clueweb09-en0000-00-00005",
+    "textProfileSignature": "f87a0d175509fc7792339b0c108358b3",
+    "md5": "3afe95f0523605ab7a1b7c2cb3885cf9",
+    "fullyTextProfileSignature": "1c6708ca333cae266565dc20efb5f213",
+    "fullyCanonicalizedMd5": "5a4562bfb66e541985e8f88bbf4312fa",
+    "documentLength": 1300,
+    "fullyCanonicalizedWord8GrammCount": 150,
+    "fullyCanonicalizedWord8GrammSetSize": 150
+  },
+  {
+    "id": "clueweb09-en0000-00-00006",
+    "textProfileSignature": "5fdaddf2a57c716b20035ec29c3f9a37",
+    "md5": "27929daf589ddcbbe1bca839ed07e33f",
+    "fullyTextProfileSignature": "e578d545299159bf9dbb7955e400b298",
+    "fullyCanonicalizedMd5": "1ca436b222823e4a79ba9ddbfa4b3fd1",
+    "documentLength": 2213,
+    "fullyCanonicalizedWord8GrammCount": 328,
+    "fullyCanonicalizedWord8GrammSetSize": 328
+  },
+  {
+    "id": "clueweb09-en0000-00-00007",
+    "textProfileSignature": "633fb04dfcd13a31848f2f7d82c7be42",
+    "md5": "3e558ab560a82d29016a14fcc205de79",
+    "fullyTextProfileSignature": "6f690d7256ac25935a2dfcb80b15ce3a",
+    "fullyCanonicalizedMd5": "acd9b919b465fc1176c5b5083ac71685",
+    "documentLength": 2491,
+    "fullyCanonicalizedWord8GrammCount": 332,
+    "fullyCanonicalizedWord8GrammSetSize": 332
+  },
+  {
+    "id": "clueweb09-en0000-00-00008",
+    "textProfileSignature": "64440253d8bb1deb52af1f2fe31dc719",
+    "md5": "5f4dcd48161ae112c1b279e674c1970e",
+    "fullyTextProfileSignature": "31e5f84e1065601c110430864e862e59",
+    "fullyCanonicalizedMd5": "87c6a8f37a7c4e92521510e8aae3a87f",
+    "documentLength": 1150,
+    "fullyCanonicalizedWord8GrammCount": 156,
+    "fullyCanonicalizedWord8GrammSetSize": 156
+  },
+  {
+    "id": "clueweb09-en0000-00-00009",
+    "textProfileSignature": "6597493858c6defe8d9b6c4bf3d2f9a1",
+    "md5": "e98d98bb8e743589f95e2140538a3611",
+    "fullyTextProfileSignature": "0e88c669293d7b1a40e04c05eaf683b5",
+    "fullyCanonicalizedMd5": "2f3a6bccf2b12f91fb06361c2b7fab46",
+    "documentLength": 2263,
+    "fullyCanonicalizedWord8GrammCount": 332,
+    "fullyCanonicalizedWord8GrammSetSize": 332
+  },
+  {
+    "id": "clueweb09-en0000-00-00010",
+    "textProfileSignature": "4e042215ce9d1afc6a19bd7835358214",
+    "md5": "cac8f9f55325ba1490dc95ea03bf9576",
+    "fullyTextProfileSignature": "04c6cdf26b3cc3dd06941df73c4e1ed7",
+    "fullyCanonicalizedMd5": "5eb695324bffac6616d23a6e30657c2f",
+    "documentLength": 494,
+    "fullyCanonicalizedWord8GrammCount": 73,
+    "fullyCanonicalizedWord8GrammSetSize": 73
+  },
+  {
+    "id": "clueweb09-en0000-00-00011",
+    "textProfileSignature": "e95b35c408d0e8140de83d6c7c8d2707",
+    "md5": "a69af40285463ab2a2fe2a67775cd991",
+    "fullyTextProfileSignature": "f32edacceb186db31d031f6a76be10d5",
+    "fullyCanonicalizedMd5": "3e824a2c7404f5a1e7dc78fd6e6c446c",
+    "documentLength": 7129,
+    "fullyCanonicalizedWord8GrammCount": 834,
+    "fullyCanonicalizedWord8GrammSetSize": 834
+  },
+  {
+    "id": "clueweb09-en0000-00-00012",
+    "textProfileSignature": "ade57d89b752b0d06d849394f72f119f",
+    "md5": "370f60cbf0b6a76a13aaeb64b94eba73",
+    "fullyTextProfileSignature": "09b83abd1dd105b0e4ae543337ef14da",
+    "fullyCanonicalizedMd5": "0eac6265c1279a30c5e308ae5d0d6919",
+    "documentLength": 16417,
+    "fullyCanonicalizedWord8GrammCount": 1874,
+    "fullyCanonicalizedWord8GrammSetSize": 1869
+  },
+  {
+    "id": "clueweb09-en0000-00-00013",
+    "textProfileSignature": "21becfb8089580084bb77967b3992cfd",
+    "md5": "412fa0d3d1460fed14c092a4a9aab370",
+    "fullyTextProfileSignature": "891e38966a58c7d8914eaf75ba1b895a",
+    "fullyCanonicalizedMd5": "8dea76f9e09488daca1f5aa3c500d214",
+    "documentLength": 1744,
+    "fullyCanonicalizedWord8GrammCount": 261,
+    "fullyCanonicalizedWord8GrammSetSize": 261
+  },
+  {
+    "id": "clueweb09-en0000-00-00014",
+    "textProfileSignature": "b6fba4def1dec2d94d0b988d3cce8bd1",
+    "md5": "e4b4793654e4a7c6bf9b09bbbc52c178",
+    "fullyTextProfileSignature": "e5a01dd9a64725169fbbb4d3b557d412",
+    "fullyCanonicalizedMd5": "ebd6df0cb05f85e64ed6398cf061fdf6",
+    "documentLength": 1108,
+    "fullyCanonicalizedWord8GrammCount": 118,
+    "fullyCanonicalizedWord8GrammSetSize": 118
+  },
+  {
+    "id": "clueweb09-en0000-00-00015",
+    "textProfileSignature": "c4b37f7fd8ad96d10fbb6976b3a59743",
+    "md5": "4510aa1254dd8082a94f85a130c620d3",
+    "fullyTextProfileSignature": "813e55d6f1992fad17b5d1833de7417b",
+    "fullyCanonicalizedMd5": "d228e70244c182b03161ef0a7ccdb10a",
+    "documentLength": 1595,
+    "fullyCanonicalizedWord8GrammCount": 165,
+    "fullyCanonicalizedWord8GrammSetSize": 165
+  },
+  {
+    "id": "clueweb09-en0000-00-00016",
+    "textProfileSignature": "ecb0f73a26b7973b52d583414b2a2474",
+    "md5": "49fd4ddd6cc4ff5fddd36481b22510ab",
+    "fullyTextProfileSignature": "4745226b9e59aab42d0b5d0647104ec0",
+    "fullyCanonicalizedMd5": "396d215248456db1c0fe083afe1603df",
+    "documentLength": 1612,
+    "fullyCanonicalizedWord8GrammCount": 234,
+    "fullyCanonicalizedWord8GrammSetSize": 234
+  },
+  {
+    "id": "clueweb09-en0000-00-00017",
+    "textProfileSignature": "fdf93756456049e7c3167de738b79f6b",
+    "md5": "02b83188b05c544479024b430dc68b69",
+    "fullyTextProfileSignature": "34104a178ffe01bce8968d70568f7cf6",
+    "fullyCanonicalizedMd5": "4473779131374982f2b3550f7711ef78",
+    "documentLength": 1548,
+    "fullyCanonicalizedWord8GrammCount": 259,
+    "fullyCanonicalizedWord8GrammSetSize": 259
+  },
+  {
+    "id": "clueweb09-en0000-00-00018",
+    "textProfileSignature": "cb640dfaa44eadf911478d56f8619c99",
+    "md5": "c649f2a8f9bb11e3b383f6c793e6eb90",
+    "fullyTextProfileSignature": "6708d62dc9644ba9f952eec354e0c136",
+    "fullyCanonicalizedMd5": "a9a56801ea3baa0bdfcc71ed93e788d7",
+    "documentLength": 1699,
+    "fullyCanonicalizedWord8GrammCount": 259,
+    "fullyCanonicalizedWord8GrammSetSize": 259
+  },
+  {
+    "id": "clueweb09-en0000-00-00019",
+    "textProfileSignature": "aba6ed16782b94d9fc7a29573615fb67",
+    "md5": "26e0f96635d514cc93afd6c47a52658b",
+    "fullyTextProfileSignature": "9b571f27d85233954a7768178a3c2c61",
+    "fullyCanonicalizedMd5": "6558f6a5ff7ce90ed98d8c2c2a402ea5",
+    "documentLength": 1575,
+    "fullyCanonicalizedWord8GrammCount": 234,
+    "fullyCanonicalizedWord8GrammSetSize": 234
+  },
+  {
+    "id": "clueweb09-en0000-00-00020",
+    "textProfileSignature": "637f30e8466aa6307175a596a0c50679",
+    "md5": "f621a2bdca052da4559e086f8706f312",
+    "fullyTextProfileSignature": "0b66798d234ec3ee017565c2f698aaeb",
+    "fullyCanonicalizedMd5": "95f14cc5234bfcd537d25c433247b0c1",
+    "documentLength": 1464,
+    "fullyCanonicalizedWord8GrammCount": 228,
+    "fullyCanonicalizedWord8GrammSetSize": 228
+  },
+  {
+    "id": "clueweb09-en0000-00-00021",
+    "textProfileSignature": "d4f1a8cf7b6c221ceaba3f83e20749b4",
+    "md5": "513ca37424762e14e46959c5af28d0f4",
+    "fullyTextProfileSignature": "9425beef1057723e80f14e04f7f3df23",
+    "fullyCanonicalizedMd5": "f88ea966e01b19ede6fc9fbbaf0ab465",
+    "documentLength": 550,
+    "fullyCanonicalizedWord8GrammCount": 61,
+    "fullyCanonicalizedWord8GrammSetSize": 61
+  },
+  {
+    "id": "clueweb09-en0000-00-00022",
+    "textProfileSignature": "9e15bebaa2c2ad0ff47b93f57c274fa3",
+    "md5": "422e9c6b965b9463d01bace2761e881c",
+    "fullyTextProfileSignature": "938514541ffb80cb7df3c4f5d157ce4b",
+    "fullyCanonicalizedMd5": "3304b41fb2bf7877f86dea2027bbd55d",
+    "documentLength": 589,
+    "fullyCanonicalizedWord8GrammCount": 83,
+    "fullyCanonicalizedWord8GrammSetSize": 83
+  }
+]

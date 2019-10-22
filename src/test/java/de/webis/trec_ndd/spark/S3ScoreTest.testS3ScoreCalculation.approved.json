@@ -1,0 +1,7 @@
+{
+  "commonNGramms": 1,
+  "s3Score": 0.4,
+  "chunksInA": 2.0,
+  "chunksInB": 3.0,
+  "meanChunks": 2.5
+}

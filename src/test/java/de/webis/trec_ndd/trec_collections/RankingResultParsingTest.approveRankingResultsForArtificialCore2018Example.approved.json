@@ -1,0 +1,20 @@
+{
+  "src/test/resources/data/artificial-sample-run-files-core-2018/input.1.gz": {
+    "run-lines": 9,
+    "first-run-line": "321 Q0 4a7c2970fd9bf65fe09c7cf46df7b06d 2 9999.096551360 TBD-1",
+    "run-lines-hash": 1999161519,
+    "last-run-line": "822 Q0 553fffea-d760-11e2-9df4-895344c13c30 3152 6909.001692214 TBD-1"
+  },
+  "src/test/resources/data/artificial-sample-run-files-core-2018/input.2.gz": {
+    "run-lines": 9,
+    "first-run-line": "32 Q0 4a7c2970fd9bf65fe09c7cf46df7b06d 2 9999.096551360 TBD-2",
+    "run-lines-hash": -910548112,
+    "last-run-line": "82 Q0 553fffea-d760-11e2-9df4-895344c13c30 3152 6909.001692214 TBD-2"
+  },
+  "src/test/resources/data/artificial-sample-run-files-core-2018/input.3.gz": {
+    "run-lines": 2,
+    "first-run-line": "1 Q0 fffbc452-b422-11e2-9a98-4be1688d7d84 1 1 TBD-3",
+    "run-lines-hash": 505052962,
+    "last-run-line": "10 Q0 b2e89334-33f9-11e1-825f-dabc29fd7071 1 1 TBD-3"
+  }
+}
