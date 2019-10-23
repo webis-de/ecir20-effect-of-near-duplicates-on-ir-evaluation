@@ -2,19 +2,19 @@
 
 ## TREC Track
 
-* [Terabyte 2004](results/terabyte/2004/README.md)
+* [Terabyte Track 2004](results/terabyte/2004/README.md)
   * The track originally analyzed by "[Redundant Documents and Search Effectiveness](https://dl.acm.org/citation.cfm?id=1099733)" by Yaniv Bernstein and Justin Zobel.
   * Additional reproduction of plots in Bernstein and Zobel's paper that did not fit into our paper due to space limitations.
-* [Terabyte 2005]()
-* [Terabyte 2006]()
-* [Web 2009]()
-* [Web 2010]()
-* [Web 2011]()
-* [Web 2012]()
-* [Web 2013]()
-* [Web 2014]()
-* [Core 2017]()
-* [Core 2018]()
+* [Terabyte Track 2005]()
+* [Terabyte Track 2006]()
+* [Web Track 2009]()
+* [Web Track 2010]()
+* [Web Track 2011]()
+* [Web Track 2012]()
+* [Web Track 2013]()
+* [Web Track 2014]()
+* [Core Track 2017]()
+* [Core Track 2018]()
 
 
 ## Usage
