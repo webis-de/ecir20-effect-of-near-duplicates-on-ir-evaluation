@@ -1,6 +1,6 @@
 # The Effect of Content-Equivalent Near-Duplicates on the Evaluation of Search Engines
 
-## Evaluations per Track
+## TREC Track
 
 * [Terabyte 2004](results/terabyte/2004/README.md)
   * Our reproduction of "[Redundant Documents and Search Effectiveness](https://dl.acm.org/citation.cfm?id=1099733)" by Yaniv Bernstein and Justin Zobel
@@ -17,7 +17,7 @@
 * [Core 2018]()
 
 
-## Development
+## Usage
 
 We encourage pull requests and are glad to help in case of problems.
 
