@@ -3,8 +3,8 @@
 ## TREC Track
 
 * [Terabyte 2004](results/terabyte/2004/README.md)
-  * Our reproduction of "[Redundant Documents and Search Effectiveness](https://dl.acm.org/citation.cfm?id=1099733)" by Yaniv Bernstein and Justin Zobel
-  * We check our pipeline and verify that we can reproduce the results from Bernstein and Zobel (especially regarding the Mean Average Precision (MAP) local judgment manipulation)
+  * The track originally analyzed by "[Redundant Documents and Search Effectiveness](https://dl.acm.org/citation.cfm?id=1099733)" by Yaniv Bernstein and Justin Zobel
+  * Additional reproduction of plots provided in Bernstein and Zobel's paper that did not fit into our paper due to space limitations.
 * [Terabyte 2005]()
 * [Terabyte 2006]()
 * [Web 2009]()
