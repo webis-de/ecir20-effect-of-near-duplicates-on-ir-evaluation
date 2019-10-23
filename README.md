@@ -29,12 +29,12 @@ We encourage pull requests and are glad to help in case of problems.
 * Attention: We have integration tests that are executed during the build that need access to all run-files (we execute some tests that check the integrity of our used trec-eval-params, i.e. that we get official score, hashes + counts of judged documents per shared task, etc).
 
 
-### Calculate Retrieval-Equivalence-Classes
+### Calculate retrieval equivalence classes
 
 1. Create hash representations of a corpus: `make hash-dataset-<CORPUS>`
 2. Deduplication: `make deduplicate-<CORPUS>`
 
-### Calculate Content-Equivalence-Classes
+### Calculate content equivalence classes
 
 1. Create a SPEX index of word 8-gramms of a corpus: `index-8-gramms-<CORPUS>`
 2. Calculate S3 groups and save connected components as equivalence classes: `calculate-s3`
