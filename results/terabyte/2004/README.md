@@ -1,4 +1,4 @@
-# Terabyte 2004
+# Terabyte Track 2004
 
 We reproduce the work of Bernstein and Zobel using local judgment manipulation (see: [Comparison of local and global manipulation of judgments](../../comparison-local-vs-global-qrel-manipulation/README.md)). Later, we show the same reports under other parameters.
 
@@ -6,11 +6,12 @@ We reproduce the work of Bernstein and Zobel using local judgment manipulation (
 
 ### Redundancy within judged documents
 
-With our preprocessing and S3-Threshold of 0.68, we get:
+With our preprocessing and S3 threshold of 0.68, we get:
 
 ![Reproduction of Figure 5](repro/reproduced-figure-4.png)
 
-We compare this with the plot reported by Bernstein and Zobel, and identify two differences regarding topic 748 (where we find more content-equivalent documents within the relevant documents then Bernstein and Zobel, but retrieval-equivalence is identical), and topic 707 (where we find more non-relevant content-equivalent documents then Bernstein and Zobel).
+We compare this with the plot reported by Bernstein and Zobel, and identify two differences regarding topic 748 (where we find more content-equivalent documents within the relevant documents than Bernstein and Zobel, but retrieval equivalence is identical),
+and topic 707 (where we find more non-relevant content-equivalent documents than Bernstein and Zobel).
 
 ![Figure 4 From Bernstein and Zobel](repro/figure-4-bernstein-zobel.png)
 
@@ -20,7 +21,7 @@ To reproduce the result of Bernstein and Zobel, we use `trec-eval` without any p
 
 ![Reproduction of Figure 5](repro/reproduced-figure-5-without-m-parameter.png)
 
-We compare this with the plot reported by Bernstein and Zobel and can verify that they are very similar and match in all characteristic points: See runs 11, 16, 20, 21, 29, 35, and 47.
+We compare this with the plot reported by Bernstein and Zobel and can confirm that they are very similar and match in all characteristic points: See runs 11, 16, 20, 21, 29, 35, and 47.
 
 ![Figure 5 From Bernstein and Zobel](repro/figure-5-bernstein-zobel.png)
 
