@@ -8,7 +8,7 @@ We reproduce the work of Bernstein and Zobel using local judgment manipulation (
 
 With our preprocessing and S3 threshold of 0.68, we get:
 
-![Reproduction of Figure 5](repro/reproduced-figure-4.png)
+![Reproduction of Figure 4](repro/reproduced-figure-4.png)
 
 We compare this with the plot reported by Bernstein and Zobel, and identify two differences regarding topic 748 (where we find more content-equivalent documents within the relevant documents than Bernstein and Zobel, but retrieval equivalence is identical),
 and topic 707 (where we find more non-relevant content-equivalent documents than Bernstein and Zobel).

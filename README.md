@@ -5,16 +5,16 @@
 * [Terabyte Track 2004](results/terabyte/2004/README.md)
   * The track originally analyzed by "[Redundant Documents and Search Effectiveness](https://dl.acm.org/citation.cfm?id=1099733)" by Yaniv Bernstein and Justin Zobel.
   * Additional reproduction of plots in Bernstein and Zobel's paper that did not fit into our paper due to space limitations.
-* [Terabyte Track 2005]()
-* [Terabyte Track 2006]()
-* [Web Track 2009]()
-* [Web Track 2010]()
-* [Web Track 2011]()
-* [Web Track 2012]()
-* [Web Track 2013]()
-* [Web Track 2014]()
-* [Core Track 2017]()
-* [Core Track 2018]()
+* [Terabyte Track 2005](results/terabyte/2005/README.md)
+* [Terabyte Track 2006](results/terabyte/2006/README.md)
+* [Web Track 2009](results/web/2009/README.md)
+* [Web Track 2010](results/web/2010/README.md)
+* [Web Track 2011](results/web/2011/README.md)
+* [Web Track 2012](results/web/2012/README.md)
+* [Web Track 2013](results/web/2013/README.md)
+* [Web Track 2014](results/web/2014/README.md)
+* [Core Track 2017](results/core/2017/README.md)
+* [Core Track 2018](results/core/2018/README.md)
 
 
 ## Usage
