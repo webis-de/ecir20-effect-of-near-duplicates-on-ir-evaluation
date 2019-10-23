@@ -1,4 +1,4 @@
-# Content-Equivalent Documents in TREC-Tracks
+# The Effect of Content-Equivalent Near-Duplicates on the Evaluation of Search Engines
 
 ## Evaluations per Track
 
