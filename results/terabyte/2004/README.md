@@ -30,6 +30,15 @@ With the parameter `-M 1000`, the plot changes in some details (mainly because t
 
 ## NDCG under Global Manipulation
 
+* S3-Threshold = 0.68, `trec-eval` with `-M 1000`
+
+![Figure 5 NDCG + GLOBAL](global/figure-5-ndcg.png)
+
+
 ## MAP under Global Manipulation
 
+![Figure 5 MAP + GLOBAL](global/figure-5-map.png)
+
 ## NDCG under LOCAL Manipulation
+
+![Figure 5 NDCG + LOCAL](local/figure-5-ndcg.png)
