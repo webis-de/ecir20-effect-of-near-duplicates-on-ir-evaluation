@@ -3,8 +3,8 @@
 ## Evaluations per Track
 
 * [Terabyte 2004](results/terabyte/2004/README.md)
-  * Our reproduction of "[RedundantDocumentsandSearch Effectiveness](https://dl.acm.org/citation.cfm?id=1099733)" by Yaniv Bernstein and Justin Zobel
-  * We check our pipeline and verify that we can reproduce the results from Bernstein and Zobel (at least for and Mean Average Precision (MAP) local judgment manipulation)
+  * Our reproduction of "[Redundant Documents and Search Effectiveness](https://dl.acm.org/citation.cfm?id=1099733)" by Yaniv Bernstein and Justin Zobel
+  * We check our pipeline and verify that we can reproduce the results from Bernstein and Zobel (especially regarding the Mean Average Precision (MAP) local judgment manipulation)
 * [Terabyte 2005]()
 * [Terabyte 2006]()
 * [Web 2009]()
@@ -31,11 +31,11 @@ We encourage pull requests and are glad to help in case of problems.
 
 ### Calculate Retrieval-Equivalence-Classes
 
-1. Create Hash-Representations of the Datasets: `make hash-dataset-<CORPUS>`
+1. Create hash representations of a corpus: `make hash-dataset-<CORPUS>`
 2. Deduplication: `make deduplicate-<CORPUS>`
 
 ### Calculate Content-Equivalence-Classes
 
-1. Create a SPEX index of word-8-gramms of the corpus: `index-8-gramms-<CORPUS>`
-2. Calculate S3-groups and save connected components as equivalence-classes: `calculate-s3`
+1. Create a SPEX index of word 8-gramms of a corpus: `index-8-gramms-<CORPUS>`
+2. Calculate S3 groups and save connected components as equivalence classes: `calculate-s3`
 
