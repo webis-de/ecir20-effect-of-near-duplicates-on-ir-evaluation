@@ -16,6 +16,10 @@
 * [Core Track 2017](results/core/2017/README.md)
 * [Core Track 2018](results/core/2018/README.md)
 
+## Aggregations over Multiple Shared Tasks
+
+* [Global judgment manipulation](results/aggregations/README-GLOBAL.md)
+* [Local judgment manipulation](results/aggregations/README-LOCAL.md)
 
 ## Usage
 
