@@ -3,7 +3,7 @@
 ## TREC Track
 
 * [Terabyte Track 2004](results/terabyte/2004/README.md)
-  * The track originally analyzed by "[Redundant Documents and Search Effectiveness](https://dl.acm.org/citation.cfm?id=1099733)" by Yaniv Bernstein and Justin Zobel.
+  * The track originally analyzed by "[Redundant Documents and Search Effectiveness](https://doi.org/10.1145/1099554.1099733)" by Yaniv Bernstein and Justin Zobel.
   * Additional reproduction of plots in Bernstein and Zobel's paper that did not fit into our paper due to space limitations.
 * [Terabyte Track 2005](results/terabyte/2005/README.md)
 * [Terabyte Track 2006](results/terabyte/2006/README.md)
