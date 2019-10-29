@@ -32,7 +32,7 @@ With the parameter `-M 1000`, the plot changes in some details (mainly because t
 ## Repetition of the Experiments Under Different Conditions
 
 We extend the work of Bernstein and Zobel and report the impact of classes of content-equivalent documents on search effectiveness for NDCG and MAP under global and local manipulation of judgments below.
-We compare NDCG under global manipulation to NDCG under local manipulation. The local variant clearly amplifies score changes:
+We compare NDCG under global manipulation to NDCG under local manipulation. The local variant amplifies score changes:
 
 ![Comparison of Figure 5: Global vs Local for NDCG](comparison/global-local-figure-5-ndcg.png)
 
@@ -43,7 +43,7 @@ This relationship is more subtle when we compare MAP under global manipulation t
 The points noted above seem to be consistent for all our experiments:
 
 *  Local manipulation amplifies score changes (compare aggregations over [global manipulations](../../aggregations/README-GLOBAL.md) to [local manipulations](../../aggregations/README-LOCAL.md))
-*  We observe much greater changes in MAP scores than for NDCG (compare the two tables listed within [the overview of global manipulations](../../aggregations/README-GLOBAL.md) and the two talbes listed within [the overview of local manipulations](../../aggregations/README-LOCAL.md))
+*  We observe much greater changes in MAP scores than for NDCG (compare the two tables listed within [the overview of global manipulations](../../aggregations/README-GLOBAL.md) and the two tables listed within [the overview of local manipulations](../../aggregations/README-LOCAL.md))
 
 
 For completeness, we report the raw plots with the parameters that we have used to obtain them.
