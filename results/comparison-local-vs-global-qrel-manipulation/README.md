@@ -1,6 +1,6 @@
 # Comparison of Local and Global Manipulation of Judgments under the Novelty Principle
 
-The script `eval.sh` shows the different behavior of local and global manipulation in the case that a ranking does not retrieve any document of a relevant class of content-equivalent documents. The script produces the following output:
+The script [eval.sh](eval.sh) shows the different behavior of local and global manipulation in the case that a ranking does not retrieve any document of a relevant class of content-equivalent documents. The script produces the following output:
 
 
 [Ranking one](ranking_one_original) has a class of relevant, content-equivalent documents on positions three, four, and five. [Ranking two](ranking_two_original) has a relevant document on position two. Ranking one is superior in terms of MAP on the original judgments.
