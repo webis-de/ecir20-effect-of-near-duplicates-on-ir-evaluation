@@ -15,7 +15,7 @@ and topic 707 (where we find more non-relevant content-equivalent documents than
 
 ![Figure 4 From Bernstein and Zobel](repro/figure-4-bernstein-zobel.png)
 
-## Impact of Redundancy on search effectiveness
+### Impact of Redundancy on search effectiveness
 
 To reproduce the result of Bernstein and Zobel, we use `trec-eval` without any parameters. Please note that we report all values in our associated paper with the parameter `-M 1000`, since this reproduces the offical MAP scores reported in the overview-paper of terabyte 2004 (the scores are sligthly lower with `-M 1000`). Besides that, we used our preprocessing and the S3-Threshold of 0.68 to get:
 
@@ -29,17 +29,26 @@ With the parameter `-M 1000`, the plot changes in some details (mainly because t
 
 ![Reproduction of Figure 5](repro/reproduced-figure-5.png)
 
-## NDCG under Global Manipulation
+## Impact of Redundancy on search effectiveness 
+
+We extend the work of Bernstein and Zobel and report the impact of classes of content-equivalent documents on search effectiveness for NDCG and MAP under global and local manipulation of judgments below. Compare NDCG under global manipulation to NDCG under local manipulation: In all our experiments, local
+manipulation amplified score changes compared to global manipulation.
+
+### NDCG under Global Manipulation
 
 * S3-Threshold = 0.68, `trec-eval` with `-M 1000`
 
 ![Figure 5 NDCG + GLOBAL](global/figure-5-ndcg.png)
 
 
-## MAP under Global Manipulation
+### MAP under Global Manipulation
+
+* S3-Threshold = 0.68, `trec-eval` with `-M 1000`
 
 ![Figure 5 MAP + GLOBAL](global/figure-5-map.png)
 
-## NDCG under LOCAL Manipulation
+### NDCG under LOCAL Manipulation
+
+* S3-Threshold = 0.68, `trec-eval` with `-M 1000`
 
 ![Figure 5 NDCG + LOCAL](local/figure-5-ndcg.png)
