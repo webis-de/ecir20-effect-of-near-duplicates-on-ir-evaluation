@@ -147,8 +147,7 @@ clean-stuff:
 	rm -Rf /tmp/.run*
 
 install-third-party: checkout-submodules
-	mvn -f third-party/jtreceval/ clean install
-
+	echo "currently no third-party :)"
 checkout-submodules:
 	git submodule update --init --recursive
 
