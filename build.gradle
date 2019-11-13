@@ -28,25 +28,15 @@ dependencies {
     compile("net.sourceforge.argparse4j:argparse4j:0.8.1")
     compile("com.google.guava:guava:27.1-jre")
     compile("org.apache.spark:spark-graphx_2.12:2.4.3")
-    compileOnly("org.apache.spark:spark-core_2.12:2.4.3") {
-        exclude(group: "org.apache.hadoop", module: "hadoop-client")
-    }
+    compileOnly("org.apache.spark:spark-core_2.12:2.4.3")
     compile("org.slf4j:slf4j-log4j12:1.7.26")
     compile("com.jayway.jsonpath:json-path:2.4.0")
-    compile("io.anserini:anserini:0.5.1") {
-        exclude(group: "com.google.protobuf", module: "protobuf-java")
-        exclude(group: "com.fasterxml.jackson.core", module: "jackson-databind")
-        exclude(group: "com.fasterxml.jackson.datatype", module: "jackson-datatype-jdk8")
-    }
+    compile("io.anserini:anserini:0.5.1")
     compile("com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.6.7")
     compile("org.elasticsearch.client:elasticsearch-rest-client:6.7.1")
     compile("client.netspeak:netspeak-client:1.3.5")
     compile("net.jodah:failsafe:2.0.1")
-    compile("org.apache.solr:solr-core:8.1.1") {
-        exclude(group: "com.jayway.jsonpath", module: "json-path")
-        exclude(group: "com.google.protobuf", module: "protobuf-java")
-        exclude(group: "com.fasterxml.jackson.core", module: "jackson-databind")
-    }
+    compile("org.apache.solr:solr-core:8.1.1")
     compile("com.github.mam10eks:jtreceval:-SNAPSHOT")
     testCompile("junit:junit:4.11")
     testCompile("com.approvaltests:approvaltests:3.2.0")
