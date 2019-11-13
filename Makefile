@@ -129,7 +129,7 @@ evaluate-clueweb12: install
 	./src/main/bash/run-evaluation-report.sh -c CLUEWEB12 --threshold 0.84|tee results/clueweb12-evaluation.jsonl
 
 install: install-third-party
-	mvn clean install
+	./gradlew clean publishToMavenLocal
 
 docker-bash: build-docker-image
 	docker run --rm -ti -v /mnt/nfs/webis20/:/mnt/nfs/webis20/ -v ${PWD}/results:/trec-ndd/results --entrypoint /bin/bash trec-ndd-kibi9872:0.0.1
@@ -145,10 +145,3 @@ clean-stuff:
 	rm -Rf /tmp/qrels* &&\
 	rm -Rf /tmp/tmp-unzipped* &&\
 	rm -Rf /tmp/.run*
-
-install-third-party: checkout-submodules
-	mvn -f third-party/jtreceval/ clean install
-
-checkout-submodules:
-	git submodule update --init --recursive
-
