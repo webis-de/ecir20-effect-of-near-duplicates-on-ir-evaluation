@@ -9,18 +9,16 @@ version = "1.0-SNAPSHOT"
 description = "trec-ndd"
 
 repositories {
+    jcenter()
     mavenCentral()
-    mavenLocal()
-    maven {
-        url = "file://C:\\Users\\kiese\\Software\\Development\\Projects\\trec-near-duplicates\\lib\\"
-    }
-
-    maven {
-        url = "https://dl.bintray.com/spark-packages/maven/"
-    }
-
     maven {
         url = "https://jitpack.io"
+    }
+    maven {
+        url = "https://raw.githubusercontent.com/lintool/AnseriniMaven/master/mvn-repo/"
+    }
+    maven {
+        url = "lib"
     }
 }
 
