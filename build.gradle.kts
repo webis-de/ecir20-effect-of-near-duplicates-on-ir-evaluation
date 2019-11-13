@@ -48,8 +48,14 @@ dependencies {
 
 tasks.shadowJar {
     dependencies {
+        // Dependencies from https://jitpack.io
+        include(dependency("com.github.mam10eks:jtreceval"))
+        include(dependency("com.github.TREMA-UNH:trec-car-tools-java"))
+        // Dependencies from https://raw.githubusercontent.com/lintool/AnseriniMaven/master/mvn-repo/
         include(dependency("io.anserini:anserini"))
+        // Dependencies from lib
         include(dependency("client.netspeak:netspeak-client"))
+        include(dependency("com.linkedin:scanns"))
     }
 }
 
@@ -59,8 +65,10 @@ lombok {
 
 publishing {
     publications {
-        create("shadow", MavenPublication::class) {
-            shadow.component(this)
+        register<MavenPublication>("shadow") {
+            artifact(tasks.shadowJar.get()) {
+                classifier = null
+            }
         }
     }
 }
