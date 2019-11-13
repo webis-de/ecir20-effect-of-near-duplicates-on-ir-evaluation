@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 import json
+
 import numpy
 from os import path, listdir
+
 #LABELED_DIRS = ['terabyte']
 #LABELED_DIRS = ['web']
 LABELED_DIRS = ['core']
