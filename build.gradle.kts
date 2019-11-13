@@ -1,25 +1,26 @@
 plugins {
-    id "java"
-    id "maven-publish"
-    id "io.freefair.lombok" version "4.1.4"
+    id("java")
+    id("maven-publish")
+    id("io.freefair.lombok") version "4.1.4"
+    id("com.github.johnrengelman.shadow") version "5.2.0"
 }
 
 group = "de.webis"
 version = "1.0-SNAPSHOT"
 description = "trec-ndd"
 
+// Disable automatic tests, when building this project.
+// This is temporary as we can't currently run the Spark cluster in Gradle yet.
+tasks.test {
+    enabled = false
+}
+
 repositories {
     jcenter()
     mavenCentral()
-    maven {
-        url = "https://jitpack.io"
-    }
-    maven {
-        url = "https://raw.githubusercontent.com/lintool/AnseriniMaven/master/mvn-repo/"
-    }
-    maven {
-        url = "lib"
-    }
+    maven(url = "https://jitpack.io")
+    maven(url = "https://raw.githubusercontent.com/lintool/AnseriniMaven/master/mvn-repo/")
+    maven(url = "lib")
 }
 
 dependencies {
@@ -45,19 +46,26 @@ dependencies {
     testCompile("com.holdenkarau:spark-testing-base_2.12:2.4.3_0.12.0")
 }
 
+tasks.shadowJar {
+    dependencies {
+        include(dependency("io.anserini:anserini"))
+        include(dependency("client.netspeak:netspeak-client"))
+    }
+}
+
 lombok {
-    version = "1.18.10"
+    version.set("1.18.10")
 }
 
 publishing {
     publications {
-        maven(MavenPublication) {
-            from(components.java)
+        create("shadow", MavenPublication::class) {
+            shadow.component(this)
         }
     }
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile::class) {
     options.encoding = "UTF-8"
     sourceCompatibility = "1.8"
 }

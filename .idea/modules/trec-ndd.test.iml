@@ -12,13 +12,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Gradle: org.restlet.jee:org.restlet:2.3.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.restlet.jee:org.restlet.ext.servlet:2.3.0" level="project" />
-    <orderEntry type="library" name="Gradle: edu.umass.ciir:RankLib:2.1" level="project" />
+    <orderEntry type="module" module-name="trec-ndd.main" />
+    <orderEntry type="library" name="Gradle: net.sourceforge.argparse4j:argparse4j:0.8.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.solr:solr-core:8.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.holdenkarau:spark-testing-base_2.12:2.4.3_0.12.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.spark:spark-mllib_2.12:2.4.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.spark:spark-graphx_2.12:2.4.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.spark:spark-streaming_2.12:2.4.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.spark:spark-hive_2.12:2.4.3" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.spark:spark-graphx_2.12:2.4.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.spark:spark-sql_2.12:2.4.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.spark:spark-catalyst_2.12:2.4.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.spark:spark-yarn_2.12:2.4.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.spark:spark-core_2.12:2.4.3" level="project" />
@@ -26,8 +28,8 @@
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-client:2.8.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-minicluster:2.8.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-common:3.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-common:tests:3.2.0" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-hdfs:tests:2.8.3" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-mapreduce-client-common:2.8.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-hdfs:2.8.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-yarn-server-tests:tests:2.8.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-yarn-server-tests:2.8.3" level="project" />
@@ -42,8 +44,8 @@
     <orderEntry type="library" name="Gradle: org.apache.curator:curator-client:2.13.0" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-mapreduce-client-jobclient:tests:2.8.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-mapreduce-client-jobclient:2.8.3" level="project" />
-    <orderEntry type="library" name="Gradle: com.approvaltests:approvaltests:3.2.0" level="project" />
-    <orderEntry type="library" name="Gradle: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-mapreduce-client-shuffle:2.8.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-mapreduce-client-common:2.8.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-mapreduce-client-core:2.8.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-yarn-server-nodemanager:2.8.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-yarn-server-applicationhistoryservice:2.8.3" level="project" />
@@ -74,8 +76,8 @@
     <orderEntry type="library" name="Gradle: org.powermock:powermock-module-junit4:2.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.lucene:lucene-test-framework:7.6.0" level="project" />
     <orderEntry type="library" name="Gradle: org.powermock:powermock-module-junit4-common:2.0.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.glassfish.jersey.core:jersey-client:2.22.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.26" level="project" />
+    <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Gradle: com.approvaltests:approvaltests:3.2.0" level="project" />
     <orderEntry type="library" name="Gradle: org.powermock:powermock-api-mockito:1.7.4" level="project" />
     <orderEntry type="library" name="Gradle: org.powermock:powermock-api-mockito-common:1.7.4" level="project" />
     <orderEntry type="library" name="Gradle: org.powermock:powermock-api-support:1.7.4" level="project" />
@@ -138,8 +140,8 @@
     <orderEntry type="library" name="Gradle: org.apache.kerby:kerb-crypto:1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.kerby:kerb-core:1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.kerby:kerby-pkix:1.0.1" level="project" />
-    <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-mapreduce-client-shuffle:2.8.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.26" level="project" />
+    <orderEntry type="library" name="Gradle: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" name="Gradle: com.nimbusds:nimbus-jose-jwt:4.41.1" level="project" />
     <orderEntry type="library" name="Gradle: net.minidev:json-smart:2.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.lucene:lucene-benchmark:7.6.0" level="project" />
@@ -147,7 +149,7 @@
     <orderEntry type="library" name="Gradle: org.apache.lucene:lucene-analyzers-common:8.1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.lucene:lucene-queries:8.1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.lucene:lucene-core:8.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.json4s:json4s-core_2.12:3.5.3" level="project" />
+    <orderEntry type="library" name="Gradle: edu.umass.ciir:RankLib:2.1" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.module:jackson-module-scala_2.12:2.6.7.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-hdfs-client:3.2.0" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.9" level="project" />
@@ -257,8 +259,8 @@
     <orderEntry type="library" name="Gradle: net.minidev:accessors-smart:1.2" level="project" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm:5.1" level="project" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm-commons:5.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-common:tests:3.2.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.spark:spark-sql_2.12:2.4.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.restlet.jee:org.restlet:2.3.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.restlet.jee:org.restlet.ext.servlet:2.3.0" level="project" />
     <orderEntry type="library" name="Gradle: org.rrd4j:rrd4j:3.5" level="project" />
     <orderEntry type="library" name="Gradle: com.approvaltests:approvaltests-util:3.2.0" level="project" />
     <orderEntry type="library" name="Gradle: org.mockito:mockito-core:2.8.9" level="project" />
@@ -266,7 +268,7 @@
     <orderEntry type="library" name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet:2.22.2" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet-core:2.22.2" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.jersey.core:jersey-server:2.22.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.spark:spark-mllib_2.12:2.4.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.glassfish.jersey.core:jersey-client:2.22.2" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.jersey.media:jersey-media-jaxb:2.22.2" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.jersey.core:jersey-common:2.22.2" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2:hk2-locator:2.4.0-b34" level="project" />
@@ -284,7 +286,7 @@
     <orderEntry type="library" name="Gradle: org.typelevel:machinist_2.12:0.6.1" level="project" />
     <orderEntry type="library" name="Gradle: org.scala-lang:scala-reflect:2.12.8" level="project" />
     <orderEntry type="library" name="Gradle: org.scala-lang.modules:scala-parser-combinators_2.12:1.1.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.solr:solr-core:8.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.json4s:json4s-core_2.12:3.5.3" level="project" />
     <orderEntry type="library" name="Gradle: org.scala-lang.modules:scala-xml_2.12:1.0.6" level="project" />
     <orderEntry type="library" name="Gradle: com.chuusai:shapeless_2.12:2.3.2" level="project" />
     <orderEntry type="library" name="Gradle: org.json4s:json4s-ast_2.12:3.5.3" level="project" />
@@ -364,7 +366,6 @@
     <orderEntry type="library" name="Gradle: javax.validation:validation-api:1.1.0.Final" level="project" />
     <orderEntry type="library" name="Gradle: net.sf.opencsv:opencsv:2.3" level="project" />
     <orderEntry type="library" name="Gradle: com.github.rwl:jtransforms:2.4.0" level="project" />
-    <orderEntry type="library" name="Gradle: xalan:xalan:2.7.0" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.ant:ant-launcher:1.10.1" level="project" />
     <orderEntry type="library" name="Gradle: com.apple:AppleJavaExtensions:1.4" level="project" />
     <orderEntry type="library" name="Gradle: com.googlecode.efficient-java-matrix-library:ejml:0.23" level="project" />
@@ -399,6 +400,7 @@
     <orderEntry type="library" name="Gradle: com.esotericsoftware:minlog:1.3.0" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2:hk2-utils:2.4.0-b34" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b34" level="project" />
+    <orderEntry type="library" name="Gradle: xalan:xalan:2.7.0" level="project" />
     <orderEntry type="library" name="Gradle: com.github.stephenc.jcip:jcip-annotations:1.0-1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.kerby:kerby-xdr:1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.antlr:stringtemplate:3.2.1" level="project" />
@@ -412,9 +414,8 @@
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-math:2.2" level="project" />
     <orderEntry type="library" name="Gradle: asm:asm:3.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.10" level="project" />
-    <orderEntry type="library" name="Gradle: net.sourceforge.argparse4j:argparse4j:0.8.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.cedarsoftware:json-io:2.5.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.kerby:kerby-util:1.0.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.cedarsoftware:json-io:2.5.1" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="trec-ndd.main" />
 </module>

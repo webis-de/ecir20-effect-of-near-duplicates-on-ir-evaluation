@@ -12,5 +12,10 @@
     <orderEntry type="module" module-name="main" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.guava:guava:27.1-jre" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.approvaltests:approvaltests:3.2.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.mockito:mockito-core:2.8.9" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.powermock:powermock-api-mockito:1.7.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.powermock:powermock-module-junit4:2.0.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.powermock:powermock-core:2.0.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.projectlombok:lombok:1.18.10" level="project" />
   </component>
 </module>

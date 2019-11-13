@@ -17,37 +17,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library name="Gradle: org.restlet.jee:org.restlet.ext.servlet:2.3.0">
-        <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/jbr/bin/Could not find org.restlet.jee:org.restlet.ext.servlet:2.3.0.&#13;&#10;Searched in the following locations:&#13;&#10;  - https:/repo.maven.apache.org/maven2/org/restlet/jee/org.restlet.ext.servlet/2.3.0/org.restlet.ext.servlet-2.3.0.pom&#13;&#10;  - https:/repo.maven.apache.org/maven2/org/restlet/jee/org.restlet.ext.servlet/2.3.0/org.restlet.ext.servlet-2.3.0.jar&#13;&#10;  - file:/C:/Users/kiese/Software/Development/Projects/trec-near-duplicates/lib/org/restlet/jee/org.restlet.ext.servlet/2.3.0/org.restlet.ext.servlet-2.3.0.pom&#13;&#10;  - file:/C:/Users/kiese/Software/Development/Projects/trec-near-duplicates/lib/org/restlet/jee/org.restlet.ext.servlet/2.3.0/org.restlet.ext.servlet-2.3.0.jar&#13;&#10;  - https:/dl.bintray.com/spark-packages/maven/org/restlet/jee/org.restlet.ext.servlet/2.3.0/org.restlet.ext.servlet-2.3.0.pom&#13;&#10;  - https:/dl.bintray.com/spark-packages/maven/org/restlet/jee/org.restlet.ext.servlet/2.3.0/org.restlet.ext.servlet-2.3.0.jar&#13;&#10;  - https:/jitpack.io/org/restlet/jee/org.restlet.ext.servlet/2.3.0/org.restlet.ext.servlet-2.3.0.pom&#13;&#10;  - https:/jitpack.io/org/restlet/jee/org.restlet.ext.servlet/2.3.0/org.restlet.ext.servlet-2.3.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Gradle: org.restlet.jee:org.restlet:2.3.0">
-        <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/jbr/bin/Could not find org.restlet.jee:org.restlet:2.3.0.&#13;&#10;Searched in the following locations:&#13;&#10;  - https:/repo.maven.apache.org/maven2/org/restlet/jee/org.restlet/2.3.0/org.restlet-2.3.0.pom&#13;&#10;  - https:/repo.maven.apache.org/maven2/org/restlet/jee/org.restlet/2.3.0/org.restlet-2.3.0.jar&#13;&#10;  - file:/C:/Users/kiese/Software/Development/Projects/trec-near-duplicates/lib/org/restlet/jee/org.restlet/2.3.0/org.restlet-2.3.0.pom&#13;&#10;  - file:/C:/Users/kiese/Software/Development/Projects/trec-near-duplicates/lib/org/restlet/jee/org.restlet/2.3.0/org.restlet-2.3.0.jar&#13;&#10;  - https:/dl.bintray.com/spark-packages/maven/org/restlet/jee/org.restlet/2.3.0/org.restlet-2.3.0.pom&#13;&#10;  - https:/dl.bintray.com/spark-packages/maven/org/restlet/jee/org.restlet/2.3.0/org.restlet-2.3.0.jar&#13;&#10;  - https:/jitpack.io/org/restlet/jee/org.restlet/2.3.0/org.restlet-2.3.0.pom&#13;&#10;  - https:/jitpack.io/org/restlet/jee/org.restlet/2.3.0/org.restlet-2.3.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Gradle: edu.umass.ciir:RankLib:2.1">
-        <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/jbr/bin/Could not find edu.umass.ciir:RankLib:2.1.&#13;&#10;Searched in the following locations:&#13;&#10;  - https:/repo.maven.apache.org/maven2/edu/umass/ciir/RankLib/2.1/RankLib-2.1.pom&#13;&#10;  - https:/repo.maven.apache.org/maven2/edu/umass/ciir/RankLib/2.1/RankLib-2.1.jar&#13;&#10;  - file:/C:/Users/kiese/Software/Development/Projects/trec-near-duplicates/lib/edu/umass/ciir/RankLib/2.1/RankLib-2.1.pom&#13;&#10;  - file:/C:/Users/kiese/Software/Development/Projects/trec-near-duplicates/lib/edu/umass/ciir/RankLib/2.1/RankLib-2.1.jar&#13;&#10;  - https:/dl.bintray.com/spark-packages/maven/edu/umass/ciir/RankLib/2.1/RankLib-2.1.pom&#13;&#10;  - https:/dl.bintray.com/spark-packages/maven/edu/umass/ciir/RankLib/2.1/RankLib-2.1.jar&#13;&#10;  - https:/jitpack.io/edu/umass/ciir/RankLib/2.1/RankLib-2.1.pom&#13;&#10;  - https:/jitpack.io/edu/umass/ciir/RankLib/2.1/RankLib-2.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="Gradle: net.sourceforge.argparse4j:argparse4j:0.8.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.solr:solr-core:8.1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.spark:spark-graphx_2.12:2.4.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.spark:spark-core_2.12:2.4.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-client:2.6.5" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-common:3.2.0" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-hdfs:2.6.5" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-client:2.6.5" level="project" />
+    <orderEntry type="library" name="Gradle: io.anserini:anserini:0.5.1" level="project" />
     <orderEntry type="library" name="Gradle: org.openrdf.sesame:sesame-rio-ntriples:4.1.2" level="project" />
     <orderEntry type="library" name="Gradle: org.openrdf.sesame:sesame-rio-api:4.1.2" level="project" />
     <orderEntry type="library" name="Gradle: org.openrdf.sesame:sesame-model:4.1.2" level="project" />
@@ -55,8 +32,8 @@
     <orderEntry type="library" name="Gradle: org.openrdf.sesame:sesame-util:4.1.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.curator:curator-recipes:2.13.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.openrdf.sesame:sesame-rio-languages:4.1.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-auth:3.2.0" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.curator:curator-framework:2.13.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-log4j12:1.7.26" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.curator:curator-client:2.13.0" level="project" />
     <orderEntry type="library" name="Gradle: org.htrace:htrace-core:3.0.4" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-mapreduce-client-app:2.6.5" level="project" />
@@ -71,8 +48,8 @@
     <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-yarn-api:2.6.5" level="project" />
     <orderEntry type="library" name="Gradle: com.google.guava:guava:27.1-jre" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.solr:solr-solrj:8.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.24" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.lucene:lucene-spatial3d:8.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.zookeeper:zookeeper:3.4.14" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-log4j12:1.7.26" level="project" />
     <orderEntry type="library" name="Gradle: com.jayway.jsonpath:json-path:2.4.0" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.9" level="project" />
     <orderEntry type="library" name="Gradle: org.elasticsearch.client:elasticsearch-rest-client:6.7.1" level="project" />
@@ -103,8 +80,8 @@
     <orderEntry type="library" name="Gradle: io.dropwizard.metrics:metrics-graphite:4.0.5" level="project" />
     <orderEntry type="library" name="Gradle: io.dropwizard.metrics:metrics-jvm:4.0.5" level="project" />
     <orderEntry type="library" name="Gradle: io.dropwizard.metrics:metrics-json:3.1.5" level="project" />
-    <orderEntry type="library" name="Gradle: javax.ws.rs:javax.ws.rs-api:2.0.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.roaringbitmap:shims:0.7.45" level="project" />
+    <orderEntry type="library" name="Gradle: io.dropwizard.metrics:metrics-core:4.0.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.24" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.avro:avro-mapred:hadoop2:1.8.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.avro:avro-ipc:1.8.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.avro:avro:1.8.2" level="project" />
@@ -133,8 +110,8 @@
     <orderEntry type="library" name="Gradle: org.apache.lucene:lucene-analyzers-common:8.1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.lucene:lucene-queries:8.1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.lucene:lucene-core:8.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Gradle: edu.umass.ciir:RankLib:2.1" level="project" />
+    <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.module:jackson-module-scala_2.12:2.6.7.1" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.9" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.9" level="project" />
@@ -169,7 +146,7 @@
     <orderEntry type="library" name="Gradle: org.apache.lucene:lucene-misc:8.1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.lucene:lucene-sandbox:8.1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.lucene:lucene-spatial-extras:8.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: io.dropwizard.metrics:metrics-core:4.0.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.lucene:lucene-spatial3d:8.1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.lucene:lucene-suggest:8.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.carrotsearch:hppc:0.8.1" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.8" level="project" />
@@ -237,9 +214,9 @@
     <orderEntry type="library" name="Gradle: net.minidev:accessors-smart:1.2" level="project" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm:5.1" level="project" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm-commons:5.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.rrd4j:rrd4j:3.5" level="project" />
     <orderEntry type="library" name="Gradle: org.restlet.jee:org.restlet:2.3.0" level="project" />
     <orderEntry type="library" name="Gradle: org.restlet.jee:org.restlet.ext.servlet:2.3.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.rrd4j:rrd4j:3.5" level="project" />
     <orderEntry type="library" name="Gradle: com.twitter:chill_2.12:0.9.3" level="project" />
     <orderEntry type="library" name="Gradle: com.twitter:chill-java:0.9.3" level="project" />
     <orderEntry type="library" name="Gradle: javax.activation:activation:1.1.1" level="project" />
@@ -298,8 +275,8 @@
     <orderEntry type="library" name="Gradle: org.tukaani:xz:1.5" level="project" />
     <orderEntry type="library" name="Gradle: com.esotericsoftware:kryo-shaded:4.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.fusesource.leveldbjni:leveldbjni-all:1.8" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.zookeeper:zookeeper:3.4.14" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.hadoop:hadoop-auth:3.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.roaringbitmap:shims:0.7.45" level="project" />
+    <orderEntry type="library" name="Gradle: javax.ws.rs:javax.ws.rs-api:2.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2:hk2-locator:2.4.0-b34" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2:hk2-api:2.4.0-b34" level="project" />
     <orderEntry type="library" name="Gradle: org.glassfish.hk2.external:javax.inject:2.4.0-b34" level="project" />
@@ -335,11 +312,7 @@
     <orderEntry type="library" name="Gradle: org.codehaus.jettison:jettison:1.1" level="project" />
     <orderEntry type="library" name="Gradle: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.10" level="project" />
-    <orderEntry type="library" name="Gradle: net.sourceforge.argparse4j:argparse4j:0.8.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.solr:solr-core:8.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.spark:spark-core_2.12:2.4.3" level="project" />
-    <orderEntry type="library" name="Gradle: io.anserini:anserini:0.5.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.kerby:kerby-util:1.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.sonatype.sisu.inject:cglib:2.2.1-v20090111" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.kerby:kerby-util:1.0.1" level="project" />
   </component>
 </module>
