@@ -44,6 +44,9 @@ dependencies {
     testCompile("org.powermock:powermock-module-junit4:2.0.2")
     testCompile("com.google.code.gson:gson:2.8.5")
     testCompile("com.holdenkarau:spark-testing-base_2.12:2.4.3_0.12.0")
+    implementation("org.apache.commons:commons-lang3:3.9")
+    implementation("commons-collections:commons-collections:3.2.2")
+    implementation("com.google.guava:guava:28.1-jre")
 }
 
 tasks.shadowJar {
