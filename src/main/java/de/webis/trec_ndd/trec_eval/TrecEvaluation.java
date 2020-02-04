@@ -22,6 +22,10 @@ public class TrecEvaluation {
 	private final Path runFile;
 	private final Path qrelFile;
 	
+	public EvalReport evalReportForMeasure(String measure) {
+		return trec_eval.reportMeasure(measure, qrelFile.toFile(), runFile.toFile());
+	}
+	
 	public double evaluateMeasureWithTrecEval(String measure, SharedTask task) {
 		try {
 			return trec_eval.evaluateMeasure(measure, qrelFile.toFile(), runFile.toFile(), task.argsForTrecEval());

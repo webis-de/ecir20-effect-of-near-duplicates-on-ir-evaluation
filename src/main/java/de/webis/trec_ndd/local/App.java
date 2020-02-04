@@ -106,7 +106,11 @@ public class App {
 		Map<String, Object> ret = new HashMap<>();
 		List<DocumentGroup> docGroups = DocumentGroup.readFromJonLines(Paths.get("/home/maik/workspace/wstud-thesis-reimer/data/fingerprint-groups/trec-fingerprint-groups-clueweb09-judged.jsonl"));
 		List<Double> ndcg = new LinkedList<>();
+		List<Double> ndcgAtAllTopics = new LinkedList<>();
+		
 		List<Double> map = new LinkedList<>();
+		List<Double> mapAtAllTopics = new LinkedList<>();
+		
 		List<Double> ndcgAt20AllTopics = new LinkedList<>();
 		List<Double> ndcgAt20 = new LinkedList<>();
 		
@@ -117,8 +121,14 @@ public class App {
 			HashSet<QrelEqualWithoutScore> processedQrels = qrelConsistency.getQrels(judgements, docGroups, deduplication); 
 			TrecEvaluation trecEvaluation = trec_eval.evaluate("can-be-ignored", processedQrels, deduplication.getDeduplicatedRun());
 
-			ndcg.add(trecEvaluation.evaluateMeasureWithTrecEval("ndcg", TrecSharedTask.WEB_2012));
-			map.add(trecEvaluation.evaluateMeasureWithTrecEval("map", TrecSharedTask.WEB_2012));
+			EvalReport ndcgReport = trecEvaluation.evalReportForMeasure("ndcg");
+			ndcg.add(ndcgReport.amean);
+			ndcgAtAllTopics.addAll(ndcgReport.scorePerTopic);
+			
+			EvalReport mapReport = trecEvaluation.evalReportForMeasure("map");
+			map.add(mapReport.amean);
+			mapAtAllTopics.addAll(mapReport.scorePerTopic);
+			
 			EvalReport ndcg20Report = trecEvaluation.ndcg20Report();
 			ndcgAt20.add(ndcg20Report.amean);
 			ndcgAt20AllTopics.addAll(ndcg20Report.scorePerTopic);
@@ -127,15 +137,19 @@ public class App {
 		ret.put("trainTestSplitStrategy", experiment.getTrainTestSplitStrategy());
 		ret.put("redundancy", experiment.getRedundancy());
 		ret.put("algorithm", experiment.getAlgorithm());
-		ret.put("ndcg", ndcg.stream().mapToDouble(i -> i).average().getAsDouble());
-		ret.put("map", map.stream().mapToDouble(i -> i).average().getAsDouble());
 		ret.put("deduplication", deduplicator.name());
 		ret.put("qrelConsistency", qrelConsistency.name());
 		ret.put("measure", experiment.measure);
 		ret.put("explicitOversampling", experiment.explicitOversampling);
+		
+		ret.put("ndcg", ndcg.stream().mapToDouble(i -> i).average().getAsDouble());
+		ret.put("ndcg_all_topics", ndcgAtAllTopics);
+		
+		ret.put("map", map.stream().mapToDouble(i -> i).average().getAsDouble());
+		ret.put("map_all_topics", mapAtAllTopics);
+		
 		ret.put("ndcg_20", ndcgAt20.stream().mapToDouble(i -> i).average().getAsDouble());
 		ret.put("ndcg_20_all_topics", ndcgAt20AllTopics);
-		
 		
 		return ret;
 	}
