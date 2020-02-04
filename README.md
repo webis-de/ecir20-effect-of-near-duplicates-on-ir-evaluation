@@ -1,5 +1,24 @@
 # The Effect of Content-Equivalent Near-Duplicates on the Evaluation of Search Engines
 
+This repository contains the data and code for reproducing results of the paper:
+
+    @InProceedings{stein:2020e,
+      address =             {Berlin Heidelberg New York},
+      author =              {Maik Fr{\"o}be and {Jan Philipp} Bittner and Martin Potthast and Matthias Hagen},
+      booktitle =           {Advances in Information Retrieval. 42nd European Conference on IR Research (ECIR 2020)},
+      doi =                 {},
+      editor =              {},
+      month =               apr,
+      pages =               {},
+      publisher =           {Springer},
+      series =              {Lecture Notes in Computer Science},
+      site =                {Lisbon, Portugal},
+      title =               {{The Effect of Content-Equivalent Near-Duplicates on the Evaluation of Search Engines}},
+      year =                2020
+    }
+
+[[Paper Link](https://webis.de/publications.html#?q=The+Effect+of+Content-Equivalent+Near-Duplicates+on+the+Evaluation+of+Search+Engines)]
+
 ## TREC Track
 
 * [Terabyte Track 2004](results/terabyte/2004/README.md)
