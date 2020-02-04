@@ -3,19 +3,24 @@ package de.webis.trec_ndd.trec_collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.SortedMap;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 import de.webis.trec_ndd.spark.DocumentGroup;
 import de.webis.trec_ndd.spark.RunLine;
 import de.webis.trec_ndd.trec_eval.EvaluationMeasure;
+import io.anserini.search.topicreader.TopicReader;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -31,12 +36,15 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.SneakyThrows;
 
+import io.anserini.search.topicreader.WebxmlTopicReader;
+
 public interface SharedTask {
 	String getQrelResource();
 	public List<EvaluationMeasure> getOfficialEvaluationMeasures();
 	public List<EvaluationMeasure> getInofficialEvaluationMeasures();
 	public List<String> runFiles();
 	public String name();
+	public Map<String, Map<String, String>> topicNumberToTopic(); 
 	
 	public default InputStream getQrelResourceAsStream() {
 		return SharedTask.class.getResourceAsStream(getQrelResource());
@@ -65,6 +73,11 @@ public interface SharedTask {
 		});
 		
 		return ret;
+	}
+	
+	public default String getQueryForTopic(String topicNumber) {
+		Map<String, Map<String, String>> bla = topicNumberToTopic();
+		return bla.get(topicNumber).get("title");
 	}
 	
 	public default Set<QrelEqualWithoutScore> getQrelResourcesWithoutScore() {
@@ -224,7 +237,9 @@ public interface SharedTask {
 				"trec27/core/",
 				"/topics-and-qrels/qrels.core18.txt",
 				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.P_10, EvaluationMeasure.NDCG),
-				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG)
+				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
+				null,
+				null
 		),
 		
 		//New York Times
@@ -232,7 +247,9 @@ public interface SharedTask {
 				"trec26/core/",
 				"/topics-and-qrels/qrels.core17.txt",
 				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG, EvaluationMeasure.P_10),
-				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG)
+				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
+				null,
+				null
 		),
 		
 		//https://trec.nist.gov/data/terabyte04.html
@@ -240,7 +257,9 @@ public interface SharedTask {
 				"trec13/terabyte/",
 				"/topics-and-qrels/qrels.701-750.txt",
 				Arrays.asList(EvaluationMeasure.MAP),
-				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG)
+				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
+				null,
+				null
 		),
 		
 		//https://trec.nist.gov/data/terabyte05.html
@@ -248,7 +267,9 @@ public interface SharedTask {
 				"trec14/terabyte.adhoc",
 				"/topics-and-qrels/qrels.751-800.txt",
 				Arrays.asList(EvaluationMeasure.BPREF, EvaluationMeasure.MAP, EvaluationMeasure.P_20),
-				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG)
+				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
+				null,
+				null
 		),
 		
 		TERABYTE_2006(
@@ -259,7 +280,9 @@ public interface SharedTask {
 						//FIXME IMPLEMENT THIS
 						//EvaluationMeasure.INF_AP
 				),
-				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG)
+				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
+				null,
+				null
 		),
 		
 		WEB_2009(
@@ -274,28 +297,36 @@ public interface SharedTask {
 						// FIXME These are only surrogates
 						EvaluationMeasure.MAP, EvaluationMeasure.BPREF, EvaluationMeasure.P_20
 				),
-				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG)
+				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
+				() -> new WebxmlTopicReader(null),
+				"/topics-and-qrels/topics.web.1-50.txt"
 		),
 		
 		WEB_2010(
 				"/trec19/web.adhoc",
 				"/topics-and-qrels/qrels.web.51-100.txt",
 				Arrays.asList(EvaluationMeasure.ERR_20, EvaluationMeasure.NDCG_CUT_20, EvaluationMeasure.P_20, EvaluationMeasure.MAP),
-				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG)
+				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
+				() -> new WebxmlTopicReader(null),
+				"/topics-and-qrels/topics.web.51-100.txt"
 		),
 		
 		WEB_2011(
 				"/trec20/web.adhoc",
 				"/topics-and-qrels/qrels.web.101-150.txt",
 				Arrays.asList(EvaluationMeasure.ERR_20, EvaluationMeasure.NDCG_CUT_20, EvaluationMeasure.P_20, EvaluationMeasure.MAP),
-				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG)
+				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
+				() -> new WebxmlTopicReader(null),
+				"/topics-and-qrels/topics.web.101-150.txt"
 		),
 		
 		WEB_2012(
 				"/trec21/web.adhoc",
 				"/topics-and-qrels/qrels.web.151-200.txt",
 				Arrays.asList(EvaluationMeasure.ERR_20, EvaluationMeasure.NDCG_CUT_20, EvaluationMeasure.P_20, EvaluationMeasure.MAP),
-				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG)
+				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
+				() -> new WebxmlTopicReader(null),
+				"/topics-and-qrels/topics.web.151-200.txt"
 		),
 
 		WEB_2013(
@@ -309,26 +340,47 @@ public interface SharedTask {
 						//FIXME: They report that they evaluate MAP and P@20, but I cant find it?
 						//EvaluationMeasure.P_20, EvaluationMeasure.MAP, 
 				),
-				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG)
+				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
+				() -> new WebxmlTopicReader(null),
+				"/topics-and-qrels/topics.web.201-250.txt"
 		),
 		
 		WEB_2014(
 				"/trec23/web.adhoc",
 				"/topics-and-qrels/qrels.web.251-300.txt",
 				Arrays.asList(EvaluationMeasure.ERR_IA_20, EvaluationMeasure.ALPHA_NDCG_CUT_20, EvaluationMeasure.NRBP, EvaluationMeasure.ERR_20, EvaluationMeasure.NDCG_CUT_20),
-				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG)
+				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
+				() -> new WebxmlTopicReader(null),
+				"/topics-and-qrels/topics.web.251-300.txt"
 		);
 		
 		private final String runFileDirectory;
 		private final String qrelResource;
 		private final List<EvaluationMeasure> officialEvaluationMeasures;
 		private final List<EvaluationMeasure> inofficialEvaluationMeasures;
+		private final Supplier<TopicReader<?>> topicReader;
+		private final String topicResource;
 		
 		@SneakyThrows
 		public List<String> runFiles() {
 			return Files.list(Paths.get("/mnt/nfs/webis20/data-in-progress/trec-system-runs/" + getRunFileDirectory()))
 					.map(Object::toString)
 					.collect(Collectors.toList());
+		}
+
+		@Override
+		@SneakyThrows
+		@SuppressWarnings({ "unchecked", "rawtypes" })
+		public Map<String, Map<String, String>> topicNumberToTopic() {
+			TopicReader<?> reader = topicReader.get();
+			SortedMap<?, ?> tmp = reader.read(IOUtils.toString(TrecSharedTask.class.getResourceAsStream(topicResource), StandardCharsets.UTF_8));
+			Map<String, Map<String, String>> ret = new HashMap<>();
+			
+			for(Map.Entry<?, ?> entry : tmp.entrySet()) {
+				ret.put(String.valueOf(entry.getKey()), (Map) entry.getValue());
+			}
+			
+			return ret;
 		}
 	}
 }

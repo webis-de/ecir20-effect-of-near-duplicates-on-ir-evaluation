@@ -1,11 +1,15 @@
 package de.webis.trec_ndd.spark;
 
 import java.io.Serializable;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -40,6 +44,13 @@ public class DocumentGroup implements Serializable {
 	@SneakyThrows
 	public String toString() {
 		return new ObjectMapper().writeValueAsString(this);
+	}
+	
+	@SneakyThrows
+	public static List<DocumentGroup> readFromJonLines(Path path) {
+		return Files.readAllLines(path).stream()
+				.map(s -> createFromJson(s))
+				.collect(Collectors.toList());
 	}
 	
 	@SneakyThrows

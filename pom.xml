@@ -122,9 +122,9 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>com.github.mam10eks</groupId>
+			<groupId>uk.ac.gla.dcs.terrierteam</groupId>
 			<artifactId>jtreceval</artifactId>
-			<version>8e8dbe0f26</version>
+			<version>0.0.5-SNAPSHOT-MF</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

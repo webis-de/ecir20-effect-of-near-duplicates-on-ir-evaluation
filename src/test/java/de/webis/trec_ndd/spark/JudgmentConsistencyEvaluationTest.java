@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.approvaltests.Approvals;
@@ -118,6 +119,11 @@ public class JudgmentConsistencyEvaluationTest {
 			
 			public Set<QrelEqualWithoutScore> getQrelResourcesWithoutScore() {
 				return Collections.unmodifiableSet(new HashSet<>(CollaborationBetweenRunDeduplicationAndQrelConsistencyTest.toQrels(qrels)));
+			}
+
+			@Override
+			public Map<String, Map<String, String>> topicNumberToTopic() {
+				return null;
 			}
 		};
 	}

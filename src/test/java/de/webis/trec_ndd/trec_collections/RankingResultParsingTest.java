@@ -94,6 +94,11 @@ public class RankingResultParsingTest {
 			public String name() {
 				return null;
 			}
+
+			@Override
+			public Map<String, Map<String, String>> topicNumberToTopic() {
+				return null;
+			}
 		};
 	}
 }

@@ -7,6 +7,7 @@ import java.util.Map;
 import de.webis.trec_ndd.trec_collections.SharedTask;
 import lombok.Data;
 import lombok.Getter;
+import uk.ac.gla.terrier.jtreceval.EvalReport;
 import uk.ac.gla.terrier.jtreceval.gdeval;
 import uk.ac.gla.terrier.jtreceval.ndeval;
 import uk.ac.gla.terrier.jtreceval.trec_eval;
@@ -52,6 +53,10 @@ public class TrecEvaluation {
 	
 	public double ndcg20() {
 		return gdeval.ndcg_20(qrelFile.toFile(), runFile.toFile());
+	}
+	
+	public EvalReport ndcg20Report() {
+		return gdeval.ndcg_20_report(qrelFile.toFile(), runFile.toFile());
 	}
 	
 	public double ndcg10() {
