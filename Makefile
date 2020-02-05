@@ -148,6 +148,10 @@ clean-stuff:
 
 install-third-party: checkout-submodules
 	echo "currently no third-party :)"
+
+local-dedup-eval:
+	mvn exec:java -Dexec.mainClass=de.webis.trec_ndd.local.App
+
 checkout-submodules:
 	git submodule update --init --recursive
 

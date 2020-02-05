@@ -35,7 +35,7 @@ import uk.ac.gla.terrier.jtreceval.EvalReport;
 
 public class App {
 	//private static final File BASE_DIR = new File("/home/maik/workspace/wstud-thesis-reimer/experiment-results-wip");
-	private static final File BASE_DIR = new File("/home/maik/workspace/trec-near-duplicates/experiment-results-wip");
+	private static final File BASE_DIR = new File("experiment-results-wip");
 	
 	private static final List<QrelConsistentMaker> QREL_CONSISTENCIES = Arrays.asList(
 		QrelConsistentMaker.base, QrelConsistentMaker.maxValueDuplicateDocsIrrelevant);
@@ -104,7 +104,7 @@ public class App {
 	
 	private static Map<String, Object> eval(List<List<RunLine>> runs, RunResultDeduplicator deduplicator, QrelConsistentMaker qrelConsistency, Experiment experiment) {
 		Map<String, Object> ret = new HashMap<>();
-		List<DocumentGroup> docGroups = DocumentGroup.readFromJonLines(Paths.get("/home/maik/workspace/wstud-thesis-reimer/data/fingerprint-groups/trec-fingerprint-groups-clueweb09-judged.jsonl"));
+		List<DocumentGroup> docGroups = DocumentGroup.readFromJonLines(Paths.get("../wstud-thesis-reimer/source/groups/src/main/resources/trec-fingerprint-groups-clueweb09-judged.jsonl"));
 		List<Double> ndcg = new LinkedList<>();
 		List<Double> ndcgAtAllTopics = new LinkedList<>();
 		
