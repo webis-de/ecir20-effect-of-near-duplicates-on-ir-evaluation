@@ -1,0 +1,8 @@
+110 Q0 id-26 1 5.040763 bm25
+110 Q0 id-15 2 4.936119 bm25
+110 Q0 id-10 3 4.7173357 bm25
+110 Q0 id2 4 4.274645 bm25
+abcd Q0 id111 1 33.33 bm25
+hello-world Q0 b 1 22.22 bm25
+hello-world Q0 a 2 11.11 bm25
+hello-world Q0 c 3 0.33 bm25

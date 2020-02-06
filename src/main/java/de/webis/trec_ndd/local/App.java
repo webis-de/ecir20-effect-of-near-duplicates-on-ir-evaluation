@@ -34,7 +34,6 @@ import lombok.SneakyThrows;
 import uk.ac.gla.terrier.jtreceval.EvalReport;
 
 public class App {
-	//private static final File BASE_DIR = new File("/home/maik/workspace/wstud-thesis-reimer/experiment-results-wip");
 	private static final File BASE_DIR = new File("experiment-results-wip");
 	
 	private static final List<QrelConsistentMaker> QREL_CONSISTENCIES = Arrays.asList(

@@ -1,0 +1,32 @@
+{
+  "110": {
+    "id2": {
+      "body-bm25-similarity": 4.274645
+    },
+    "id-10": {
+      "body-bm25-similarity": 4.7173357
+    },
+    "id-15": {
+      "body-bm25-similarity": 4.936119
+    },
+    "id-26": {
+      "body-bm25-similarity": 5.040763
+    }
+  },
+  "abcd": {
+    "id111": {
+      "body-bm25-similarity": 33.33
+    }
+  },
+  "hello-world": {
+    "a": {
+      "body-bm25-similarity": 11.11
+    },
+    "b": {
+      "body-bm25-similarity": 22.22
+    },
+    "c": {
+      "body-bm25-similarity": 0.33
+    }
+  }
+}
