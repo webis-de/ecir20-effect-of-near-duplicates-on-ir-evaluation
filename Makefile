@@ -90,6 +90,11 @@ index-8-gramms-clueweb12: install
 run: install
 	java -jar target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar
 
+run-local-experiment-evaluation: install
+	java -cp target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar de.webis.trec_ndd.local.BM25BaselineRanking &&\
+	java -cp target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar de.webis.trec_ndd.local.App
+
+
 evaluate-judgment-inconsistencies: install
 	./src/main/bash/evaluate-judgment-inconsistencies.sh --collections CLUEWEB09 CLUEWEB12 --threshold 0.84 |tee intermediate-results/judgment-inconsistencies-clueweb.jsonl &&\
 	./src/main/bash/evaluate-judgment-inconsistencies.sh --collections GOV2 --threshold 0.68 |tee intermediate-results/judgment-inconsistencies-gov.jsonl &&\
