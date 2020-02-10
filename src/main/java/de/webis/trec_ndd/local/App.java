@@ -2,6 +2,7 @@ package de.webis.trec_ndd.local;
 
 import java.io.File;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
@@ -90,15 +91,15 @@ public class App {
 	
 	@SneakyThrows
 	private static List<Integer> allWikipediaRanks(Experiment experiment) {
-		List<Integer> ret = new LinkedList<>();
-		ObjectReader reader = new ObjectMapper().reader(new TypeReference<Map<String, Object>>() {});
+//		List<Integer> ret = new LinkedList<>();
+//		ObjectReader reader = new ObjectMapper().reader(new TypeReference<Map<String, Object>>() {});
+//		
+//		for(File f : experiment.experimentDirs) {
+//			Map<String, Object> m = reader.readValue(f.toPath().resolve("experiment-result-details.json").toFile());
+//			ret.addAll((List) m.get("firstWikipediaOccurrences"));
+//		}
 		
-		for(File f : experiment.experimentDirs) {
-			Map<String, Object> m = reader.readValue(f.toPath().resolve("experiment-result-details.json").toFile());
-			ret.addAll((List) m.get("firstWikipediaOccurrences"));
-		}
-		
-		return ret;
+		return new ArrayList<>();
 	}
 	
 	private static Map<String, Object> eval(List<List<RunLine>> runs, RunResultDeduplicator deduplicator, QrelConsistentMaker qrelConsistency, Experiment experiment) {
