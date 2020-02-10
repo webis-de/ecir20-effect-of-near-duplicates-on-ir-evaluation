@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.codehaus.jackson.map.ObjectMapper;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
 import lombok.SneakyThrows;
@@ -30,6 +31,14 @@ public class BM25BaselineRanking {
 			
 			System.out.println("Create BM25 ranking for " + resultPath);
 			Files.write(resultPath, runFile.getBytes(StandardCharsets.UTF_8));
+			
+			Path trainingResult = resultPath.getParent().resolve("reranked-training");
+			trainTestSplit = StringUtils.replace(trainTestSplit, "test", "BLAAA-HACK");
+			trainTestSplit = StringUtils.replace(trainTestSplit, "train", "test");
+
+			runFile = featureVectorsToRunFile(featureVectors, trainTestSplit);
+			System.out.println("Create BM25 ranking for " + trainingResult);
+			Files.write(trainingResult, runFile.getBytes(StandardCharsets.UTF_8));
 		}
 	}
 	
