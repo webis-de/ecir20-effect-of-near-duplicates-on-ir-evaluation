@@ -39,6 +39,9 @@ public class BM25BaselineRanking {
 			runFile = featureVectorsToRunFile(featureVectors, trainTestSplit);
 			System.out.println("Create BM25 ranking for " + trainingResult);
 			Files.write(trainingResult, runFile.getBytes(StandardCharsets.UTF_8));
+			
+			Path experimentDetailsPath = resultPath.getParent().resolve("experiment-result-details.json");
+			Files.write(experimentDetailsPath, "{\"trainingSetSize\": 0, \"firstWikipediaOccurrences\": []}".getBytes(StandardCharsets.UTF_8));
 		}
 	}
 	
