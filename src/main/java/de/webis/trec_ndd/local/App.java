@@ -137,26 +137,34 @@ public class App {
 			ndcgAt20AllTopics.addAll(ndcg20Report.scorePerTopic);
 		}
 		
-		List<Double> ndcgTrain = new LinkedList<>();
-		List<Double> ndcgTrainAtAllTopics = new LinkedList<>();
-		
-		List<Double> ndcgTrainAt20AllTopics = new LinkedList<>();
-		List<Double> ndcgTrainAt20 = new LinkedList<>();
-		
-		for(List<RunLine> trainRun: trainingRuns) {
-			Set<QrelEqualWithoutScore> judgements = collectionJudgments(trainRun, TrecCollections.CLUEWEB09);
-			TrecEvaluator trec_eval = new TrecEvaluator();
-			DeduplicationResult deduplication = deduplicator.deduplicateRun(trainRun, docGroups);
-			HashSet<QrelEqualWithoutScore> processedQrels = qrelConsistency.getQrels(judgements, docGroups, deduplication); 
-			TrecEvaluation trecEvaluation = trec_eval.evaluate("can-be-ignored", processedQrels, deduplication.getDeduplicatedRun());
-
-			EvalReport ndcgReport = trecEvaluation.evalReportForMeasure("ndcg");
-			ndcgTrain.add(ndcgReport.amean);
-			ndcgTrainAtAllTopics.addAll(ndcgReport.scorePerTopic);
+		if(!experiment.explicitOversampling.contains("explicit-random-oversampling")) {
+			List<Double> ndcgTrain = new LinkedList<>();
+			List<Double> ndcgTrainAtAllTopics = new LinkedList<>();
 			
-			EvalReport ndcg20Report = trecEvaluation.ndcg20Report();
-			ndcgTrainAt20.add(ndcg20Report.amean);
-			ndcgTrainAt20AllTopics.addAll(ndcg20Report.scorePerTopic);
+			List<Double> ndcgTrainAt20AllTopics = new LinkedList<>();
+			List<Double> ndcgTrainAt20 = new LinkedList<>();
+			
+			for(List<RunLine> trainRun: trainingRuns) {
+				Set<QrelEqualWithoutScore> judgements = collectionJudgments(trainRun, TrecCollections.CLUEWEB09);
+				TrecEvaluator trec_eval = new TrecEvaluator();
+				DeduplicationResult deduplication = deduplicator.deduplicateRun(trainRun, docGroups);
+				HashSet<QrelEqualWithoutScore> processedQrels = qrelConsistency.getQrels(judgements, docGroups, deduplication); 
+				TrecEvaluation trecEvaluation = trec_eval.evaluate("can-be-ignored", processedQrels, deduplication.getDeduplicatedRun());
+
+				EvalReport ndcgReport = trecEvaluation.evalReportForMeasure("ndcg");
+				ndcgTrain.add(ndcgReport.amean);
+				ndcgTrainAtAllTopics.addAll(ndcgReport.scorePerTopic);
+				
+				EvalReport ndcg20Report = trecEvaluation.ndcg20Report();
+				ndcgTrainAt20.add(ndcg20Report.amean);
+				ndcgTrainAt20AllTopics.addAll(ndcg20Report.scorePerTopic);
+			}
+			
+			ret.put("ndcg_train", ndcgTrain.stream().mapToDouble(i -> i).average().getAsDouble());
+			ret.put("ndcg_train_all_topics", ndcgTrainAtAllTopics);
+			
+			ret.put("ndcg_train_20", ndcgTrainAt20.stream().mapToDouble(i -> i).average().getAsDouble());
+			ret.put("ndcg_train_20_all_topics", ndcgTrainAt20AllTopics);
 		}
 		
 		ret.put("trainTestSplitStrategy", experiment.getTrainTestSplitStrategy());
@@ -175,12 +183,6 @@ public class App {
 		
 		ret.put("ndcg_20", ndcgAt20.stream().mapToDouble(i -> i).average().getAsDouble());
 		ret.put("ndcg_20_all_topics", ndcgAt20AllTopics);
-		
-		ret.put("ndcg_train", ndcgTrain.stream().mapToDouble(i -> i).average().getAsDouble());
-		ret.put("ndcg_train_all_topics", ndcgTrainAtAllTopics);
-		
-		ret.put("ndcg_train_20", ndcgTrainAt20.stream().mapToDouble(i -> i).average().getAsDouble());
-		ret.put("ndcg_train_20_all_topics", ndcgTrainAt20AllTopics);
 		
 		return ret;
 	}
