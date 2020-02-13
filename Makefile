@@ -91,9 +91,13 @@ run: install
 	java -jar target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 run-local-experiment-evaluation: install
-	java -cp target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar de.webis.trec_ndd.local.BM25BaselineRanking &&\
+	rm -Rf experiment-results-wip/ evaluation-of-experiments.json &&\
+	cd  ../wstud-thesis-reimer/source/tasks/ &&\
+	java -cp ../../../trec-near-duplicates/target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar de.webis.trec_ndd.local.BM25BaselineRanking &&\
+       	make run-preparation-for-analysis-on-experiments &&\
+	cd ../../../trec-near-duplicates &&\
+	cp -r ~/workspace/wstud-thesis-reimer/source/tasks/experiment-results-wip/ . &&\
 	java -cp target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar de.webis.trec_ndd.local.App
-
 
 evaluate-judgment-inconsistencies: install
 	./src/main/bash/evaluate-judgment-inconsistencies.sh --collections CLUEWEB09 CLUEWEB12 --threshold 0.84 |tee intermediate-results/judgment-inconsistencies-clueweb.jsonl &&\
@@ -134,7 +138,7 @@ evaluate-clueweb12: install
 	./src/main/bash/run-evaluation-report.sh -c CLUEWEB12 --threshold 0.84|tee results/clueweb12-evaluation.jsonl
 
 install: install-third-party
-	mvn clean install
+	mvn clean install -DskipTests
 
 docker-bash: build-docker-image
 	docker run --rm -ti -v /mnt/nfs/webis20/:/mnt/nfs/webis20/ -v ${PWD}/results:/trec-ndd/results --entrypoint /bin/bash trec-ndd-kibi9872:0.0.1
@@ -153,9 +157,6 @@ clean-stuff:
 
 install-third-party: checkout-submodules
 	echo "currently no third-party :)"
-
-local-dedup-eval:
-	mvn exec:java -Dexec.mainClass=de.webis.trec_ndd.local.App
 
 checkout-submodules:
 	git submodule update --init --recursive

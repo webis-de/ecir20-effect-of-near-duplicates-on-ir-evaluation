@@ -19,11 +19,12 @@ import org.apache.commons.lang3.tuple.Pair;
 import lombok.SneakyThrows;
 
 public class BM25BaselineRanking {
-
+	private static final String BASE_DIR = "/home/aqqes/workspace/wstud-thesis-reimer/";
+			
 	@SneakyThrows
 	public static void main(String[] args) {
-		List<String> trainTestSplits = Files.readAllLines(Paths.get("../wstud-thesis-reimer/source/ltr/src/main/resources/clueweb09-train-test-splits.jsonl"));
-		File featureVectors = new File("../wstud-thesis-reimer/source/ltr-files/src/main/resources/clueweb09/feature-vectors.json");
+		List<String> trainTestSplits = Files.readAllLines(Paths.get(BASE_DIR + "source/ltr/src/main/resources/clueweb09-train-test-splits.jsonl"));
+		File featureVectors = new File(BASE_DIR + "source/ltr-files/src/main/resources/clueweb09/feature-vectors.json");
 		
 		for(String trainTestSplit: trainTestSplits) {
 			String runFile = featureVectorsToRunFile(featureVectors, trainTestSplit);
