@@ -91,12 +91,10 @@ run: install
 	java -jar target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 run-local-experiment-evaluation: install
-	rm -Rf experiment-results-wip/ evaluation-of-experiments.json &&\
 	cd  ../wstud-thesis-reimer/source/tasks/ &&\
 	java -cp ../../../trec-near-duplicates/target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar de.webis.trec_ndd.local.BM25BaselineRanking &&\
-       	make run-preparation-for-analysis-on-experiments &&\
+	make run-preparation-for-analysis-on-experiments &&\
 	cd ../../../trec-near-duplicates &&\
-	cp -r ~/workspace/wstud-thesis-reimer/source/tasks/experiment-results-wip/ . &&\
 	java -cp target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar de.webis.trec_ndd.local.App
 
 evaluate-judgment-inconsistencies: install

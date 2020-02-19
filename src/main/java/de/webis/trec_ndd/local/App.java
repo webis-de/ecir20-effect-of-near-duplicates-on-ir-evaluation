@@ -27,7 +27,6 @@ import de.webis.trec_ndd.spark.RunResultDeduplicator.DeduplicationResult;
 import de.webis.trec_ndd.trec_collections.CollectionConfiguration.TrecCollections;
 import de.webis.trec_ndd.trec_collections.QrelEqualWithoutScore;
 import de.webis.trec_ndd.trec_collections.SharedTask;
-import de.webis.trec_ndd.trec_collections.SharedTask.TrecSharedTask;
 import de.webis.trec_ndd.trec_eval.TrecEvaluation;
 import de.webis.trec_ndd.trec_eval.TrecEvaluator;
 import lombok.Data;
@@ -35,7 +34,9 @@ import lombok.SneakyThrows;
 import uk.ac.gla.terrier.jtreceval.EvalReport;
 
 public class App {
-	private static final File BASE_DIR = new File("experiment-results-wip");
+	static final File BASE_DIR = new File("/mnt/ceph/storage/data-in-progress/wstud-thesis-reimer/cw09-ltr-training/2020-02-19-12-57");
+	
+	private static final File RESULT_FILE = BASE_DIR.toPath().resolve("evaluation-of-experiments.json").toFile();
 	
 	private static final List<QrelConsistentMaker> QREL_CONSISTENCIES = Arrays.asList(
 		QrelConsistentMaker.base, QrelConsistentMaker.maxValueDuplicateDocsIrrelevant);
@@ -53,7 +54,7 @@ public class App {
 		experimentSettings().parallelStream()
 			.forEach(i -> ret.addAll(evaluateExperiment(i)));
 		
-		new ObjectMapper().writeValue(new File("evaluation-of-experiments.json"), ret);
+		new ObjectMapper().writeValue(RESULT_FILE, ret);
 	}
 	
 	private static List<Map<String, Object>> evaluateExperiment(Experiment experiment) {

@@ -52,7 +52,7 @@ public class BM25BaselineRanking {
 		Map<String, Object> tmp = new ObjectMapper().readValue(json, Map.class);
 		String strategyName = (String) tmp.get("name");
 		
-		File ret = Paths.get("experiment-results-wip")
+		File ret = App.BASE_DIR.toPath()
 				.resolve(strategyName)
 				.resolve("deduplicate-relevant-keep-irrelevant")
 				.resolve("BM25")
