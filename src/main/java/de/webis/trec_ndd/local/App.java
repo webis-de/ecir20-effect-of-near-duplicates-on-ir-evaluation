@@ -212,6 +212,9 @@ public class App {
 		
 		for(String trainTestSplitStrategy : BASE_DIR.list()) {
 			File tts = BASE_DIR.toPath().resolve(trainTestSplitStrategy).toFile();
+			if(!tts.isDirectory()) {
+				continue;
+			}
 			
 			for(String redundancy : tts.list()) {
 				File red = tts.toPath().resolve(redundancy).toFile();
