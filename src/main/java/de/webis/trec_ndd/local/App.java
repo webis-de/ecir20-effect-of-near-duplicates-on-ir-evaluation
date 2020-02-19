@@ -95,13 +95,15 @@ public class App {
 	
 	@SneakyThrows
 	private static List<Integer> allWikipediaRanks(Experiment experiment) {
-//		List<Integer> ret = new LinkedList<>();
-//		ObjectReader reader = new ObjectMapper().reader(new TypeReference<Map<String, Object>>() {});
-//		
-//		for(File f : experiment.experimentDirs) {
-//			Map<String, Object> m = reader.readValue(f.toPath().resolve("experiment-result-details.json").toFile());
-//			ret.addAll((List) m.get("firstWikipediaOccurrences"));
-//		}
+		List<Integer> ret = new LinkedList<>();
+		ObjectReader reader = new ObjectMapper().reader(new TypeReference<Map<String, Object>>() {});
+		
+		for(File f : experiment.experimentDirs) {
+			Map<String, Integer> m = reader.readValue(f.toPath().resolve("reranked-evaluation-first-wikipedia-rank.txt").toFile());
+			for(Map.Entry<String, Integer> entry : m.entrySet()) {
+				ret.add(entry.getValue());
+			}
+		}
 		
 		return new ArrayList<>();
 	}
