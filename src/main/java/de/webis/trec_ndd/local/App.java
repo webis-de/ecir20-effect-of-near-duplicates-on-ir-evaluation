@@ -105,7 +105,7 @@ public class App {
 			}
 		}
 		
-		return new ArrayList<>();
+		return ret;
 	}
 	
 	private static Map<String, Object> eval(List<List<RunLine>> runs, RunResultDeduplicator deduplicator, QrelConsistentMaker qrelConsistency, Experiment experiment, List<List<RunLine>> trainingRuns) {
