@@ -31,6 +31,8 @@ public class BM25BaselineRanking {
 			Path resultPath = rerankedFile(trainTestSplit).toPath();
 			
 			System.out.println("Create BM25 ranking for " + resultPath);
+			resultPath.getParent().toFile().mkdirs();
+			resultPath.toFile().createNewFile();
 			Files.write(resultPath, runFile.getBytes(StandardCharsets.UTF_8));
 			
 			Path trainingResult = resultPath.getParent().resolve("reranked-training");

@@ -92,7 +92,7 @@ run: install
 
 run-local-experiment-evaluation: install
 	cd  ../wstud-thesis-reimer/source/tasks/ &&\
-	java -cp ../../../trec-near-duplicates/target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar de.webis.trec_ndd.local.BM25BaselineRanking &&\
+	sudo java -cp ../../../trec-near-duplicates/target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar de.webis.trec_ndd.local.BM25BaselineRanking &&\
 	make run-preparation-for-analysis-on-experiments &&\
 	cd ../../../trec-near-duplicates &&\
 	java -cp target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar de.webis.trec_ndd.local.App
