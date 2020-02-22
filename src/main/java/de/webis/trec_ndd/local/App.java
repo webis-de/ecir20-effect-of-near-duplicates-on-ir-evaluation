@@ -72,6 +72,7 @@ public class App {
 					System.out.println("---->" + new Date());
 					Map<String, Object> evaluation = eval(runs, deduplicator, qrelConsistency, experiment, trainingRuns);
 					evaluation.put("firstWikipediaOccurences", allWikipediaRanks(experiment));
+					evaluation.put("firstIrrelevantWikipeidaOccurences", irrelevantWikipediaRanks(experiment));
 					evaluation.put("examplesInTrainingSet", trainingSetSize(experiment));
 					ret.add(evaluation);
 				}
@@ -100,6 +101,21 @@ public class App {
 		
 		for(File f : experiment.experimentDirs) {
 			Map<String, Integer> m = reader.readValue(f.toPath().resolve("reranked-evaluation-first-wikipedia-rank.txt").toFile());
+			for(Map.Entry<String, Integer> entry : m.entrySet()) {
+				ret.add(entry.getValue());
+			}
+		}
+		
+		return ret;
+	}
+	
+	@SneakyThrows
+	private static List<Integer> irrelevantWikipediaRanks(Experiment experiment) {
+		List<Integer> ret = new LinkedList<>();
+		ObjectReader reader = new ObjectMapper().reader(new TypeReference<Map<String, Object>>() {});
+		
+		for(File f : experiment.experimentDirs) {
+			Map<String, Integer> m = reader.readValue(f.toPath().resolve("reranked-evaluation-first-irrelevant-wikipedia-rank.txt").toFile());
 			for(Map.Entry<String, Integer> entry : m.entrySet()) {
 				ret.add(entry.getValue());
 			}

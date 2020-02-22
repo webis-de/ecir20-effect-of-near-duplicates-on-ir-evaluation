@@ -19,7 +19,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import lombok.SneakyThrows;
 
 public class BM25BaselineRanking {
-	private static final String BASE_DIR = "/home/aqqes/workspace/wstud-thesis-reimer/";
+	private static final String BASE_DIR = "/home/maik/workspace/wstud-thesis-reimer/";
 			
 	@SneakyThrows
 	public static void main(String[] args) {
@@ -58,7 +58,7 @@ public class BM25BaselineRanking {
 				.resolve(strategyName)
 				.resolve("deduplicate-relevant-keep-irrelevant")
 				.resolve("BM25")
-				.resolve("Map")
+				.resolve("Ndcg")
 				.resolve("no-explicit-oversampling")
 				.resolve("execution-1").toFile();
 		
