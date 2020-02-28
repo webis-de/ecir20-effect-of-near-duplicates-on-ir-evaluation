@@ -45,6 +45,11 @@ public interface SharedTask {
 	public List<String> runFiles();
 	public String name();
 	public Map<String, Map<String, String>> topicNumberToTopic(); 
+	String getGroupFingerprintResource();
+	
+	public default InputStream getGroupFingerprintResourceAsStream() {
+		return SharedTask.class.getResourceAsStream(getGroupFingerprintResource());
+	}
 	
 	public default InputStream getQrelResourceAsStream() {
 		return SharedTask.class.getResourceAsStream(getQrelResource());
@@ -236,6 +241,7 @@ public interface SharedTask {
 		CORE_2018(
 				"trec27/core/",
 				"/topics-and-qrels/qrels.core18.txt",
+				null, //FIXME: groups need to be calculated
 				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.P_10, EvaluationMeasure.NDCG),
 				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
 				null,
@@ -246,6 +252,7 @@ public interface SharedTask {
 		CORE_2017(
 				"trec26/core/",
 				"/topics-and-qrels/qrels.core17.txt",
+				null,//FIXME: groups need to be calculated
 				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG, EvaluationMeasure.P_10),
 				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
 				null,
@@ -256,6 +263,7 @@ public interface SharedTask {
 		TERABYTE_2004(
 				"trec13/terabyte/",
 				"/topics-and-qrels/qrels.701-750.txt",
+				"/document-groups/trec-fingerprint-groups-gov2-judged.jsonl",
 				Arrays.asList(EvaluationMeasure.MAP),
 				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
 				null,
@@ -266,6 +274,7 @@ public interface SharedTask {
 		TERABYTE_2005_ADHOC(
 				"trec14/terabyte.adhoc",
 				"/topics-and-qrels/qrels.751-800.txt",
+				"/document-groups/trec-fingerprint-groups-gov2-judged.jsonl",
 				Arrays.asList(EvaluationMeasure.BPREF, EvaluationMeasure.MAP, EvaluationMeasure.P_20),
 				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
 				null,
@@ -275,6 +284,7 @@ public interface SharedTask {
 		TERABYTE_2006(
 				"/trec15/terabyte-adhoc",
 				"/topics-and-qrels/qrels.801-850.txt",
+				"/document-groups/trec-fingerprint-groups-gov2-judged.jsonl",
 				Arrays.asList(EvaluationMeasure.BPREF, EvaluationMeasure.MAP, EvaluationMeasure.P_20
 						
 						//FIXME IMPLEMENT THIS
@@ -290,6 +300,7 @@ public interface SharedTask {
 				//FIXME: Should I use both?
 //				"/topics-and-qrels/prels.web.1-50.txt",
 				"/topics-and-qrels/qrels.inofficial.web.1-50.txt",
+				"/document-groups/trec-fingerprint-groups-clueweb09-judged.jsonl",
 				Arrays.asList(
 						// FIXME Implement those measures 
 						//EvaluationMeasure.E_MAP, EvaluationMeasure.E_P_5, EvaluationMeasure.E_P_10, EvaluationMeasure.E_P_20, 
@@ -305,6 +316,7 @@ public interface SharedTask {
 		WEB_2010(
 				"/trec19/web.adhoc",
 				"/topics-and-qrels/qrels.web.51-100.txt",
+				"/document-groups/trec-fingerprint-groups-clueweb09-judged.jsonl",
 				Arrays.asList(EvaluationMeasure.ERR_20, EvaluationMeasure.NDCG_CUT_20, EvaluationMeasure.P_20, EvaluationMeasure.MAP),
 				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
 				() -> new WebxmlTopicReader(null),
@@ -314,6 +326,7 @@ public interface SharedTask {
 		WEB_2011(
 				"/trec20/web.adhoc",
 				"/topics-and-qrels/qrels.web.101-150.txt",
+				"/document-groups/trec-fingerprint-groups-clueweb09-judged.jsonl",
 				Arrays.asList(EvaluationMeasure.ERR_20, EvaluationMeasure.NDCG_CUT_20, EvaluationMeasure.P_20, EvaluationMeasure.MAP),
 				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
 				() -> new WebxmlTopicReader(null),
@@ -323,6 +336,7 @@ public interface SharedTask {
 		WEB_2012(
 				"/trec21/web.adhoc",
 				"/topics-and-qrels/qrels.web.151-200.txt",
+				"/document-groups/trec-fingerprint-groups-clueweb09-judged.jsonl",
 				Arrays.asList(EvaluationMeasure.ERR_20, EvaluationMeasure.NDCG_CUT_20, EvaluationMeasure.P_20, EvaluationMeasure.MAP),
 				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
 				() -> new WebxmlTopicReader(null),
@@ -332,6 +346,7 @@ public interface SharedTask {
 		WEB_2013(
 				"/trec22/web.adhoc",
 				"/topics-and-qrels/qrels.web.201-250.txt",
+				"/document-groups/trec-fingerprint-groups-clueweb12-judged.jsonl",
 				Arrays.asList(EvaluationMeasure.ERR_10, EvaluationMeasure.NDCG_CUT_10, EvaluationMeasure.ERR_20,
 						EvaluationMeasure.NDCG_CUT_20,
 						EvaluationMeasure.ERR_IA_10, EvaluationMeasure.ALPHA_NDCG_CUT_10, EvaluationMeasure.NRBP,
@@ -348,6 +363,7 @@ public interface SharedTask {
 		WEB_2014(
 				"/trec23/web.adhoc",
 				"/topics-and-qrels/qrels.web.251-300.txt",
+				"/document-groups/trec-fingerprint-groups-clueweb12-judged.jsonl",
 				Arrays.asList(EvaluationMeasure.ERR_IA_20, EvaluationMeasure.ALPHA_NDCG_CUT_20, EvaluationMeasure.NRBP, EvaluationMeasure.ERR_20, EvaluationMeasure.NDCG_CUT_20),
 				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
 				() -> new WebxmlTopicReader(null),
@@ -356,6 +372,7 @@ public interface SharedTask {
 		
 		private final String runFileDirectory;
 		private final String qrelResource;
+		private final String groupFingerprintResource;
 		private final List<EvaluationMeasure> officialEvaluationMeasures;
 		private final List<EvaluationMeasure> inofficialEvaluationMeasures;
 		private final Supplier<TopicReader<?>> topicReader;
