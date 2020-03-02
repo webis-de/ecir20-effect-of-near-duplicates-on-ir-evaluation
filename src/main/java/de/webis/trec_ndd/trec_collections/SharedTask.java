@@ -37,6 +37,7 @@ import lombok.Getter;
 import lombok.SneakyThrows;
 
 import io.anserini.search.topicreader.WebxmlTopicReader;
+import io.anserini.search.topicreader.TrecTopicReader;
 
 public interface SharedTask {
 	String getQrelResource();
@@ -283,6 +284,15 @@ public interface SharedTask {
 				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
 				null,
 				null
+		),
+		
+		ROBUST_04(
+				null,
+				"/topics-and-qrels/qrels.robust2004.txt",
+				null,
+				null,
+				() -> new TrecTopicReader(null),
+				"/topics-and-qrels/topics.robust04.301-450.601-700.txt"
 		),
 		
 		WEB_2009(
