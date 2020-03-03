@@ -91,11 +91,11 @@ public interface CollectionConfiguration extends Serializable {
 					TrecSharedTask.TERABYTE_2006
 			))
 		),
-		ROBUST_TBD(
-			"TBD???TBD",
+		ROBUST04(
+			"/mnt/ceph/storage/corpora/corpora-thirdparty/corpora-trec/corpus-trec-vol4/",
 			"TrecCollection",
 			"JsoupGenerator",
-			Collections.unmodifiableList(Collections.emptyList())
+			Collections.unmodifiableList(Arrays.asList(TrecSharedTask.ROBUST_04))
 		),
 		CORE2018(
 			"/mnt/nfs/webis20/data-in-progress/trec-2018-webis/WashingtonPost/WashingtonPost.v2/data/",

@@ -45,7 +45,7 @@ public class AnseriniCollectionReaderTest<T extends SourceDocument> {
 	private static <T extends SourceDocument> CollectionReader robustAnseriniCollectionReader() {
 		String pathToCollection = "src/test/resources/data/robust";
 		List<String> qrelResources = Arrays.asList("/data/robust-qrels.txt");
-		CollectionConfiguration config = SegmentPathToDocumentTextTest.collectionConfiguration(pathToCollection, qrelResources, TrecCollections.ROBUST_TBD);
+		CollectionConfiguration config = SegmentPathToDocumentTextTest.collectionConfiguration(pathToCollection, qrelResources, TrecCollections.ROBUST04);
 		
 		return new AnseriniCollectionReader<T>(config);
 	}

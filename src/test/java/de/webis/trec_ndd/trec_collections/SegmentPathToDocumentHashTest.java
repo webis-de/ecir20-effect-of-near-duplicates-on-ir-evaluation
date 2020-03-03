@@ -16,7 +16,7 @@ public class SegmentPathToDocumentHashTest {
 
 	@Test
 	public void approveTransformationForRobustCollectionWithSingleSegment() {
-		CollectionConfiguration conf = SegmentPathToDocumentTextTest.collectionConfiguration("src/test/resources/data/robust", TrecCollections.ROBUST_TBD);
+		CollectionConfiguration conf = SegmentPathToDocumentTextTest.collectionConfiguration("src/test/resources/data/robust", TrecCollections.ROBUST04);
 		AnseriniCollectionReader<?> collectionReader = new AnseriniCollectionReader<>(conf);
 		List<DocumentHash> collectionDocuments = mapAllSegmentPathsToDocumentRepresentation(collectionReader);
 		
