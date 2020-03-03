@@ -92,7 +92,7 @@ public interface CollectionConfiguration extends Serializable {
 			))
 		),
 		ROBUST04(
-			"/mnt/ceph/storage/corpora/corpora-thirdparty/corpora-trec/corpus-trec-vol4/",
+			"/mnt/ceph/storage/data-in-progress/kibi9872/robust-04/",
 			"TrecCollection",
 			"JsoupGenerator",
 			Collections.unmodifiableList(Arrays.asList(TrecSharedTask.ROBUST_04))
