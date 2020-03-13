@@ -91,6 +91,15 @@ public interface CollectionConfiguration extends Serializable {
 					TrecSharedTask.TERABYTE_2006
 			))
 		),
+		GOV2_MQ(			// compressed 81GB
+				"/mnt/ceph/storage/corpora/corpora-thirdparty/corpora-trec/corpus-trec-web/DOTGOV2/gov2-corpus/",
+				"TrecwebCollection",
+				"JsoupGenerator",
+				Collections.unmodifiableList(Arrays.asList(
+					TrecSharedTask.MILLION_QUERY_2007,
+					TrecSharedTask.MILLION_QUERY_2008
+				))
+		),
 		ROBUST04(
 			"/mnt/ceph/storage/data-in-progress/kibi9872/robust-04/",
 			"TrecCollection",

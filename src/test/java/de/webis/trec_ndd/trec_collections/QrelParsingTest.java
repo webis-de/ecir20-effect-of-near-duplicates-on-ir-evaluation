@@ -57,6 +57,15 @@ public class QrelParsingTest {
 		Assert.assertEquals("999905", judgedIds.get(judgedIds.size()-1));
 	}
 	
+	@Test
+	public void approveJudgedIdsInMillionQuery() {
+		List<String> judgedIds = judgedDocumentIdsInConfig(TrecCollections.GOV2_MQ);
+
+		Assert.assertEquals(81802, judgedIds.size());
+		Assert.assertEquals("GX000-00-0000000", judgedIds.get(0));
+		Assert.assertEquals("GX272-84-8558203", judgedIds.get(judgedIds.size()-1));
+	}
+	
 	private static List<String> judgedDocumentIdsInConfig(CollectionConfiguration config) {
 		List<String> ret = new ArrayList<>(config.judgedDocumentIds());
 		Collections.sort(ret);

@@ -22,6 +22,9 @@ deduplicate-gov: install
 calculate-s3-gov: install
 	./src/main/bash/calculate-s3-with-spex.sh -c GOV2 --threshold 0.68
 
+calculate-s3-million-query: install
+	./src/main/bash/calculate-s3-with-spex.sh -c GOV2 --threshold 0.68
+
 calculate-s3-CLUEWEB09: install
 	./src/main/bash/calculate-s3-with-spex.sh -c CLUEWEB09 --threshold 0.84
 
@@ -35,6 +38,9 @@ calculate-s3-core: install
 index-8-gramms-gov: install
 	./src/main/bash/run-8-gramm-indexing.sh -c GOV1 --chunkSelection SPEX &&\
 	./src/main/bash/run-8-gramm-indexing.sh -c GOV2 --chunkSelection SPEX
+
+index-8-gramms-million-query: install
+	./src/main/bash/run-8-gramm-indexing.sh -c GOV2_MQ --chunkSelection SPEX
 
 hash-datasets-common-core: install
 	hdfs dfs -rm -r -f trec-ndd-hashes-core2017 &&\

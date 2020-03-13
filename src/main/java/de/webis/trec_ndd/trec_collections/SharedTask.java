@@ -286,6 +286,32 @@ public interface SharedTask {
 				null
 		),
 		
+		MILLION_QUERY_2007(
+				null,
+				"/topics-and-qrels/prels.mq.1-10000.txt",
+				Arrays.asList(
+						//FIXME
+				),
+				Arrays.asList(
+						//FIXME
+				),
+				null,
+				null
+		),
+		
+		MILLION_QUERY_2008(
+				null,
+				"/topics-and-qrels/prels.mq.10001-20000.txt",
+				Arrays.asList(
+						//FIXME
+				),
+				Arrays.asList(
+						//FIXME
+				),
+				null,
+				null
+		),
+		
 		ROBUST_04(
 				null,
 				"/topics-and-qrels/qrels.robust2004.txt",

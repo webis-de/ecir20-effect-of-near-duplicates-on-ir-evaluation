@@ -60,5 +60,5 @@ We encourage pull requests and are glad to help in case of problems.
 ### Calculate content equivalence classes
 
 1. Create a SPEX index of word 8-gramms of a corpus: `index-8-gramms-<CORPUS>`
-2. Calculate S3 groups and save connected components as equivalence classes: `calculate-s3`
+2. Calculate S3 groups and save connected components as equivalence classes: `calculate-s3-<CORPUS>`
 
