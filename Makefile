@@ -11,7 +11,8 @@ hash-datasets-gov: install
 
 copy-run-docs-gov: install
 	./src/main/bash/copy-run-file-docs-to-hdfs.sh -c GOV1 &&\
-	./src/main/bash/copy-run-file-docs-to-hdfs.sh -c GOV2
+	./src/main/bash/copy-run-file-docs-to-hdfs.sh -c GOV2 &&\
+	./src/main/bash/copy-run-file-docs-to-hdfs.sh -c GOV2_MQ
 
 deduplicate-gov: install
 	hdfs dfs -rm -r -f trec-fingerprint-groups-gov1 &&\
