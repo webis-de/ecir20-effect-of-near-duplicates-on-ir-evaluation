@@ -142,7 +142,7 @@ evaluate-clueweb12: install
 	./src/main/bash/run-evaluation-report.sh -c CLUEWEB12 --threshold 0.84|tee results/clueweb12-evaluation.jsonl
 
 install: install-third-party
-	mvn clean install -DskipTests
+	./mvnw clean install -DskipTests
 
 docker-bash: build-docker-image
 	docker run --rm -ti -v /mnt/nfs/webis20/:/mnt/nfs/webis20/ -v ${PWD}/results:/trec-ndd/results --entrypoint /bin/bash trec-ndd-kibi9872:0.0.1
