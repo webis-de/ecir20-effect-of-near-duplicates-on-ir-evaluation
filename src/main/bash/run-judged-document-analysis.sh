@@ -7,7 +7,7 @@ spark-submit \
 	--class de.webis.trec_ndd.spark.SparkAnalyzeJudgedDocumentsTmp \
 	--conf spark.default.parallelism=${PARALLELISM}\
 	--num-executors ${PARALLELISM}\
-	--executor-memory 5G\
-	--driver-memory 5G\
+	--executor-memory 15G\
+	--driver-memory 15G\
 	target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar
 

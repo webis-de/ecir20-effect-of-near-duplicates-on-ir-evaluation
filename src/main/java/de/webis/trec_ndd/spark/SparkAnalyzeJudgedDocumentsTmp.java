@@ -38,11 +38,32 @@ public class SparkAnalyzeJudgedDocumentsTmp {
 			JavaRDD<CollectionDocument> cw12 = context.textFile("trec-docs-in-judged-for-clueweb12")
 					.map(i -> CollectionDocument.fromString(i));
 			
+
+			int allNGramms = cw09.union(cw12).aggregate(
+				new HashSet<String>(),
+				(ret,doc) -> {
+					List<Word8Gramm> nGramms = NGramms.build8Gramms(doc.getFullyCanonicalizedContent());
+					ret.addAll(nGramms.stream().map(i -> i.getMd5Hash()).collect(Collectors.toList()));
+					return ret;
+				}
+				, (a,b) -> {
+					HashSet<String> set = new HashSet<>();
+					set.addAll(a);
+					set.addAll(b);
+					
+					return set;
+				}
+			).size();
+			
+			JavaRDD<String> str = context.parallelize(Arrays.asList("{\"topic\": \"PSEUDO-TOPIC\", \"nGrammCount\": " + allNGramms + "}"));
+			
 			cw09.union(cw12)
 				.flatMap(i -> bla(i))
 				.groupBy(i -> i._1)
 				.map(i -> describe(i))
+				.union(str)
 				.saveAsTextFile("tmp-analysis-of-judged-cw09-cw12-docs");
+			
 			
 		}
 	}
