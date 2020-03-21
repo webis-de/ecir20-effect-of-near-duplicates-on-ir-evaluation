@@ -24,7 +24,7 @@ calculate-s3-gov: install
 	./src/main/bash/calculate-s3-with-spex.sh -c GOV2 --threshold 0.68
 
 calculate-s3-million-query: install
-	./src/main/bash/calculate-s3-with-spex.sh -c GOV2 --threshold 0.68
+	./src/main/bash/calculate-s3-with-spex.sh -c GOV2_MQ --threshold 0.68
 
 calculate-s3-CLUEWEB09: install
 	./src/main/bash/calculate-s3-with-spex.sh -c CLUEWEB09 --threshold 0.84
