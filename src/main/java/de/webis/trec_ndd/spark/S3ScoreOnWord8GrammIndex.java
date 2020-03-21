@@ -66,7 +66,7 @@ public class S3ScoreOnWord8GrammIndex implements SparkArguments {
 			intermediateS3.map(i -> new S3Score(i))
 				.saveAsTextFile(SparkGroupByFingerprint.resultDir(collection(), documentSelection(), "intermediate-unfiltered-s3-similarity-connected-component-" + threshold));
 			
-			GraphTest.group(intermediateS3, threshold)
+			GraphTest.group(intermediateS3, collection(), threshold)
 				.saveAsTextFile(SparkGroupByFingerprint.resultDir(collection(), documentSelection(), "s3-similarity-connected-component-" + threshold));
 		}
 	}
