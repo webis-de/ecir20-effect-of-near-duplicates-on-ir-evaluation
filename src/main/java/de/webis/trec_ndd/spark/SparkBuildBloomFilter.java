@@ -26,7 +26,7 @@ import scala.Tuple3;
 public class SparkBuildBloomFilter {
 	public static void main(String[] args) {
 		try (JavaSparkContext context = context()) {
-			BloomFilter<String> bf = bf("tmp-analysis-of-judged-cw09-cw12-docs", context);
+			BloomFilter<CharSequence> bf = bf("tmp-analysis-of-judged-cw09-cw12-docs", context);
 			List<String> dummyElements = new ArrayList<>();
 			for(int i=0; i<10000; i++) {
 				dummyElements.add(MD5.md5hash(""+ i));
@@ -38,7 +38,7 @@ public class SparkBuildBloomFilter {
 		}
 	}
 	
-	private static Tuple3<String, Boolean, Long> tmpBla(BloomFilter<String> bf, String value) {
+	private static Tuple3<String, Boolean, Long> tmpBla(BloomFilter<CharSequence> bf, String value) {
 		long start = System.currentTimeMillis();
 		boolean mightContain = bf.mightContain(value);
 		long end = System.currentTimeMillis();
@@ -46,14 +46,14 @@ public class SparkBuildBloomFilter {
 		return new Tuple3<>(value, mightContain, end-start);
 	}
 	
-	private static final BloomFilter<String> bf(String dir, JavaSparkContext context) {
+	private static final BloomFilter<CharSequence> bf(String dir, JavaSparkContext context) {
 		Collection<String> elements = context.textFile(dir)
 				.flatMap(i -> bla(i))
 				.distinct()
 				.collect();
 		
-		Funnel<CharSequence> funnel = Funnels.stringFunnel(StandardCharsets.UTF_8);
-		BloomFilter<String> bf = BloomFilter.create(funnel, elements.size() + 10000, 1.0e-8);
+		Funnel<CharSequence> funnel = Funnels.stringFunnel();
+		BloomFilter<CharSequence> bf = BloomFilter.create(funnel, elements.size() + 10000, 1.0e-8);
 		for(String element: elements) {
 			bf.put(element);
 		}
