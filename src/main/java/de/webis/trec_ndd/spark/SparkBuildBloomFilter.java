@@ -1,5 +1,6 @@
 package de.webis.trec_ndd.spark;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -15,6 +16,8 @@ import org.codehaus.jackson.type.TypeReference;
 
 import com.google.common.collect.Iterators;
 import com.google.common.hash.BloomFilter;
+import com.google.common.hash.Funnel;
+import com.google.common.hash.Funnels;
 
 import de.webis.trec_ndd.similarity.MD5;
 import lombok.SneakyThrows;
@@ -48,9 +51,9 @@ public class SparkBuildBloomFilter {
 				.flatMap(i -> bla(i))
 				.distinct()
 				.collect();
-		elements = new HashSet<String>(elements);
 		
-		BloomFilter<String> bf = BloomFilter.create(null, elements.size(), 1.0e-8);
+		Funnel<CharSequence> funnel = Funnels.stringFunnel(StandardCharsets.UTF_8);
+		BloomFilter<String> bf = BloomFilter.create(funnel, elements.size() + 10000, 1.0e-8);
 		for(String element: elements) {
 			bf.put(element);
 		}
