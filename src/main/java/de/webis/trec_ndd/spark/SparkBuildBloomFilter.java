@@ -82,11 +82,19 @@ public class SparkBuildBloomFilter {
 	}
 	
 	private static List<CandidateDocumentForTopic> calculateIt(CollectionDocument doc, List<Tuple2<String, BloomFilter<CharSequence>>> bf) {
+		long startTime = System.currentTimeMillis();
+		
 		Set<Word8Gramm> word8Gramms = new HashSet<>(NGramms.build8Gramms(doc.getFullyCanonicalizedContent()));
 		
-		return bf.stream()
+		List<CandidateDocumentForTopic> ret = bf.stream()
 				.map(i -> toCandidate(doc, word8Gramms, i))
 				.filter(i -> i.lowerBoundOnMatching8Gramms()>= 0.4)
+				.collect(Collectors.toList());
+		
+		long calculationTimePerDocMs = System.currentTimeMillis() - startTime;
+		
+		return ret.stream()
+				.map(i -> i.withCalculationTimePerDocMs(calculationTimePerDocMs))
 				.collect(Collectors.toList());
 	}
 	
@@ -114,6 +122,7 @@ public class SparkBuildBloomFilter {
 	public static class CandidateDocumentForTopic {
 		private String topic, documentId, collection;
 		private int word8Gramms, mightMatching8Gramms;
+		private long calculationTimePerDocMs;
 		
 		public double lowerBoundOnMatching8Gramms() {
 			return ((double) mightMatching8Gramms)/((double) word8Gramms);
