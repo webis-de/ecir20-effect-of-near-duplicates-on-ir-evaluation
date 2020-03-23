@@ -61,7 +61,10 @@ public interface CollectionConfiguration extends Serializable {
 				TrecSharedTask.WEB_2009,
 				TrecSharedTask.WEB_2010,
 				TrecSharedTask.WEB_2011,
-				TrecSharedTask.WEB_2012
+				TrecSharedTask.WEB_2012,
+				TrecSharedTask.SESSION_2010,
+				TrecSharedTask.SESSION_2011,
+				TrecSharedTask.SESSION_2012
 			))
 		),
 		CLUEWEB12(
@@ -70,7 +73,9 @@ public interface CollectionConfiguration extends Serializable {
 			"JsoupGenerator",
 			Collections.unmodifiableList(Arrays.asList(
 					TrecSharedTask.WEB_2013,
-					TrecSharedTask.WEB_2014
+					TrecSharedTask.WEB_2014,
+					TrecSharedTask.SESSION_2013,
+					TrecSharedTask.SESSION_2014
 			))
 		),
 		GOV1(
