@@ -433,6 +433,33 @@ public interface SharedTask {
 				null, //FIXME: Add inofficialEvaluationMeasures,
 				null, //FIXME: Add topicReader
 				null  // FIXME: Add topic resource
+		),
+		
+		ENTITY_2009(
+				null, // FIXME: Add runFileDirectory
+				"/topics-and-qrels/qrels.inofficial.entity2009.txt",
+				null, //FIXME: Add officialEvaluationMeasures
+				null, //FIXME: Add inofficialEvaluationMeasures,
+				null, //FIXME: Add topicReader
+				"/topics-and-qrels/topics.entity2009.txt"
+		),
+		
+		ENTITY_2010(
+				null, // FIXME: Add runFileDirectory
+				"/topics-and-qrels/qrels.inofficial.entity2010.txt",
+				null, //FIXME: Add officialEvaluationMeasures
+				null, //FIXME: Add inofficialEvaluationMeasures,
+				null, //FIXME: Add topicReader
+				"/topics-and-qrels/topics.entity2010.txt"
+		),
+		
+		ENTITY_2011(
+				null, // FIXME: Add runFileDirectory
+				"/topics-and-qrels/qrels.entity2011.txt",
+				null, //FIXME: Add officialEvaluationMeasures
+				null, //FIXME: Add inofficialEvaluationMeasures,
+				null, //FIXME: Add topicReader
+				"/topics-and-qrels/topics.entity2011.txt"
 		)
 		;
 		
