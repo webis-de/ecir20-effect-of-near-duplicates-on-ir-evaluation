@@ -455,7 +455,7 @@ public interface SharedTask {
 		
 		ENTITY_2011(
 				null, // FIXME: Add runFileDirectory
-				"/topics-and-qrels/qrels.entity2011.txt",
+				"/topics-and-qrels/qrels.inofficial.entity2011.txt",
 				null, //FIXME: Add officialEvaluationMeasures
 				null, //FIXME: Add inofficialEvaluationMeasures,
 				null, //FIXME: Add topicReader
