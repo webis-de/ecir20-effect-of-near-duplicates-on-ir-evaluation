@@ -54,7 +54,7 @@ public interface CollectionConfiguration extends Serializable {
 	public static enum TrecCollections implements CollectionConfiguration {
 		CLUEWEB09(
 			// compressed 4TB
-			"/mnt/nfs/webis20/corpora/corpora-thirdparty/corpus-clueweb09/",
+			"/mnt/ceph/storage/corpora/corpora-thirdparty/corpus-clueweb09/",
 			"ClueWeb09Collection",
 			"JsoupGenerator",
 			Collections.unmodifiableList(Arrays.asList(
@@ -68,7 +68,7 @@ public interface CollectionConfiguration extends Serializable {
 			))
 		),
 		CLUEWEB12(
-			"/mnt/nfs/webis20/data-in-progress/kibi9872/clueweb12/",
+			"/mnt/ceph/storage/data-in-progress/kibi9872/clueweb12/",
 			"ClueWeb12Collection",
 			"JsoupGenerator",
 			Collections.unmodifiableList(Arrays.asList(
