@@ -2,6 +2,7 @@ package de.webis.trec_ndd.trec_collections;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
+import java.net.URL;
 import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -15,6 +16,8 @@ import org.apache.lucene.document.Document;
 import com.google.common.collect.Iterators;
 
 import de.webis.trec_ndd.spark.DocumentHash;
+import io.anserini.collection.ClueWeb09Collection;
+import io.anserini.collection.ClueWeb12Collection;
 import io.anserini.collection.DocumentCollection;
 import io.anserini.collection.Segment;
 import io.anserini.collection.SegmentProvider;
@@ -128,16 +131,39 @@ public class AnseriniCollectionReader<T extends SourceDocument> implements Colle
 		@Override
 		public CollectionDocument next() {
 			T document = segment.next();
-			if (document == null || !document.indexable())
+			if (document == null || !document.indexable()) {
 				return null;
+			}
+			
 			Document doc = generator.createDocument(document);
-			if (doc == null || (keepDocument != null && Boolean.FALSE.equals(keepDocument.apply(doc))))
+			if (doc == null || (keepDocument != null && Boolean.FALSE.equals(keepDocument.apply(doc)))) {
 				return null;
-			else
-				return CollectionDocument.fromLuceneDocument(doc);
+			} else {
+				CollectionDocument ret = CollectionDocument.fromLuceneDocument(doc);
+				ret.setUrl(extractUrlIfPossible(document));
+				return ret;
+			}
+		}
+	}
+	
+	private static URL extractUrlIfPossible(SourceDocument document) {
+		try {
+			return extractUrlOrFail(document);
+		} catch (Exception e) {
+			return null;
 		}
 	}
 
+	private static URL extractUrlOrFail(SourceDocument document) throws Exception {
+		if (document instanceof ClueWeb09Collection.Document) {
+			return new URL(((ClueWeb09Collection.Document) document).getURL());
+		} else if (document instanceof ClueWeb09Collection.Document) {
+			return new URL(((ClueWeb12Collection.Document) document).getURL());
+		}
+		
+		return null;
+	}
+	
 	@SneakyThrows
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private SegmentProvider<T> documentCollection()

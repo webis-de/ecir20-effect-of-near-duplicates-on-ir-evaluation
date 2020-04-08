@@ -25,8 +25,11 @@ public class NGramms {
 	}
 	
 	public static List<Word8Gramm> build8Gramms(String text) {
-		List<String> tokens = Arrays.asList(WHITESPACE.split(text));
-		return build8Gramms(tokens);
+		return build8Gramms(tokenize(text));
+	}
+	
+	public static List<String> tokenize(String text) {
+		return Arrays.asList(WHITESPACE.split(text));
 	}
 	
 	public static List<Word8Gramm> build8Gramms(List<String> tokens) {

@@ -3,6 +3,7 @@ package de.webis.trec_ndd.spark;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
@@ -13,15 +14,17 @@ import com.google.common.collect.ImmutableList;
 
 import de.webis.trec_ndd.spark.S3ScoreOnWord8GrammIndex.S3Score;
 import de.webis.trec_ndd.spark.S3ScoreOnWord8GrammIndex.S3ScoreIntermediateResult;
+import de.webis.trec_ndd.trec_collections.CollectionConfiguration;
+import de.webis.trec_ndd.trec_collections.SharedTask;
 import scala.reflect.ClassTag;
 
 import org.apache.spark.graphx.Edge;
 import org.apache.spark.graphx.Graph;
 
 public class GraphTest {
-	public static JavaRDD<DocumentGroup> group(JavaRDD<S3ScoreIntermediateResult> rdd, double threshold) {
+	public static JavaRDD<DocumentGroup> group(JavaRDD<S3ScoreIntermediateResult> rdd, CollectionConfiguration collection, double thresshold) {
 		JavaRDD<S3Score> scores = rdd.map(i -> new S3Score(i))
-			.filter(score -> score != null && score.getS3Score() > threshold);
+			.filter(score -> s3ThresholdFilter(score, collection, thresshold));
 		
 		Map<String, Long> docToVertex = documentIdToVertexId(scores);
 		Map<Long, String> vertexToDoc = revertMap(docToVertex);
@@ -51,6 +54,24 @@ public class GraphTest {
 						.setIds(new ArrayList<>(ImmutableList.copyOf(group._2).stream().map(Pair::getLeft).collect(Collectors.toList()))));
 	}
 	
+	private static boolean s3ThresholdFilter(S3Score s3Score, CollectionConfiguration collection, double threshold) {
+		return s3Score != null && s3Score.getS3Score() > threshold && bothDocumentsAreJudgedForTheSameTopic(s3Score, collection);
+	}
+	
+	private static boolean bothDocumentsAreJudgedForTheSameTopic(S3Score s3Score, CollectionConfiguration collection) {
+		for(SharedTask task: collection.getSharedTasks()) {
+			for(Map<String, String> idToJudgment : task.documentJudgments().getData().values()) {
+				Set<String> idsInTopic = idToJudgment.keySet();
+				
+				if(idsInTopic.contains(s3Score.getIdPair().getLeft()) && idsInTopic.contains(s3Score.getIdPair().getRight()) ) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+
 	private static Map<String, Long> documentIdToVertexId(JavaRDD<S3Score> scores) {
 		return scores
 			.flatMap(s3Score -> Arrays.asList(s3Score.getIdPair().getLeft(), s3Score.getIdPair().getRight()).iterator())

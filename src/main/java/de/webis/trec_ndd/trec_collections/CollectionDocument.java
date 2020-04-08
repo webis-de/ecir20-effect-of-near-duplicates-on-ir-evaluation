@@ -1,6 +1,7 @@
 package de.webis.trec_ndd.trec_collections;
 
 import java.io.Serializable;
+import java.net.URL;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,6 +24,8 @@ public class CollectionDocument implements Serializable {
 				   content,
 				   fullyCanonicalizedContent;
 	
+	private URL url;
+	
 	public static CollectionDocument fromLuceneDocument(Document document) {
 		String content = document.get(LuceneDocumentGenerator.FIELD_BODY);
 		List<String> canonicalizedTokens = TextCanonicalization.fullCanonicalization(content); 
@@ -30,7 +33,8 @@ public class CollectionDocument implements Serializable {
 		return new CollectionDocument(
 			AnseriniCollectionReader.documentId(document),
 			content,
-			canonicalizedTokens.stream().collect(Collectors.joining(" "))
+			canonicalizedTokens.stream().collect(Collectors.joining(" ")),
+			null
 		);
 	}
 	

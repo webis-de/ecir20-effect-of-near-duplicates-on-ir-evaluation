@@ -54,23 +54,28 @@ public interface CollectionConfiguration extends Serializable {
 	public static enum TrecCollections implements CollectionConfiguration {
 		CLUEWEB09(
 			// compressed 4TB
-			"/mnt/nfs/webis20/corpora/corpora-thirdparty/corpus-clueweb09/",
+			"/mnt/ceph/storage/corpora/corpora-thirdparty/corpus-clueweb09/",
 			"ClueWeb09Collection",
 			"JsoupGenerator",
 			Collections.unmodifiableList(Arrays.asList(
 				TrecSharedTask.WEB_2009,
 				TrecSharedTask.WEB_2010,
 				TrecSharedTask.WEB_2011,
-				TrecSharedTask.WEB_2012
+				TrecSharedTask.WEB_2012,
+				TrecSharedTask.SESSION_2010,
+				TrecSharedTask.SESSION_2011,
+				TrecSharedTask.SESSION_2012
 			))
 		),
 		CLUEWEB12(
-			"/mnt/nfs/webis20/data-in-progress/kibi9872/clueweb12/",
+			"/mnt/ceph/storage/data-in-progress/kibi9872/clueweb12/",
 			"ClueWeb12Collection",
 			"JsoupGenerator",
 			Collections.unmodifiableList(Arrays.asList(
 					TrecSharedTask.WEB_2013,
-					TrecSharedTask.WEB_2014
+					TrecSharedTask.WEB_2014,
+					TrecSharedTask.SESSION_2013,
+					TrecSharedTask.SESSION_2014
 			))
 		),
 		GOV1(
@@ -90,6 +95,15 @@ public interface CollectionConfiguration extends Serializable {
 					TrecSharedTask.TERABYTE_2005_ADHOC,
 					TrecSharedTask.TERABYTE_2006
 			))
+		),
+		GOV2_MQ(			// compressed 81GB
+				"/mnt/ceph/storage/corpora/corpora-thirdparty/corpora-trec/corpus-trec-web/DOTGOV2/gov2-corpus/",
+				"TrecwebCollection",
+				"JsoupGenerator",
+				Collections.unmodifiableList(Arrays.asList(
+					TrecSharedTask.MILLION_QUERY_2007,
+					TrecSharedTask.MILLION_QUERY_2008
+				))
 		),
 		ROBUST04(
 			"/mnt/ceph/storage/data-in-progress/kibi9872/robust-04/",

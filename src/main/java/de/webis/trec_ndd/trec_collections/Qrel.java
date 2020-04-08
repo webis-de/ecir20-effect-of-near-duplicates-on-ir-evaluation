@@ -28,7 +28,12 @@ public class Qrel implements Serializable{
             topicNumber = Integer.parseInt(args[0]);
             //skipping 1 because it is irrelevant -> has always 0 as value wehen printed
             documentID = args[2];
-            score = Integer.parseInt(args[3]);	
+            if(args[3].contains(".")) {
+                //FIXME: what is the score for session track?
+                score = Integer.MIN_VALUE;
+            } else {
+            	score = Integer.parseInt(args[3]);
+            }
         }
     }
 	

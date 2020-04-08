@@ -286,6 +286,32 @@ public interface SharedTask {
 				null
 		),
 		
+		MILLION_QUERY_2007(
+				null,
+				"/topics-and-qrels/prels.mq.1-10000.txt",
+				Arrays.asList(
+						//FIXME
+				),
+				Arrays.asList(
+						//FIXME
+				),
+				null,
+				null
+		),
+		
+		MILLION_QUERY_2008(
+				null,
+				"/topics-and-qrels/prels.mq.10001-20000.txt",
+				Arrays.asList(
+						//FIXME
+				),
+				Arrays.asList(
+						//FIXME
+				),
+				null,
+				null
+		),
+		
 		ROBUST_04(
 				null,
 				"/topics-and-qrels/qrels.robust2004.txt",
@@ -362,7 +388,80 @@ public interface SharedTask {
 				Arrays.asList(EvaluationMeasure.MAP, EvaluationMeasure.NDCG),
 				() -> new WebxmlTopicReader(null),
 				"/topics-and-qrels/topics.web.251-300.txt"
-		);
+		),
+
+		SESSION_2010(
+				null, // FIXME: Add runFileDirectory
+				"/topics-and-qrels/qrels.session2010.txt",
+				null, //FIXME: Add officialEvaluationMeasures
+				null, //FIXME: Add inofficialEvaluationMeasures,
+				null, //FIXME: Add topicReader
+				null  // FIXME: Add topic resource
+		),
+
+		SESSION_2011(
+				null, // FIXME: Add runFileDirectory
+				"/topics-and-qrels/qrels.session2011.txt",
+				null, //FIXME: Add officialEvaluationMeasures
+				null, //FIXME: Add inofficialEvaluationMeasures,
+				null, //FIXME: Add topicReader
+				null  // FIXME: Add topic resource
+		),
+		
+		SESSION_2012(
+				null, // FIXME: Add runFileDirectory
+				"/topics-and-qrels/qrels.session2012.txt",
+				null, //FIXME: Add officialEvaluationMeasures
+				null, //FIXME: Add inofficialEvaluationMeasures,
+				null, //FIXME: Add topicReader
+				null  // FIXME: Add topic resource
+		),
+		
+		SESSION_2013(
+				null, // FIXME: Add runFileDirectory
+				"/topics-and-qrels/qrels.session2013.txt",
+				null, //FIXME: Add officialEvaluationMeasures
+				null, //FIXME: Add inofficialEvaluationMeasures,
+				null, //FIXME: Add topicReader
+				null  // FIXME: Add topic resource
+		),
+		
+		SESSION_2014(
+				null, // FIXME: Add runFileDirectory
+				"/topics-and-qrels/qrels.session2014.txt",
+				null, //FIXME: Add officialEvaluationMeasures
+				null, //FIXME: Add inofficialEvaluationMeasures,
+				null, //FIXME: Add topicReader
+				null  // FIXME: Add topic resource
+		),
+		
+		ENTITY_2009(
+				null, // FIXME: Add runFileDirectory
+				"/topics-and-qrels/qrels.inofficial.entity2009.txt",
+				null, //FIXME: Add officialEvaluationMeasures
+				null, //FIXME: Add inofficialEvaluationMeasures,
+				null, //FIXME: Add topicReader
+				"/topics-and-qrels/topics.entity2009.txt"
+		),
+		
+		ENTITY_2010(
+				null, // FIXME: Add runFileDirectory
+				"/topics-and-qrels/qrels.inofficial.entity2010.txt",
+				null, //FIXME: Add officialEvaluationMeasures
+				null, //FIXME: Add inofficialEvaluationMeasures,
+				null, //FIXME: Add topicReader
+				"/topics-and-qrels/topics.entity2010.txt"
+		),
+		
+		ENTITY_2011(
+				null, // FIXME: Add runFileDirectory
+				"/topics-and-qrels/qrels.entity2011.txt",
+				null, //FIXME: Add officialEvaluationMeasures
+				null, //FIXME: Add inofficialEvaluationMeasures,
+				null, //FIXME: Add topicReader
+				"/topics-and-qrels/topics.entity2011.txt"
+		)
+		;
 		
 		private final String runFileDirectory;
 		private final String qrelResource;
