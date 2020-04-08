@@ -131,4 +131,23 @@ public interface CollectionConfiguration extends Serializable {
 
 		private final List<SharedTask> sharedTasks;
 	}
+	
+	@Getter
+	@AllArgsConstructor
+	public static enum OtherCollections implements CollectionConfiguration {
+		COMMON_CRAWL_2015_02("CommonCrawlCollection", "JsoupGenerator");
+		
+		private final String collectionType,
+			documentGenerator;
+
+		@Override
+		public List<SharedTask> getSharedTasks() {
+			return Collections.emptyList();
+		}
+
+		@Override
+		public String getPathToCollection() {
+			return null;
+		}
+	}
 }

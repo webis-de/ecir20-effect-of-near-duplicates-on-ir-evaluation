@@ -90,7 +90,7 @@ public class SegmentPathToDocumentTextTest {
 		return collectionConfiguration(pathToCollection, Collections.emptyList(), collection);
 	}
 	
-	public static CollectionConfiguration collectionConfiguration(String pathToCollection, List<String> qrelResources, TrecCollections collection ) {
+	public static CollectionConfiguration collectionConfiguration(String pathToCollection, List<String> qrelResources, CollectionConfiguration collection ) {
 		List<SharedTask> sharedTasks = qrelResources.stream()
 				.map(r -> sharedTaskWithQrelResource(r))
 				.collect(Collectors.toList());
@@ -99,7 +99,7 @@ public class SegmentPathToDocumentTextTest {
 	}
 
 	@SuppressWarnings("serial")
-	public static CollectionConfiguration collectionConfigurationWithSharedTasks(String pathToCollection, List<SharedTask> sharedTasks, TrecCollections collection ) {
+	public static CollectionConfiguration collectionConfigurationWithSharedTasks(String pathToCollection, List<SharedTask> sharedTasks, CollectionConfiguration collection ) {
 		return new CollectionConfiguration() {
 			@Override
 			public String getPathToCollection() {
