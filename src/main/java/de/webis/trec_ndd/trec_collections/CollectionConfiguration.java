@@ -150,7 +150,7 @@ public interface CollectionConfiguration extends Serializable {
 		}
 		
 		public static OtherCollections commonCrawl_2015_02(S3Files s3Files) {
-			return new OtherCollections(s3Files.getBucketName(), "CommonCrawlCollection", "JsoupGenerator", s3Files);
+			return new OtherCollections("/tmp", "CommonCrawlCollection", "JsoupGenerator", s3Files);
 		}
 	}
 }
