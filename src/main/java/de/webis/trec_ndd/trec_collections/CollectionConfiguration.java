@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import de.webis.trec_ndd.trec_collections.SharedTask.TrecSharedTask;
+import de.webis.trec_ndd.util.S3Files;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.SneakyThrows;
@@ -134,20 +135,22 @@ public interface CollectionConfiguration extends Serializable {
 	
 	@Getter
 	@AllArgsConstructor
-	public static enum OtherCollections implements CollectionConfiguration {
-		COMMON_CRAWL_2015_02("CommonCrawlCollection", "JsoupGenerator");
+	@SuppressWarnings("serial")
+	public static class OtherCollections implements CollectionConfiguration {
 		
-		private final String collectionType,
-			documentGenerator;
+		private final String pathToCollection,
+							collectionType,
+							documentGenerator;
+		
+		private final S3Files s3Files;
 
 		@Override
 		public List<SharedTask> getSharedTasks() {
 			return Collections.emptyList();
 		}
-
-		@Override
-		public String getPathToCollection() {
-			return null;
+		
+		public static OtherCollections commonCrawl_2015_02(S3Files s3Files) {
+			return new OtherCollections(s3Files.getBucketName(), "CommonCrawlCollection", "JsoupGenerator", s3Files);
 		}
 	}
 }

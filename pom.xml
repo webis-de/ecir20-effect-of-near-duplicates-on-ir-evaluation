@@ -19,6 +19,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>1.11.683</version>
+		</dependency>
+		<dependency>
 			<groupId>com.github.helgeho</groupId>
 			<artifactId>archivespark_2.11</artifactId>
 			<version>3.0.1</version>

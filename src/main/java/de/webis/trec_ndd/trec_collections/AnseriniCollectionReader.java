@@ -16,8 +16,10 @@ import org.apache.lucene.document.Document;
 import com.google.common.collect.Iterators;
 
 import de.webis.trec_ndd.spark.DocumentHash;
+import de.webis.trec_ndd.trec_collections.CollectionConfiguration.OtherCollections;
 import io.anserini.collection.ClueWeb09Collection;
 import io.anserini.collection.ClueWeb12Collection;
+import io.anserini.collection.CommonCrawlCollection;
 import io.anserini.collection.DocumentCollection;
 import io.anserini.collection.Segment;
 import io.anserini.collection.SegmentProvider;
@@ -172,6 +174,10 @@ public class AnseriniCollectionReader<T extends SourceDocument> implements Colle
 				.newInstance();
 		((DocumentCollection) ret).setCollectionPath(Paths.get(config.getPathToCollection()));
 
+		if(ret instanceof CommonCrawlCollection) {
+			((CommonCrawlCollection) ret).setS3Files(((OtherCollections) config).getS3Files());
+		}
+		
 		return ret;
 	}
 
