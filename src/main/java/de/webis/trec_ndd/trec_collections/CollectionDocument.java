@@ -28,10 +28,16 @@ public class CollectionDocument implements Serializable {
 	
 	public static CollectionDocument fromLuceneDocument(Document document) {
 		String content = document.get(LuceneDocumentGenerator.FIELD_BODY);
+		String documentId = AnseriniCollectionReader.documentId(document);
+
+		return collectionDocument(content, documentId);
+	}
+	
+	public static CollectionDocument collectionDocument(String content, String id) {
 		List<String> canonicalizedTokens = TextCanonicalization.fullCanonicalization(content); 
 		
 		return new CollectionDocument(
-			AnseriniCollectionReader.documentId(document),
+			id,
 			content,
 			canonicalizedTokens.stream().collect(Collectors.joining(" ")),
 			null
