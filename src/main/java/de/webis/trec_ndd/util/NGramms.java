@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import de.webis.trec_ndd.similarity.MD5;
 import lombok.AllArgsConstructor;
@@ -28,30 +29,37 @@ public class NGramms {
 		return build8Gramms(tokenize(text));
 	}
 	
+	public static List<String> nGramms(String text, int length) {
+		return nGramms(tokenize(text), length);
+	}
+	
 	public static List<String> tokenize(String text) {
 		return Arrays.asList(WHITESPACE.split(text));
 	}
 	
-	public static List<Word8Gramm> build8Gramms(List<String> tokens) {
-		int nGrammLength = 8;
-		List<Word8Gramm> ret = new LinkedList<>();
+	public static List<String> nGramms(List<String> tokens, int length) {
+		List<String> ret = new LinkedList<>();
 		
-		for(int i=0; i<= tokens.size() - nGrammLength; i++) {
-			ret.add(buildWord8GramStartingAt(i, tokens));
+		for(int i=0; i<= tokens.size() - length; i++) {
+			ret.add(buildN8GramStartingAt(i, tokens, length));
 		}
 		
 		return ret;
 	}
 	
-	private static Word8Gramm buildWord8GramStartingAt(int position, List<String> tokens) {
+	public static List<Word8Gramm> build8Gramms(List<String> tokens) {
+		return nGramms(tokens, 8).stream()
+				.map(i -> new Word8Gramm(i, MD5.md5hash(i)))
+				.collect(Collectors.toList());
+	}
+	
+	private static String buildN8GramStartingAt(int position, List<String> tokens, int length) {
 		String ret = "";
 		
-		for(int i = 0; i< 8; i++) {
+		for(int i = 0; i< length; i++) {
 			ret += tokens.get(position + i) + " ";
 		}
 		
-		ret = ret.trim();
-		
-		return new Word8Gramm(ret, MD5.md5hash(ret));
+		return ret.trim();
 	}
 }
