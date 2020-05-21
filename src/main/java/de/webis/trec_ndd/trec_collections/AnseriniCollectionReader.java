@@ -12,6 +12,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.apache.lucene.document.Document;
+import org.jsoup.Jsoup;
+import org.jsoup.select.Elements;
 
 import com.google.common.collect.Iterators;
 
@@ -143,9 +145,32 @@ public class AnseriniCollectionReader<T extends SourceDocument> implements Colle
 			} else {
 				CollectionDocument ret = CollectionDocument.fromLuceneDocument(doc);
 				ret.setUrl(extractUrlIfPossible(document));
+				ret.setCanonicalUrl(extractCanonicalUrlIfPossible(document));
 				return ret;
 			}
 		}
+	}
+	
+	private static URL extractCanonicalUrlIfPossible(SourceDocument document) {
+		try {
+			return extractCanonicalUrlOrFail(document);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	private static URL extractCanonicalUrlOrFail(SourceDocument document) throws Exception {
+		URL resolveFrom = extractUrlIfPossible(document);
+		if(resolveFrom == null) {
+			return null;
+		}
+		
+		Elements canonicals = Jsoup.parse(document.content()).head().select("link[rel=\"canonical\"][href]");
+		if(canonicals.size() == 0) {
+			return null;
+		}
+
+		return new URL(resolveFrom, canonicals.get(0).attr("href"));
 	}
 	
 	private static URL extractUrlIfPossible(SourceDocument document) {

@@ -24,7 +24,8 @@ public class CollectionDocument implements Serializable {
 				   content,
 				   fullyCanonicalizedContent;
 	
-	private URL url;
+	private URL url,
+				canonicalUrl;
 	
 	public static CollectionDocument fromLuceneDocument(Document document) {
 		String content = document.get(LuceneDocumentGenerator.FIELD_BODY);
@@ -40,6 +41,7 @@ public class CollectionDocument implements Serializable {
 			id,
 			content,
 			canonicalizedTokens.stream().collect(Collectors.joining(" ")),
+			null,
 			null
 		);
 	}
