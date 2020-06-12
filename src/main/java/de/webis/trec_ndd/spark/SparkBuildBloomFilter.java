@@ -58,7 +58,7 @@ public class SparkBuildBloomFilter {
 		Map<String, Object> parsed = new ObjectMapper().readValue(str, new TypeReference<Map<String, Object>>() {});
 		Set<Map<String, String>> word8gramms = new HashSet<Map<String, String>>((Collection)parsed.get("word8gramms"));
 
-		Funnel<CharSequence> funnel = Funnels.stringFunnel();
+		Funnel<CharSequence> funnel = Funnels.unencodedCharsFunnel();
 		BloomFilter<CharSequence> bf = BloomFilter.create(funnel, (word8gramms.size()*2) + 10000, 1.0e-8);
 		
 		for(Map<String, String> word8gramm: word8gramms) {
