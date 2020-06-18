@@ -5,7 +5,9 @@ KIBANA_NAME="${NAMESPACE}-kibana"
 
 hash-datasets-gov: install
 	hdfs dfs -rm -r -f trec-ndd-hashes-gov1 &&\
+	hdfs dfs -rm -r -f trec-ndd-hashes-gov1-judged &&\
 	hdfs dfs -rm -r -f trec-ndd-hashes-gov2 &&\
+	hdfs dfs -rm -r -f trec-ndd-hashes-gov2-judged &&\
 	./src/main/bash/run-spark-hash-dataset.sh -c GOV1 &&\
 	./src/main/bash/run-spark-hash-dataset.sh -c GOV2
 
