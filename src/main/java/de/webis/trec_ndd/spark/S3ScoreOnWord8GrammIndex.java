@@ -54,7 +54,7 @@ public class S3ScoreOnWord8GrammIndex implements SparkArguments {
 	public void run() {
 		double threshold = parsedArgs.getDouble("threshold");
 		try (JavaSparkContext context = context()) {
-			JavaRDD<S3ScoreIntermediateResult> intermediateS3 = sumCoocurrencesOfAllIndexEntries(context, collection());
+			JavaRDD<S3ScoreIntermediateResult> intermediateS3 = sumCoocurrencesOfAllIndexEntries(context, collection(), documentSelection());
 			Set<String> documentIds = extractDocumentIdsUsedInIndex(intermediateS3);
 			
 			JavaPairRDD<String, DocumentHash> metadata = documentMetadata(context, documentIds);
@@ -124,8 +124,8 @@ public class S3ScoreOnWord8GrammIndex implements SparkArguments {
 			.collect().stream().collect(Collectors.toSet());
 	}
 	
-	private static JavaRDD<S3ScoreIntermediateResult> sumCoocurrencesOfAllIndexEntries(JavaSparkContext context, CollectionConfiguration config) {
-		return allIndexEntries(context, config)
+	private static JavaRDD<S3ScoreIntermediateResult> sumCoocurrencesOfAllIndexEntries(JavaSparkContext context, CollectionConfiguration config, DocumentSelectionStrategy documentSelectionStrategy) {
+		return allIndexEntries(context, config, documentSelectionStrategy)
 				.flatMap(indexEntry -> SymmetricPairUtil.extractCoocurrencePairs(indexEntry).iterator())
 				.groupBy(Pair::getLeft)
 				.map(S3ScoreOnWord8GrammIndex::sum);
@@ -159,8 +159,8 @@ public class S3ScoreOnWord8GrammIndex implements SparkArguments {
 				.mapToPair(d -> new Tuple2<>(d.getId(), d));
 	}
 	
-	private static JavaRDD<Word8GrammIndexEntry> allIndexEntries(JavaSparkContext sc, CollectionConfiguration config) {
-		return sc.textFile(SparkBuild8GrammIndex.jobName(config, ChunkSelectionStrategy.SPEX, DocumentSelectionStrategy.RUN_FILES))
+	private static JavaRDD<Word8GrammIndexEntry> allIndexEntries(JavaSparkContext sc, CollectionConfiguration config, DocumentSelectionStrategy documentSelectionStrategy) {
+		return sc.textFile(SparkBuild8GrammIndex.jobName(config, ChunkSelectionStrategy.SPEX, documentSelectionStrategy))
 				.map(Word8GrammIndexEntry::fromString);
 	}
 	
