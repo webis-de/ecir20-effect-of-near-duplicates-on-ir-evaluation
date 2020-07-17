@@ -22,7 +22,8 @@ import lombok.SneakyThrows;
 public class CollectionDocument implements Serializable {
 	private String id,
 				   content,
-				   fullyCanonicalizedContent;
+				   fullyCanonicalizedContent,
+				   crawlingTimestamp;
 	
 	private URL url,
 				canonicalUrl;
@@ -41,6 +42,7 @@ public class CollectionDocument implements Serializable {
 			id,
 			content,
 			canonicalizedTokens.stream().collect(Collectors.joining(" ")),
+			null,
 			null,
 			null
 		);
