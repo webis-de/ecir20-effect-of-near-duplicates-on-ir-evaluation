@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -20,60 +21,38 @@ import de.webis.trec_ndd.trec_collections.CollectionConfiguration.TrecCollection
 import de.webis.trec_ndd.trec_collections.CollectionDocument;
 import de.webis.trec_ndd.util.NGramms;
 import de.webis.trec_ndd.util.NGramms.Word8Gramm;
-import io.anserini.collection.ClueWeb09Collection.Document;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.experimental.Accessors;
-import net.sourceforge.argparse4j.ArgumentParsers;
-import net.sourceforge.argparse4j.inf.ArgumentParser;
-import net.sourceforge.argparse4j.inf.Namespace;
 import scala.Tuple2;
 
-public class SparkBuild8GrammIndex implements SparkArguments {
-	
-	@Getter
-	private final Namespace parsedArgs;
-	
-	private SparkBuild8GrammIndex(String[] args) {
-		this.parsedArgs = parseArguments(args);
-	}
-	
-	@Override
-	public void run() {
-		ChunkSelectionStrategy chunkSelection = chunkSelectionStrategy();
+public class SparkBuild8GrammIndex {	
+	public static void main(String[] args) {
+		ChunkSelectionStrategy chunkSelection = ChunkSelectionStrategy.SPEX;
 
 		try (JavaSparkContext context = context()) {
-			documents(parsedArgs, context)
+			documents(context)
 				.flatMap(SparkBuild8GrammIndex::documentTo8Gramms)
 				.groupBy(Tuple2::_1)
 				.map(Word8GrammIndexEntry::buildIndexEntry)
 				.filter(c -> chunkSelection.getKeepIndexEntry().apply(c))
-				.saveAsTextFile(jobName());
+				.saveAsTextFile("trec2020/health-misinformation-spex-warc-8-gramm-index");
 		}
 	}
 	
-	public static void main(String[] args) {
-		new SparkBuild8GrammIndex(args).run();
+	private static JavaSparkContext context() {
+		SparkConf conf = new SparkConf(true);
+		conf.setAppName("health-misinformation-spex-warc-8-gramm-index");
+
+		return new JavaSparkContext(conf);
 	}
 	
-	private JavaRDD<CollectionDocument> documents(Namespace parsedArgs, JavaSparkContext context) {
-		String collection = collectionName();
-		DocumentSelectionStrategy documentSelection = documentSelection();
-		
-		if (!DocumentSelectionStrategy.ALL.equals(documentSelection)) {
-			return context.textFile(CopyDocumentsFromRunFilesToHdfs.jobName(collection, documentSelection))
-				.map(CollectionDocument::fromString);
-		}
-		else {
-			AnseriniCollectionReader<Document> acr = new AnseriniCollectionReader<Document>(collection());
-			List<String> segmentPaths = acr.segmentPaths();
-			
-			return context.parallelize(segmentPaths)
-				.flatMap(s -> documentSelection.getDocumentsInSegmentPath().apply(acr).apply(s));	
-		}
+	private static JavaRDD<CollectionDocument> documents(JavaSparkContext context) {
+		return context.textFile("trec2020/health-misinformation-collection-documents/*")
+				.map(i -> CollectionDocument.fromString(i));
 	}
 
 	@Data
@@ -119,10 +98,6 @@ public class SparkBuild8GrammIndex implements SparkArguments {
 		return ret.iterator();
 	}
 
-	@Override
-	public String jobName() {
-		return jobName(collection(), chunkSelectionStrategy(), documentSelection());
-	}
 	
 	public static String jobName(CollectionConfiguration config, ChunkSelectionStrategy chunkSelectionStrategy, DocumentSelectionStrategy documentSelectionStrategy) {
 		String collection = config instanceof TrecCollections ? ((TrecCollections) config).toString() : config.getClass().getSimpleName();
@@ -155,18 +130,5 @@ public class SparkBuild8GrammIndex implements SparkArguments {
 		Set<String> judgedDocumentIds = collectionReader.getConfig().documentIdsInRunFiles();
 		
 		return s -> collectionReader.documentsFromRunFilesInPath(s, judgedDocumentIds);
-	}
-
-	private Namespace parseArguments(String[] args) {
-		ArgumentParser parser = ArgumentParsers.newFor("Spark8GrammIndex")
-				.build()
-				.defaultHelp(true)
-				.description("Build 8-gramm-index for all judged documents in a dataset.");
-
-		addCollectionToArgparser(parser);
-		addChunkSelectionToArgparser(parser);
-		addDocumentSelectionToArgparser(parser);
-
-		return parser.parseArgsOrFail(args);
 	}
 }
