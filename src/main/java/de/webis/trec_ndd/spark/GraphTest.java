@@ -22,9 +22,9 @@ import org.apache.spark.graphx.Edge;
 import org.apache.spark.graphx.Graph;
 
 public class GraphTest {
-	public static JavaRDD<DocumentGroup> group(JavaRDD<S3ScoreIntermediateResult> rdd, CollectionConfiguration collection, double thresshold) {
+	public static JavaRDD<DocumentGroup> group(JavaRDD<S3ScoreIntermediateResult> rdd, CollectionConfiguration collectiosn, double thresshold) {
 		JavaRDD<S3Score> scores = rdd.map(i -> new S3Score(i))
-			.filter(score -> s3ThresholdFilter(score, collection, thresshold));
+			.filter(score -> s3ThresholdFilter(score, null, thresshold));
 		
 		Map<String, Long> docToVertex = documentIdToVertexId(scores);
 		Map<Long, String> vertexToDoc = revertMap(docToVertex);
@@ -55,7 +55,7 @@ public class GraphTest {
 	}
 	
 	private static boolean s3ThresholdFilter(S3Score s3Score, CollectionConfiguration collection, double threshold) {
-		return s3Score != null && s3Score.getS3Score() > threshold && bothDocumentsAreJudgedForTheSameTopic(s3Score, collection);
+		return s3Score != null && s3Score.getS3Score() > threshold;
 	}
 	
 	private static boolean bothDocumentsAreJudgedForTheSameTopic(S3Score s3Score, CollectionConfiguration collection) {

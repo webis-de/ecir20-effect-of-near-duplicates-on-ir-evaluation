@@ -45,7 +45,7 @@ import scala.Tuple2;
 
 public class S3ScoreOnWord8GrammIndex {
 	public static void main(String[] args) {
-		double threshold = 0.84;
+		double threshold = 0.83;
 		try (JavaSparkContext context = context()) {
 			JavaRDD<S3ScoreIntermediateResult> intermediateS3 = sumCoocurrencesOfAllIndexEntries(context);
 			Set<String> documentIds = extractDocumentIdsUsedInIndex(intermediateS3);
@@ -58,6 +58,9 @@ public class S3ScoreOnWord8GrammIndex {
 			
 			intermediateS3.map(i -> new S3Score(i))
 				.saveAsTextFile("trec2020/health-misinformation-intermediate-unfiltered-s3-similarity-connected-component-" + threshold);
+			
+			GraphTest.group(intermediateS3, null, threshold)
+				.saveAsTextFile("trec2020/health-misinformation-s3-similarity-connected-component-" + threshold);
 		}
 	}
 	
