@@ -1,8 +1,7 @@
 #!/bin/bash -e
 
 PARALLELISM=70
-
-hdfs dfs -rm -f -R trec-ndd-test-hashing
+./mvnw clean install -DskipTests
 
 spark-submit \
 	--deploy-mode cluster \
@@ -12,7 +11,5 @@ spark-submit \
 	--executor-cores 11\
 	--executor-memory 15G\
 	--driver-memory 25G\
-	target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar \
-	--documentSelection JUDGED \
-	${@}
+	target/trec-ndd-1.0-SNAPSHOT-jar-with-dependencies.jar
 
