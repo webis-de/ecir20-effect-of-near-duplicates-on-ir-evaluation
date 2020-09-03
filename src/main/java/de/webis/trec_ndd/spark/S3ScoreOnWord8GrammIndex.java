@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.math3.stat.descriptive.moment.Mean;
+import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -28,6 +29,7 @@ import de.webis.trec_ndd.spark.SparkBuild8GrammIndex.DocumentSelectionStrategy;
 import de.webis.trec_ndd.spark.SparkBuild8GrammIndex.Word8GrammIndexEntry;
 import de.webis.trec_ndd.spark.SparkGroupByFingerprint.DocumentHashGroupKey;
 import de.webis.trec_ndd.trec_collections.CollectionConfiguration;
+import de.webis.trec_ndd.trec_collections.CollectionDocument;
 import de.webis.trec_ndd.trec_collections.CollectionConfiguration.TrecCollections;
 import de.webis.trec_ndd.util.SymmetricPairUtil;
 import lombok.Data;
@@ -41,20 +43,11 @@ import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.Namespace;
 import scala.Tuple2;
 
-public class S3ScoreOnWord8GrammIndex implements SparkArguments {
-	
-	@Getter
-	private final Namespace parsedArgs;
-	
-	private S3ScoreOnWord8GrammIndex(String[] args) {
-		this.parsedArgs = parseArguments(args);
-	}
-	
-	@Override
-	public void run() {
-		double threshold = parsedArgs.getDouble("threshold");
+public class S3ScoreOnWord8GrammIndex {
+	public static void main(String[] args) {
+		double threshold = 0.84;
 		try (JavaSparkContext context = context()) {
-			JavaRDD<S3ScoreIntermediateResult> intermediateS3 = sumCoocurrencesOfAllIndexEntries(context, collection());
+			JavaRDD<S3ScoreIntermediateResult> intermediateS3 = sumCoocurrencesOfAllIndexEntries(context);
 			Set<String> documentIds = extractDocumentIdsUsedInIndex(intermediateS3);
 			
 			JavaPairRDD<String, DocumentHash> metadata = documentMetadata(context, documentIds);
@@ -64,16 +57,19 @@ public class S3ScoreOnWord8GrammIndex implements SparkArguments {
 			intermediateS3 = intermediateS3.union(retrievalEquivalentDocsWithZeroWord8Gramms(metadata, context));
 			
 			intermediateS3.map(i -> new S3Score(i))
-				.saveAsTextFile(SparkGroupByFingerprint.resultDir(collection(), documentSelection(), "intermediate-unfiltered-s3-similarity-connected-component-" + threshold));
-			
-			GraphTest.group(intermediateS3, collection(), threshold)
-				.saveAsTextFile(SparkGroupByFingerprint.resultDir(collection(), documentSelection(), "s3-similarity-connected-component-" + threshold));
+				.saveAsTextFile("trec2020/health-misinformation-intermediate-unfiltered-s3-similarity-connected-component-" + threshold);
 		}
 	}
+	
+	private static JavaSparkContext context() {
+		SparkConf conf = new SparkConf(true);
+		conf.setAppName("health-misinformation-s3-score-on-word-8-gramm-index");
 
-	private JavaRDD<S3ScoreIntermediateResult> retrievalEquivalentDocsWithZeroWord8Gramms(JavaPairRDD<String, DocumentHash> metadata, JavaSparkContext sc) {
-		String retrievalEquivalentDir = SparkGroupByFingerprint.resultDir(collection(), documentSelection(), DocumentHashGroupKey.CANONICALIZED_MD5_CONTENT);
-		ArrayList<DocumentGroup> retrievalEquivalent = readGroupsUsedInRunFiles(sc, retrievalEquivalentDir, collection());
+		return new JavaSparkContext(conf);
+	}
+
+	private static JavaRDD<S3ScoreIntermediateResult> retrievalEquivalentDocsWithZeroWord8Gramms(JavaPairRDD<String, DocumentHash> metadata, JavaSparkContext sc) {
+		ArrayList<DocumentGroup> retrievalEquivalent = readGroupsUsedInRunFiles(sc, "trec2020/health-misinformation-document-fingerprint-groups-" +DocumentHashGroupKey.CANONICALIZED_MD5_CONTENT.name(), null);
 		
 		JavaRDD<S3ScoreIntermediateResult> ret = sc.parallelize(retrievalEquivalent)
 				.flatMap(i -> shortRetrievalEquivalentDocGroupToS3IntermediateResults(i));
@@ -82,10 +78,6 @@ public class S3ScoreOnWord8GrammIndex implements SparkArguments {
 		ret = joinMetadataOfRightDocument(ret, metadata);
 		
 		return ret.filter(i -> i.getLeftMetadata().getFullyCanonicalizedWord8GrammSetSize() == 0 && i.getRightMetadata().getFullyCanonicalizedWord8GrammSetSize() == 0);
-	}
-
-	public static void main(String[] args) {
-		new S3ScoreOnWord8GrammIndex(args).run();
 	}
 
 	public static Iterator<S3ScoreIntermediateResult> shortRetrievalEquivalentDocGroupToS3IntermediateResults(DocumentGroup group) {
@@ -124,8 +116,8 @@ public class S3ScoreOnWord8GrammIndex implements SparkArguments {
 			.collect().stream().collect(Collectors.toSet());
 	}
 	
-	private static JavaRDD<S3ScoreIntermediateResult> sumCoocurrencesOfAllIndexEntries(JavaSparkContext context, CollectionConfiguration config) {
-		return allIndexEntries(context, config)
+	private static JavaRDD<S3ScoreIntermediateResult> sumCoocurrencesOfAllIndexEntries(JavaSparkContext context) {
+		return allIndexEntries(context)
 				.flatMap(indexEntry -> SymmetricPairUtil.extractCoocurrencePairs(indexEntry).iterator())
 				.groupBy(Pair::getLeft)
 				.map(S3ScoreOnWord8GrammIndex::sum);
@@ -150,17 +142,16 @@ public class S3ScoreOnWord8GrammIndex implements SparkArguments {
 		return "trec-s3-score-" + collection.toLowerCase();
 	}
 	
-	private JavaPairRDD<String, DocumentHash> documentMetadata(JavaSparkContext sc, Set<String> documentIds) {
-		CollectionConfiguration collection = collection();
-		
-		return sc.textFile(SparkHashDataset.jobName(collection, documentSelection()))
-				.map(DocumentHash::fromString)
+	private static JavaPairRDD<String, DocumentHash> documentMetadata(JavaSparkContext sc, Set<String> documentIds) {
+		return sc.textFile("trec2020/health-misinformation-collection-documents/*")
+				.map(i -> CollectionDocument.fromString(i))
+				.map(i -> new DocumentHash(i))
 				.filter(doc -> documentIds.contains(doc.getId()))
 				.mapToPair(d -> new Tuple2<>(d.getId(), d));
 	}
 	
-	private static JavaRDD<Word8GrammIndexEntry> allIndexEntries(JavaSparkContext sc, CollectionConfiguration config) {
-		return sc.textFile(SparkBuild8GrammIndex.jobName(config, ChunkSelectionStrategy.SPEX, DocumentSelectionStrategy.RUN_FILES))
+	private static JavaRDD<Word8GrammIndexEntry> allIndexEntries(JavaSparkContext sc) {
+		return sc.textFile("trec2020/health-misinformation-spex-warc-8-gramm-index/*")
 				.map(Word8GrammIndexEntry::fromString);
 	}
 	
@@ -267,27 +258,5 @@ public class S3ScoreOnWord8GrammIndex implements SparkArguments {
 				
 			}
 		}
-	}
-	
-	private Namespace parseArguments(String[] args) {
-		ArgumentParser parser = ArgumentParsers.newFor("S3ScoreOnWord8GrammIndex")
-				.build()
-				.defaultHelp(true)
-				.description("Calculate the S3-Score on the word-8-gramm index associated with the given collection.");
-
-		addCollectionToArgparser(parser);
-		addDocumentSelectionToArgparser(parser);
-		
-		parser.addArgument("--threshold")
-			.required(Boolean.TRUE)
-			.type(Double.class)
-			.help("Specify the s3 threshold to use.");
-		
-		return parser.parseArgsOrFail(args);
-	}
-
-	@Override
-	public String jobName() {
-		return jobName(collection());
 	}
 }

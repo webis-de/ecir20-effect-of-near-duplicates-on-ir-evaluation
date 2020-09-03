@@ -3,6 +3,7 @@ package de.webis.trec_ndd.spark;
 import java.io.Serializable;
 import java.util.function.Function;
 
+import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,23 +14,12 @@ import de.webis.trec_ndd.trec_collections.CollectionConfiguration.TrecCollection
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.SneakyThrows;
-import net.sourceforge.argparse4j.ArgumentParsers;
-import net.sourceforge.argparse4j.inf.ArgumentParser;
-import net.sourceforge.argparse4j.inf.Namespace;
 import scala.Tuple2;
 
-public class SparkGroupByFingerprint implements SparkArguments {
-	
-	@Getter
-	private final Namespace parsedArgs;
-	
-	private SparkGroupByFingerprint(String[] args) {
-		this.parsedArgs = parseArguments(args);
-	}
-	
-	@Override
-	public void run() {
-		String sourceDirectory = SparkHashDataset.jobName(collection(), documentSelection());
+public class SparkGroupByFingerprint {
+
+	public static void main(String[] args) {
+		String sourceDirectory = "trec2020/health-misinformation-document-hashs";
 		
 		try (JavaSparkContext sc = context()) {
 			for(DocumentHashGroupKey groupKey : DocumentHashGroupKey.values()) {
@@ -37,13 +27,16 @@ public class SparkGroupByFingerprint implements SparkArguments {
 					.map(line -> jsonLineToDocumentTuple(line, groupKey))
 					.groupBy(Tuple2::_1)
 					.map(group -> new DocumentGroup(group)).filter(dg -> dg.ids.size() > 1)
-					.saveAsTextFile(resultDir(collection(), documentSelection(), groupKey));
+					.saveAsTextFile("trec2020/health-misinformation-document-fingerprint-groups-" + groupKey.name());
 			}
 		}
 	}
 	
-	public static void main(String[] args) {
-		new SparkGroupByFingerprint(args).run();
+	private static JavaSparkContext context() {
+		SparkConf conf = new SparkConf(true);
+		conf.setAppName("SparkGroupByFingerprint");
+
+		return new JavaSparkContext(conf);
 	}
 	
 	@SneakyThrows
@@ -54,27 +47,11 @@ public class SparkGroupByFingerprint implements SparkArguments {
 		
 		return new Tuple2<>(hash, document.getId());
 	}
-
-	public String jobName() {
-		return jobName(collection(), documentSelection());
-	}
 	
 	public static String jobName(CollectionConfiguration config, DocumentSelectionStrategy documentSelection) {
 		String collection = config instanceof TrecCollections ? ((TrecCollections) config).toString() : config.getClass().getSimpleName();
 		
 		return "trec-fingerprint-groups-" + collection.toLowerCase() + "-" +documentSelection.name().toLowerCase();
-	}
-
-	private Namespace parseArguments(String[] args) {
-		ArgumentParser parser = ArgumentParsers.newFor("SparkFingerprintGroups")
-			.build()
-			.defaultHelp(true)
-			.description("Group document representations by hashes.");
-
-		addCollectionToArgparser(parser);
-		addDocumentSelectionToArgparser(parser);
-		
-		return parser.parseArgsOrFail(args);
 	}
 	
 	public static String resultDir(CollectionConfiguration config, DocumentSelectionStrategy documentSelection, DocumentHashGroupKey groupKey) {
