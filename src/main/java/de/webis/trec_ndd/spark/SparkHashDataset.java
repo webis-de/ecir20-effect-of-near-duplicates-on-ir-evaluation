@@ -25,6 +25,6 @@ public class SparkHashDataset {
 	private static JavaRDD<DocumentHash> documents(JavaSparkContext context) {
 		return context.textFile("trec2020/health-misinformation-collection-documents/*")
 			.map(i -> CollectionDocument.fromString(i))
-			.map(i -> new DocumentHash());
+			.map(i -> new DocumentHash(i));
 	}
 }
