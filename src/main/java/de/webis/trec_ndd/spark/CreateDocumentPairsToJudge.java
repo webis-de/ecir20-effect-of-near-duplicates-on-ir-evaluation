@@ -69,7 +69,7 @@ public class CreateDocumentPairsToJudge implements SparkArguments {
 		
 		for(S3Score sample: samples) {
 			Path resultPath = resultPath(collection, sample);
-			
+			System.out.println("Write result to :" + resultPath.toAbsolutePath().toString());
 			writeDocToResult(docs.get(sample.getIdPair().getLeft()), resultPath);
 			writeDocToResult(docs.get(sample.getIdPair().getRight()), resultPath);
 			writeScoreToResult(sample, resultPath);
