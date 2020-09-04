@@ -104,8 +104,7 @@ public class CreateDocumentPairsToJudge implements SparkArguments {
 			idsToKeep.add(i.getIdPair().getRight());
 		});
 		
-		
-		return context.textFile(CopyDocumentsFromRunFilesToHdfs.jobName(collectionName(collection), documentSelection))
+		return context.textFile("trec2020/health-misinformation-collection-documents/*")
 			.map(CollectionDocument::fromString)
 			.filter(i -> idsToKeep.contains(i.getId()))
 			.collect().stream()
