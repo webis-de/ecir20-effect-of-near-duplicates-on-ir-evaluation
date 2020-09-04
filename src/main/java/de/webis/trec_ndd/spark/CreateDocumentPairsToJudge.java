@@ -34,7 +34,7 @@ public class CreateDocumentPairsToJudge implements SparkArguments {
 	private final Namespace parsedArgs;
 	
 	@Getter
-	private final DocumentSelectionStrategy documentSelection = DocumentSelectionStrategy.JUDGED;
+	private final DocumentSelectionStrategy documentSelection = DocumentSelectionStrategy.ALL;
 	
 	private CreateDocumentPairsToJudge(String[] args) {
 		parsedArgs = parseArguments(args);
@@ -58,7 +58,7 @@ public class CreateDocumentPairsToJudge implements SparkArguments {
 					
 					bucketStart = bucketEnd;
 				}
-			}	
+			}
 		}
 	}
 
@@ -129,8 +129,7 @@ public class CreateDocumentPairsToJudge implements SparkArguments {
 	}
 	
 	private JavaRDD<S3Score> s3ScoresAbove(double minThreshold, JavaSparkContext context, CollectionConfiguration collection) {
-//		String resultDir = SparkGroupByFingerprint.resultDir(collection, documentSelection, "intermediate-unfiltered-s3-similarity-connected-component-0.58");
-		String resultDir = "intermediate-unfiltered-trec-fingerprint-groups-gov2-judged/s3-similarity-connected-component-0.58";
+		String resultDir = "trec2020/health-misinformation-intermediate-unfiltered-s3-similarity-connected-component-0.5";
 		
 		return context.textFile(resultDir)
 				.map(S3Score::fromString)
