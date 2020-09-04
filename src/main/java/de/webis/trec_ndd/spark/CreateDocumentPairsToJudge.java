@@ -89,7 +89,7 @@ public class CreateDocumentPairsToJudge implements SparkArguments {
 	}
 	
 	private Path resultPath(CollectionConfiguration c, S3Score score) {
-		File resultDir = new File("results/" + collectionName(c) +"/" +
+		File resultDir = new File("results/trec-health-misinformation/" +
 				score.getIdPair().getLeft() + "_vs_" +
 				score.getIdPair().getRight());
 		resultDir.mkdirs();
@@ -112,11 +112,8 @@ public class CreateDocumentPairsToJudge implements SparkArguments {
 	}
 
 	private List<S3Score> sampleBetween(double start, double end, JavaRDD<S3Score> s3Scores) {
-		Set<String> idsInTerabyte2004 = SharedTask.TrecSharedTask.TERABYTE_2004.documentIdsInRunFiles();
-		
 		List<S3Score> scores = s3Scores
 			.filter(i -> start <= i.getS3Score() && end >= i.getS3Score())
-			.filter(i -> idsInTerabyte2004.contains(i.getIdPair().getLeft()) && idsInTerabyte2004.contains(i.getIdPair().getRight()))
 			.collect();
 		scores = new LinkedList<>(scores);
 			
