@@ -3,6 +3,7 @@ package de.webis.trec_ndd.spark;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 import org.apache.spark.api.java.JavaRDD;
@@ -13,6 +14,8 @@ import com.holdenkarau.spark.testing.SharedJavaSparkContext;
 
 import de.webis.trec_ndd.spark.S3ScoreOnWord8GrammIndex.S3ScoreIntermediateResult;
 import de.webis.trec_ndd.util.SymmetricPairUtil;
+import de.webis.trec_ndd.trec_collections.CollectionConfiguration;
+import de.webis.trec_ndd.trec_collections.SharedTask;
 
 public class S3SimilarityGroupTest extends SharedJavaSparkContext {
 	
@@ -53,8 +56,24 @@ public class S3SimilarityGroupTest extends SharedJavaSparkContext {
 		Approvals.verifyAsJson(actual);
 	}
 	
+	public static class DummyCollectionConfiguration implements CollectionConfiguration{
+		public String getPathToCollection(){
+			return "";
+		}
+		public String getCollectionType(){
+			return "";
+		}
+		public String getDocumentGenerator(){
+			return "";
+		}
+		public List<SharedTask> getSharedTasks(){
+			return new ArrayList<SharedTask>();
+		}
+	}
+	
+	
 	private static List<DocumentGroup> groupWithSpark(JavaRDD<S3ScoreIntermediateResult> rdd, double threshold) {
-		JavaRDD<DocumentGroup> groups = GraphTest.group(rdd, threshold);
+		JavaRDD<DocumentGroup> groups = GraphTest.group(rdd, new DummyCollectionConfiguration(), threshold);
 		return groups.collect().stream()
 				.map(d -> {
 					Collections.sort(d.ids);
