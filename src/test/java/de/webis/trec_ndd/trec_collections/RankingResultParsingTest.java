@@ -99,6 +99,11 @@ public class RankingResultParsingTest {
 			public Map<String, Map<String, String>> topicNumberToTopic() {
 				return null;
 			}
+
+			@Override
+			public String getGroupFingerprintResource() {
+				return null;
+			}
 		};
 	}
 }
